@@ -3,3 +3,12 @@
 :map x <C-o>
 :map c <C-i>
 :map v :emenu Edit.Preferences<CR>
+
+:silent :qmark t https://github.com/skeeto
+:silent :qmark m https://mail.google.com/
+:silent :qmark r https://reader.google.com/
+:silent :qmark n http://nullprogram.com/
+:silent :qmark p http://search.maven.org/
+:silent :qmark d http://www.reddit.com/
+:silent :qmark D http://www.reddit.com/user/skeeto/
+:silent :qmark R http://www.reddit.com/r/mod/about/modqueue/
