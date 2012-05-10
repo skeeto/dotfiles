@@ -1,0 +1,5 @@
+:map w gT
+:map e gt
+:map x <C-o>
+:map c <C-i>
+:map v :emenu Edit.Preferences<CR>
