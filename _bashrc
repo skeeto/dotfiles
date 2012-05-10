@@ -1,0 +1,13 @@
+## Includes
+source ~/.bash_aliases
+source /etc/bash_completion
+
+## Options
+shopt -s globstar
+
+## Environment
+export PATH=~/bin:$PATH
+export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:bin/javac::")
+export EDITOR="emacsclient -ta ''"
+export DEBEMAIL="mosquitopsu@gmail.com"
+export DEBFULLNAME="Christopher Wellons"

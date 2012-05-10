@@ -1,0 +1,17 @@
+alias p=pushd
+alias po=popd
+alias e='emacsclient -ca ""'
+alias et='emacsclient -ta ""'
+alias ins='sudo apt-get install'
+alias sapt='apt-cache search'
+alias y='youtube-dl -t'
+alias m='mplayer'
+alias ms='mplayer -shuffle'
+alias sr='screen -r'
+alias npr='mplayer http://wamu-1.streamguys.com'
+alias sra='screen -r aim || screen -S aim pork'
+alias t='tar -axvf'
+alias oct='octave -q'
+alias httpd='screen -S httpd python -m SimpleHTTPServer 8080'
+
+alias ls='ls --color=auto'

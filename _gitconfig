@@ -1,0 +1,15 @@
+[user]
+        name = Christopher Wellons
+        email = mosquitopsu@gmail.com
+        signingkey = 0C276D5D
+[color]
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
+[push]
+        default = matching
+[alias]
+        lol = log --graph --decorate --pretty=oneline --abbrev-commit
+        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
