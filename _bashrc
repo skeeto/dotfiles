@@ -11,3 +11,10 @@ export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:bin/javac::")
 export EDITOR="emacsclient -ta ''"
 export DEBEMAIL="mosquitopsu@gmail.com"
 export DEBFULLNAME="Christopher Wellons"
+
+export LIBRARY_PATH=~/lib
+export C_INCLUDE_PATH=~/include
+export CPLUS_INCLUDE_PATH=~/include
+export LD_LIBRARY_PATH=~/lib
+export PKG_CONFIG_PATH=~/lib/pkgconfig
+export PERL5LIB=~/lib
