@@ -6,7 +6,7 @@ source /etc/bash_completion
 shopt -s globstar
 
 ## Environment
-export PATH=~/bin:$PATH
+export PATH=~/bin:/sbin:$PATH
 export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:bin/javac::")
 export EDITOR="emacsclient -ta ''"
 export DEBEMAIL="mosquitopsu@gmail.com"
