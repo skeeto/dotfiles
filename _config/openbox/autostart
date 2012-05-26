@@ -1,0 +1,6 @@
+#!/bin/bash
+
+xcompmgr -nc &
+firefox &
+pidgin &
+~/.wallpaper/random-feh.sh
