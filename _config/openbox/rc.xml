@@ -467,6 +467,13 @@
   <application name="Pidgin">
     <desktop>1</desktop>
   </application>
+  <application name="x-terminal-emulator">
+    <position>
+      <x>-0</x>
+      <y>0</y>
+    </position>
+    <maximized>vertical</maximized>
+  </application>
 </applications>
 
 </openbox_config>
