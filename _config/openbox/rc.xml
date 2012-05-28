@@ -467,7 +467,7 @@
   <application name="Pidgin">
     <desktop>1</desktop>
   </application>
-  <application name="x-terminal-emulator">
+  <application name="lxterminal">
     <position>
       <x>-0</x>
       <y>0</y>
