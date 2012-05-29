@@ -155,6 +155,11 @@
   <keybind key="A-F11">
      <action name="ToggleFullscreen"/>
   </keybind>
+
+  <!-- screen lock -->
+  <keybind key="C-A-l">
+    <action name="Execute"><command>xlock</command></action>
+  </keybind>
 </keyboard>
 
 <mouse>
