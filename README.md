@@ -14,6 +14,13 @@ An Openbox config is included. To use it fully, make sure you install
 
     apt-get install openbox feh xcompmgr lxterminal
 
+I'm also using Thunar for occasional file/mount management and `xlock`
+for screen locking.
+
+    apt-get install thunar xlockmore
+
+Check rc.xml for all of my fancy Openbox keyboard shortcuts.
+
 ## Wallpapers
 
 Wallpaper stuff is installed in `~/.wallpaper`. It includes a script
