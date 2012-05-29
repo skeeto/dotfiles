@@ -155,13 +155,6 @@
   <keybind key="A-F11">
      <action name="ToggleFullscreen"/>
   </keybind>
-
-  <!-- Launch Task Manager with Ctrl+Alt+Del -->
-  <keybind key="A-C-Delete">
-      <action name="Execute">
-          <command>lxtask</command>
-      </action>
-  </keybind>
 </keyboard>
 
 <mouse>
