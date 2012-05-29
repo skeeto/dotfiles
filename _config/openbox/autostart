@@ -2,5 +2,5 @@
 
 xcompmgr -nc &
 firefox &
-pidgin &
+lxterminal &
 ~/.wallpaper/random-feh.sh
