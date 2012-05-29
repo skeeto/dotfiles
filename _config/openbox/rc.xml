@@ -141,13 +141,7 @@
 
   <!-- Keybindings for running applications -->
   <keybind key="W-e">
-    <action name="Execute">
-      <startupnotify>
-        <enabled>true</enabled>
-        <name>PCManFM</name>
-      </startupnotify>
-      <command>pcmanfm</command>
-    </action>
+    <action name="Execute"><command>thunar</command></action>
   </keybind>
 
   <!-- dmenu -->
