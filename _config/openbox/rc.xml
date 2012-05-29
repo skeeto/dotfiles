@@ -114,6 +114,25 @@
     <action name="FocusToBottom"/>
     <action name="Unfocus"/>
   </keybind>
+  <keybind key="W-Left">
+    <!--<action name="ToggleMaximizeVert"/>-->
+    <action name="MoveToEdge"><direction>west</direction></action>
+  </keybind>
+  <keybind key="W-Right">
+    <action name="MoveToEdge"><direction>east</direction></action>
+  </keybind>
+  <keybind key="W-Up">
+    <action name="MoveToEdge"><direction>north</direction></action>
+  </keybind>
+  <keybind key="W-Down">
+    <action name="MoveToEdge"><direction>south</direction></action>
+  </keybind>
+  <keybind key="W-v">
+    <action name="ToggleMaximizeVert"/>
+  </keybind>
+  <keybind key="W-h">
+    <action name="ToggleMaximizeHorz"/>
+  </keybind>
 
   <!-- Keybindings for window switching -->
   <keybind key="A-Tab">
