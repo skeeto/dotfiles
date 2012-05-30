@@ -133,6 +133,32 @@
     <action name="ToggleMaximizeHorz"/>
   </keybind>
 
+  <!-- Window sizing -->
+  <keybind key="W-A-Left">
+    <action name="GrowToEdge"><direction>west</direction></action>
+  </keybind>
+  <keybind key="W-A-Right">
+    <action name="GrowToEdge"><direction>east</direction></action>
+  </keybind>
+  <keybind key="W-A-Up">
+    <action name="GrowToEdge"><direction>north</direction></action>
+  </keybind>
+  <keybind key="W-A-Down">
+    <action name="GrowToEdge"><direction>south</direction></action>
+  </keybind>
+  <keybind key="W-C-Left">
+    <action name="ShrinkToEdge"><direction>west</direction></action>
+  </keybind>
+  <keybind key="W-C-Right">
+    <action name="ShrinkToEdge"><direction>east</direction></action>
+  </keybind>
+  <keybind key="W-C-Up">
+    <action name="ShrinkToEdge"><direction>north</direction></action>
+  </keybind>
+  <keybind key="W-C-Down">
+    <action name="ShrinkToEdge"><direction>south</direction></action>
+  </keybind>
+
   <!-- Keybindings for window switching -->
   <keybind key="A-Tab">
     <action name="NextWindow"/>
