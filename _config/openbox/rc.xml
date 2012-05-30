@@ -143,6 +143,9 @@
   <keybind key="W-e">
     <action name="Execute"><command>thunar</command></action>
   </keybind>
+  <keybind key="W-n">
+    <action name="Execute"><command>lxterminal</command></action>
+  </keybind>
 
   <!-- dmenu -->
   <keybind key="A-F1">
