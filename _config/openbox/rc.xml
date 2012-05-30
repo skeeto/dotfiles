@@ -114,16 +114,16 @@
     <action name="FocusToBottom"/>
     <action name="Unfocus"/>
   </keybind>
-  <keybind key="W-Left">
+  <keybind key="W-S-Left">
     <action name="MoveToEdge"><direction>west</direction></action>
   </keybind>
-  <keybind key="W-Right">
+  <keybind key="W-S-Right">
     <action name="MoveToEdge"><direction>east</direction></action>
   </keybind>
-  <keybind key="W-Up">
+  <keybind key="W-S-Up">
     <action name="MoveToEdge"><direction>north</direction></action>
   </keybind>
-  <keybind key="W-Down">
+  <keybind key="W-S-Down">
     <action name="MoveToEdge"><direction>south</direction></action>
   </keybind>
   <keybind key="W-v">
@@ -157,6 +157,28 @@
   </keybind>
   <keybind key="W-C-Down">
     <action name="ShrinkToEdge"><direction>south</direction></action>
+  </keybind>
+
+  <!-- Window focus -->
+  <keybind key="W-Left">
+    <action name="DirectionalFocusWest">
+      <dialog>no</dialog>
+    </action>
+  </keybind>
+  <keybind key="W-Right">
+    <action name="DirectionalFocusEast">
+      <dialog>no</dialog>
+    </action>
+  </keybind>
+  <keybind key="W-Up">
+    <action name="DirectionalFocusNorth">
+      <dialog>no</dialog>
+    </action>
+  </keybind>
+  <keybind key="W-Down">
+    <action name="DirectionalFocusSouth">
+      <dialog>no</dialog>
+    </action>
   </keybind>
 
   <!-- Keybindings for window switching -->
