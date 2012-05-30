@@ -115,7 +115,6 @@
     <action name="Unfocus"/>
   </keybind>
   <keybind key="W-Left">
-    <!--<action name="ToggleMaximizeVert"/>-->
     <action name="MoveToEdge"><direction>west</direction></action>
   </keybind>
   <keybind key="W-Right">
