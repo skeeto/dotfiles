@@ -6,6 +6,19 @@ anywhere and the dotfiles installed by running `install.sh`.
 For convenience, I don't actually want these files hidden in the
 repository, so the dots are replaced with underscores.
 
+## Private (encrypted) dotfiles
+
+Dotfiles ending in ".priv.gpg" will be decrypted before installation,
+with the ".priv.gpg" stripped from the name. You probably want
+`gpg-agent` running if you want to avoid entering your passphrase
+multiple times. Unlike the other dotfiles, these are not symlinked
+since there is nothing to symlink to.
+
+Caveat: private files should be installed after `.gnupg/` is
+installed, meaning they need to come after "gnupg" alphabetically. I
+still need to fix this. If this is a problem, just run the install
+script twice in a row initially.
+
 ## Openbox
 
 An Openbox config is included. To use it fully, make sure you install
