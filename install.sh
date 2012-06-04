@@ -1,6 +1,6 @@
 #!/bin/bash
 
-find -regex "./_.*" -type f -print0 | while read -d $'\0' file
+find -regex "./_.*" -type f -print0 | sort -z | while read -d $'\0' file
 do
     dotfile=${file/_/.}
     echo Installing $dotfile
