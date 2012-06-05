@@ -11,8 +11,8 @@ export EDITOR="emacsclient -ta ''"
 
 ## Identity
 export REALNAME="Christopher Wellons"
-export EMAIL="wellons@nullprogram.com"
-export DEBEMAIL="mosquitopsu@gmail.com"
+export EMAIL="mosquitopsu@gmail.com"
+export DEBEMAIL=$EMAIL
 export DEBFULLNAME=$REALNAME
 
 ## Places
