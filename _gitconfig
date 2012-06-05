@@ -1,6 +1,5 @@
 [user]
         name = Christopher Wellons
-        email = mosquitopsu@gmail.com
         signingkey = 0C276D5D
 [color]
         branch = auto
