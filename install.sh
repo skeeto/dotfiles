@@ -15,7 +15,7 @@ do
         ## Decrypt into place
         if [ $file -nt ~/$decfile ]; then
             echo Decrypting ~/$decfile
-            gpg --quiet --batch --yes --decrypt --output ~/$decfile $file
+            gpg --quiet --yes --decrypt --output ~/$decfile $file
         else
             echo Skipping $dotfile
         fi
