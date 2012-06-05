@@ -3,4 +3,4 @@
 xcompmgr -nc &
 firefox &
 lxterminal &
-~/.wallpaper/random-feh.sh
+~/.wallpaper/random-feh.sh &
