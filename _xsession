@@ -1,1 +1,1 @@
-exec ssh-agent -t 1h gpg-agent --daemon openbox-session
+openbox-session

@@ -14,6 +14,9 @@ with the ".priv.gpg" stripped from the name. You probably want
 multiple times. Unlike the other dotfiles, these are not symlinked
 since there is nothing to symlink to.
 
+I'm using `keychain` to start `ssh-agent` and `gpg-agent` so make sure
+it's installed along with the agents.
+
 Caveat: private files should be installed after `.gnupg/` is
 installed, meaning they need to come after "gnupg" alphabetically. I
 still need to fix this. If this is a problem, just run the install
