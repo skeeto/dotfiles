@@ -26,3 +26,8 @@ export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:bin/javac::")
 
 ## Agents
 eval $(keychain --eval --quiet)
+
+## Local configuration
+if [ -f ~/.bash_local ]; then
+   . ~/.bash_local
+fi
