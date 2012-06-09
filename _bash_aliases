@@ -1,5 +1,4 @@
 # Misc
-alias agent='exec ssh-agent gpg-agent --daemon bash'
 alias httpd='screen -S httpd python -m SimpleHTTPServer 8080'
 alias oct='octave -q'
 alias sr='screen -r'
