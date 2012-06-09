@@ -2,6 +2,7 @@
 
 ## Setup GPG
 echo Installing .gnupg
+chmod go-rwx gnupg
 ln -sf $(pwd)/gnupg ~/.gnupg
 
 ## Install each _-prefixed file
