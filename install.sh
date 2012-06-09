@@ -1,5 +1,10 @@
 #!/bin/bash
 
+## Setup GPG
+echo Installing .gnupg
+ln -sf $(pwd)/gnupg ~/.gnupg
+
+## Install each _-prefixed file
 find -regex "./_.*" -type f -print0 | sort -z | while read -d $'\0' file
 do
     dotfile=${file/.\/_/.}

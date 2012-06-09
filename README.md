@@ -21,11 +21,6 @@ it's installed along with the agents.
 
     apt-get install keychain
 
-Caveat: private files should be installed *after* `.gnupg/` is
-installed, meaning they need to come after "gnupg" alphabetically. I
-still need to fix this. If this becomes a problem, just run the
-install script twice in a row initially.
-
 You may have noticed, yes, I have my private PGP key in here!
 Dangerous?! Maybe, it's an experiment. It's got a strong passphrase on
 it and I've pumped up the key strengthening settings in GPG, like so,
