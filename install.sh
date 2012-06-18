@@ -17,7 +17,7 @@ do
     fi
 
     ## Install the file
-    if [ ${file#./*.} = priv.gpg ]; then
+    if [[ "$file" =~ priv.gpg$ ]]; then
         ## Decrypt into place
         if [ $file -nt ~/$decfile ]; then
             echo Decrypting ~/$decfile
