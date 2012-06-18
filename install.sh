@@ -22,6 +22,7 @@ do
         if [ $file -nt ~/$decfile ]; then
             echo Decrypting ~/$decfile
             gpg --quiet --yes --decrypt --output ~/$decfile $file
+            chmod go-rwx ~/$decfile
         else
             echo Skipping $dotfile
         fi
