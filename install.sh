@@ -3,7 +3,7 @@
 ## Setup GPG
 echo Installing .gnupg
 chmod go-rwx gnupg
-ln -sf $(pwd)/gnupg ~/.gnupg
+ln -Tsf $(pwd)/gnupg ~/.gnupg
 
 ## Install each _-prefixed file
 find -regex "./_.*" -type f -print0 | sort -z | while read -d $'\0' file
