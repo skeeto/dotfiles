@@ -34,4 +34,6 @@ do
     fi
 done
 
+## Special cases
 ln -sf /dev/null ~/.bash_history
+chmod -w _config/vlc/vlcrc  # Disables annoying VLC clobbering
