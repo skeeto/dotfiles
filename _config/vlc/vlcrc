@@ -4,8 +4,8 @@ album-art=2
 qt-autosave-volume=0
 
 ## Be more like mplayer
-play-and-exit=1
-qt-minimal-view=1
+#play-and-exit=1
+#qt-minimal-view=1
 key-quit=q
 key-vol-up=0
 key-vol-down=9

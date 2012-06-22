@@ -9,8 +9,8 @@ alias untmp='rm -rf /tmp/$$'
 
 # Media
 alias adump='mplayer -vc dummy -vo null -ao pcm'
-alias m='mplayer'
-alias ms='mplayer -shuffle'
+alias m='vlc --play-and-exit --qt-minimal-view'
+alias ms='vlc --random'
 alias npr='mplayer http://wamu-1.streamguys.com'
 alias y='youtube-dl -t'
 
