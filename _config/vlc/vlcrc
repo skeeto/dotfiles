@@ -1,0 +1,27 @@
+﻿## Annoying stuff
+qt-privacy-ask=0
+album-art=2
+qt-autosave-volume=0
+
+## Be more like mplayer
+play-and-exit=1
+qt-minimal-view=1
+key-quit=q
+key-vol-up=0
+key-vol-down=9
+
+## Time Navigation
+key-jump-extrashort=Shift+Left
+key-jump+extrashort=Shift+Right
+key-jump-short=Left
+key-jump+short=Right
+key-jump-medium=Down
+key-jump+medium=Up
+key-jump-long=Page Down
+key-jump+long=Page Up
+
+## Time jump sizes
+extrashort-jump-size=3
+short-jump-size=10
+medium-jump-size=60
+long-jump-size=600
