@@ -54,6 +54,7 @@ Check rc.xml for all of my fancy Openbox keyboard shortcuts. Examples,
  * W-*arrow* -- change focus to window in a direction
  * W-S-*arrow* -- move window to an edge in a direction
  * C-W-*arrow* -- grow window to an edge
+ * W-l -- toggle the window always-on-top
 
 The desktop environment traditionally fills the role for a number of
 common activities. Since I'm using bare-bones Openbox, I have a number
