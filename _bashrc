@@ -1,6 +1,8 @@
 ## Includes
 source ~/.bash_aliases
-source /etc/bash_completion
+if [ -e /etc/bash_completion ]; then
+    source /etc/bash_completion
+fi
 
 ## Options
 shopt -s globstar
