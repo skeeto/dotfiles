@@ -11,7 +11,7 @@ EOF
 }
 
 ## Parse command line switches
-while getopts “hp” OPTION
+while getopts "hp" OPTION
 do
     case $OPTION in
         h)
