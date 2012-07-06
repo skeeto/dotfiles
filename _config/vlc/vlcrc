@@ -10,6 +10,8 @@ qt-autosave-volume=0
 key-quit=q
 key-vol-up=0
 key-vol-down=9
+key-next=Shift+>
+key-prev=Shift+<
 
 ## Time Navigation
 key-jump-extrashort=Shift+Left
