@@ -2,5 +2,12 @@
 
 ## Fetches my personal collection of landscape wallpapers.
 
-URL=https://s3.amazonaws.com/nullprogram/personal/wallpapers.tar
-wget $URL -O - | tar -xv
+base=http://skeeto.s3.amazonaws.com/wallpapers
+while read line; do
+    wget -O - $base/$line | tar -xv
+done <<EOF
+kde.tar
+misc.tar
+100-wallpapers.tar
+large-set.tar
+EOF
