@@ -266,9 +266,8 @@
     </mousebind>
 
     <mousebind button="Middle" action="Press">
-      <action name="Lower"/>
-      <action name="FocusToBottom"/>
-      <action name="Unfocus"/>
+      <action name="Focus"/>
+      <action name="Raise"/>
     </mousebind>
 
     <mousebind button="Up" action="Click">
