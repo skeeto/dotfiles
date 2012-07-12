@@ -12,6 +12,7 @@ key-vol-up=0
 key-vol-down=9
 key-next=Shift+>
 key-prev=Shift+<
+key-frame-next=.
 
 ## Time Navigation
 key-jump-extrashort=Shift+Left
