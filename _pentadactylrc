@@ -1,25 +1,25 @@
-:map w gT
-:map e gt
-:map x <C-o>
-:map c <C-i>
-:map v :emenu Edit.Preferences<CR>
+map w gT
+map e gt
+map x <C-o>
+map c <C-i>
+map v :emenu Edit.Preferences<CR>
 
 set editor='emacsclient -ca "" +<line>:<column> <file>'
 
-:silent :qmark t https://github.com/skeeto
-:silent :qmark m https://mail.google.com/
-:silent :qmark r https://reader.google.com/
-:silent :qmark n http://nullprogram.com/
-:silent :qmark p http://search.maven.org/
-:silent :qmark d http://www.reddit.com/
-:silent :qmark D http://www.reddit.com/user/skeeto/
-:silent :qmark R http://www.reddit.com/r/mod/about/modqueue/
-:silent :qmark B javascript:void(z=document.createElement('script'));void(z.type='text/javascript');void(z.src='http://www.diigo.com/javascripts/webtoolbar/diigolet_b_h_b.js');void(document.body.appendChild(z));
+silent :qmark t https://github.com/skeeto
+silent :qmark m https://mail.google.com/
+silent :qmark r https://reader.google.com/
+silent :qmark n http://nullprogram.com/
+silent :qmark p http://search.maven.org/
+silent :qmark d http://www.reddit.com/
+silent :qmark D http://www.reddit.com/user/skeeto/
+silent :qmark R http://www.reddit.com/r/mod/about/modqueue/
+silent :qmark B javascript:void(z=document.createElement('script'));void(z.type='text/javascript');void(z.src='http://www.diigo.com/javascripts/webtoolbar/diigolet_b_h_b.js');void(document.body.appendChild(z));
 
-:bmark -t=TPB         -k=tpb    http://thepiratebay.se/s/?q=%s&page=0
-:bmark -t=subreddit   -k=r      http://www.reddit.com/r/%s
-:bmark -t=reddituser  -k=u      http://www.reddit.com/u/%s
-:bmark -t=Wikipedia   -k=w      http://en.wikipedia.org/w/index.php?search=%s
-:bmark -t=Google      -k=g      http://www.google.com/search?q=%s
-:bmark -t=Wiktionary  -k=wd     http://en.wiktionary.org/wiki/?search=%s
-:bmark -t=DCSS        -k=crawl  http://crawl.chaosforge.org/index.php?search=%s
+bmark -t=TPB         -k=tpb    http://thepiratebay.se/s/?q=%s&page=0
+bmark -t=subreddit   -k=r      http://www.reddit.com/r/%s
+bmark -t=reddituser  -k=u      http://www.reddit.com/u/%s
+bmark -t=Wikipedia   -k=w      http://en.wikipedia.org/w/index.php?search=%s
+bmark -t=Google      -k=g      http://www.google.com/search?q=%s
+bmark -t=Wiktionary  -k=wd     http://en.wiktionary.org/wiki/?search=%s
+bmark -t=DCSS        -k=crawl  http://crawl.chaosforge.org/index.php?search=%s
