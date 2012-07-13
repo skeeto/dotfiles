@@ -4,6 +4,8 @@
 :map c <C-i>
 :map v :emenu Edit.Preferences<CR>
 
+set editor='emacsclient -ca "" +<line>:<column> <file>'
+
 :silent :qmark t https://github.com/skeeto
 :silent :qmark m https://mail.google.com/
 :silent :qmark r https://reader.google.com/
