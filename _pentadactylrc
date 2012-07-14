@@ -3,8 +3,12 @@ map e gt
 map x <C-o>
 map c <C-i>
 map v :emenu Edit.Preferences<CR>
+map gI 2gi
 
 set editor='emacsclient -ca "" +<line>:<column> <file>'
+set newtab='help'
+set private
+set incfind
 
 silent :qmark t https://github.com/skeeto
 silent :qmark m https://mail.google.com/
