@@ -34,3 +34,4 @@ alias ls='ls --color=auto'
 alias p='pushd'
 alias po='popd'
 alias s='less -S'
+alias bat="acpitool -b"
