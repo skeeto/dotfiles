@@ -18,6 +18,7 @@ silent :qmark p http://search.maven.org/
 silent :qmark d http://www.reddit.com/
 silent :qmark D http://www.reddit.com/user/skeeto/
 silent :qmark R http://www.reddit.com/r/mod/about/modqueue/
+silent :qmark b http://www.diigo.com/user/skeeto
 silent :qmark B javascript:void(z=document.createElement('script'));void(z.type='text/javascript');void(z.src='http://www.diigo.com/javascripts/webtoolbar/diigolet_b_h_b.js');void(document.body.appendChild(z));
 
 bmark -t=TPB         -k=tpb    http://thepiratebay.se/s/?q=%s&page=0
