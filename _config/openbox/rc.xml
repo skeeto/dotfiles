@@ -216,7 +216,7 @@
 
   <!-- screen lock -->
   <keybind key="C-A-l">
-    <action name="Execute"><command>xlock</command></action>
+    <action name="Execute"><command>xlock -mousemotion</command></action>
   </keybind>
 </keyboard>
 
