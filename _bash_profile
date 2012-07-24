@@ -1,2 +1,2 @@
 ## Not all systems source .bashrc for login shells.
-source .bashrc
+source ~/.bashrc
