@@ -7,11 +7,12 @@ usage: $0 [options]
 OPTIONS:
   -h    Show this message
   -p    Don't install private dotfiles
+  -s    Don't install ~/bin/ scripts
 EOF
 }
 
 ## Parse command line switches
-while getopts "hp" OPTION
+while getopts "hps" OPTION
 do
     case $OPTION in
         h)
@@ -20,6 +21,9 @@ do
             ;;
         p)
             NO_PRIVATE=1
+            ;;
+        s)
+            NO_SCRIPTS=1
             ;;
         ?)
             usage
@@ -32,6 +36,12 @@ done
 echo Installing .gnupg
 chmod go-rwx gnupg
 ln -Tsf $(pwd)/gnupg ~/.gnupg
+
+## Install scripts
+if [ -z "$NO_SCRIPTS" ]; then
+    echo Installing '~/bin/'
+    find bin/ -type f | xargs -I{} ln -fs $(pwd)/{} ~/bin/
+fi
 
 ## Install each _-prefixed file
 find . -regex "./_.*" -type f -print0 | sort -z | while read -d $'\0' file
