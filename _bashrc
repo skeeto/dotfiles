@@ -8,7 +8,16 @@ fi
 shopt -s globstar
 
 ## Environment
-export PS1='\[\e[0;33m\]\u\[\e[m\]\[\e[1;32m\]\h\[\e[m\]\[\e[1;35m\]\w\[\e[m\] '
+_PS1 ()
+{
+    local PRE= NAME="$1" LENGTH="$2";
+    [[ "$NAME" != "${NAME#$HOME/}" || -z "${NAME#$HOME}" ]] &&
+        PRE+='~' NAME="${NAME#$HOME}" LENGTH=$[LENGTH-1];
+    ((${#NAME}>$LENGTH)) && NAME="/...${NAME:$[${#NAME}-LENGTH+4]}";
+    echo "$PRE$NAME"
+}
+export PS1='\[\e[0;33m\]\u\[\e[m\]\[\e[1;32m\]\h\[\e[m\]\
+\[\e[1;35m\]$(_PS1 "$PWD" 30)\[\e[m\] '
 export PATH=~/bin:/sbin:$PATH
 export EDITOR="emacsclient -ta ''"
 export BROWSER="firefox"
