@@ -11,6 +11,7 @@ shopt -s globstar
 export PS1='\[\e[0;33m\]\u\[\e[m\]\[\e[1;32m\]\h\[\e[m\]\[\e[1;35m\]\w\[\e[m\] '
 export PATH=~/bin:/sbin:$PATH
 export EDITOR="emacsclient -ta ''"
+export BROWSER="firefox"
 
 ## Identity
 export REALNAME="Christopher Wellons"
