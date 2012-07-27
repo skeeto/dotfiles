@@ -132,6 +132,9 @@
   <keybind key="W-h">
     <action name="ToggleMaximizeHorz"/>
   </keybind>
+  <keybind key="W-f">
+    <action name="ToggleMaximize"/>
+  </keybind>
 
   <!-- Window sizing -->
   <keybind key="W-A-Left">
