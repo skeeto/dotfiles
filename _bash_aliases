@@ -36,3 +36,4 @@ alias po='popd'
 alias s='less -S'
 alias bat="acpitool -b"
 alias pu='pumount'
+alias reportbug='reportbug --gnupg'
