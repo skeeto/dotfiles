@@ -1,7 +1,7 @@
 # Misc
 alias httpd='screen -S httpd python -m SimpleHTTPServer 8080'
 alias oct='octave -q'
-alias sr='screen -r'
+alias sr='screen -dr'
 alias ss='DISPLAY=:0 import -window root'
 alias t='tar -axvf'
 alias tmp='mkdir /tmp/$$ ; cd /tmp/$$'
