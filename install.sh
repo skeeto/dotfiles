@@ -38,6 +38,7 @@ chmod go-rwx gnupg
 ln -Tsf $(pwd)/gnupg ~/.gnupg
 
 ## Install scripts
+mkdir -p ~/bin
 if [ -z "$NO_SCRIPTS" ]; then
     echo Installing '~/bin/'
     find bin/ -type f | xargs -I{} ln -fs $(pwd)/{} ~/bin/
