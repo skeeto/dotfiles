@@ -207,6 +207,9 @@
   <keybind key="W-w">
     <action name="Execute"><command>wicd-gtk</command></action>
   </keybind>
+  <keybind key="W-t">
+    <action name="Execute"><command>toggle-time</command></action>
+  </keybind>
 
   <!-- dmenu -->
   <keybind key="A-F1">
@@ -555,6 +558,13 @@
       <y>0</y>
     </position>
     <maximized>vertical</maximized>
+  </application>
+  <application name="xclock">
+    <focus>no</focus>
+    <position>
+      <x>0</x><y>0</y>
+    </position>
+    <decor>no</decor>
   </application>
 </applications>
 
