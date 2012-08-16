@@ -208,7 +208,10 @@
     <action name="Execute"><command>wicd-gtk</command></action>
   </keybind>
   <keybind key="W-t">
-    <action name="Execute"><command>toggle-time</command></action>
+    <action name="Execute"><command>notify-date</command></action>
+  </keybind>
+  <keybind key="W-b">
+    <action name="Execute"><command>notify-battery</command></action>
   </keybind>
 
   <!-- dmenu -->
