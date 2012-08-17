@@ -6,6 +6,7 @@ fi
 
 ## Options
 shopt -s globstar
+set +o histexpand
 
 ## Environment
 _PS1 ()
