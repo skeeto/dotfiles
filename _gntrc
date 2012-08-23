@@ -1,0 +1,6 @@
+[Finch]
+color-away = gray; default
+color-timestamp = gray; default
+
+[colors]
+gray = 700; 700; 700
