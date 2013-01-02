@@ -12,7 +12,8 @@ alias adump='mplayer -vc dummy -vo null -ao pcm'
 alias m='vlc --play-and-exit --qt-minimal-view --quiet'
 alias ms='vlc --random --quiet --qt-minimal-view'
 alias npr='mplayer http://wamu-1.streamguys.com'
-alias y='youtube-dl -t'
+alias y='youtube-dl -t --no-mtime'
+alias ys='youtube-dl -t --no-mtime -r 150k'
 
 # Emacs
 alias e='emacsclient -ca ""'
