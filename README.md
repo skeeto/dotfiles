@@ -79,9 +79,9 @@ mounting.
 
 ### Screen locking
 
-`xlock` is used for screen locking.
+`i3lock` is used for screen locking.
 
-    apt-get install xlockmore
+    apt-get install i3lock
 
  * C-A-l -- lock the screen
 

@@ -228,7 +228,7 @@
 
   <!-- screen lock -->
   <keybind key="C-A-l">
-    <action name="Execute"><command>xlock -mousemotion</command></action>
+    <action name="Execute"><command>i3lock -c 000000</command></action>
   </keybind>
 </keyboard>
 
