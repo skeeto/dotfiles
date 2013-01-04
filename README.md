@@ -87,7 +87,7 @@ mounting.
 
 ### Network management
 
-An good tool for network management is Wicd.
+A mediocre, but fully standalone, tool for network management is Wicd.
 
     apt-get install wicd wicd-gtk wicd-curses
 
