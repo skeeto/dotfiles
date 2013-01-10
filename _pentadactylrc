@@ -12,6 +12,7 @@ set incfind
 
 set! browser.download.dir='/tmp'
 set! general.warnOnAboutConfig=false
+set! browser.tabs.closeButtons=2
 
 silent :qmark t https://github.com/skeeto
 silent :qmark m https://mail.google.com/
