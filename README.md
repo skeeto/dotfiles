@@ -48,13 +48,13 @@ manager should be told to use something like "user preference" or
 
 Check rc.xml for all of my fancy Openbox keyboard shortcuts. Examples,
 
- * W-n -- launch a terminal
- * C-A-*arrow* -- move focus to another desktop
- * C-S-*arrow* -- move window, with focus, to another desktop
- * W-*arrow* -- change focus to window in a direction
- * W-S-*arrow* -- move window to an edge in a direction
- * C-W-*arrow* -- grow window to an edge
- * W-l -- toggle the window always-on-top
+ * <kbd>W-n</kbd>: launch a terminal
+ * <kbd>C-A-[arrow]</kbd>: move focus to another desktop
+ * <kbd>C-S-[arrow]</kbd>: move window, with focus, to another desktop
+ * <kbd>W-[arrow]</kbd>: change focus to window in a direction
+ * <kbd>W-S-[arrow]</kbd>: move window to an edge in a direction
+ * <kbd>C-W-[arrow]</kbd>: grow window to an edge
+ * <kbd>W-l</kbd>: toggle the window always-on-top
 
 The desktop environment traditionally fills the role for a number of
 common activities. Since I'm using bare-bones Openbox, I have a number
@@ -66,7 +66,7 @@ I use dmenu to launch applications.
 
     apt-get install dmenu
 
- * A-F1 -- use dmenu to launch an application
+ * <kbd>A-F1</kbd>: use dmenu to launch an application
 
 ### Mounting
 
@@ -75,7 +75,7 @@ mounting.
 
     apt-get install thunar pmount
 
- * W-e -- launch Thunar (file management)
+ * <kbd>W-e</kbd>: launch Thunar (file management)
 
 ### Screen locking
 
@@ -83,7 +83,7 @@ mounting.
 
     apt-get install i3lock
 
- * C-A-l -- lock the screen
+ * <kbd>C-A-l</kbd>: lock the screen
 
 ### Network management
 
@@ -91,7 +91,7 @@ A mediocre, but fully standalone, tool for network management is Wicd.
 
     apt-get install wicd wicd-gtk wicd-curses
 
- * W-w -- launch Wicd client
+ * <kbd>W-w</kbd>: launch Wicd client
 
 ### Wallpapers
 
