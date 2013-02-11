@@ -8,12 +8,13 @@ map <F12> :emenu Tools.Web Developer.Web Console<CR>
 
 set editor='emacsclient -ca "" +<line>:<column> <file>'
 set newtab='help'
-set private
 set incfind
 
 set! browser.download.dir='/tmp'
 set! general.warnOnAboutConfig=false
 set! browser.tabs.closeButtons=2
+set! browser.privatebrowsing.autostart=true
+set! browser.startup.page=0
 
 silent :qmark t https://github.com/skeeto
 silent :qmark m https://mail.google.com/
