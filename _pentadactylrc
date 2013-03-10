@@ -25,7 +25,7 @@ silent :qmark d http://www.reddit.com/
 silent :qmark D http://www.reddit.com/user/skeeto/
 silent :qmark R http://www.reddit.com/r/mod/about/modqueue/
 silent :qmark b http://www.diigo.com/user/skeeto
-silent :qmark k javascript:(function(){var d=document;var s=d.createElement('script');s.src='http://localhost:8080/skewer';s.onload=function(){skewer()};d.getElementsByTagName('head')[0].appendChild(s);})()
+silent :qmark k javascript:(function(){var d=document;var s=d.createElement('script');s.src='http://localhost:8080/skewer';d.body.appendChild(s);})()
 silent :qmark B javascript:void(z=document.createElement('script'));void(z.type='text/javascript');void(z.src='http://www.diigo.com/javascripts/webtoolbar/diigolet_b_h_b.js');void(document.body.appendChild(z));
 silent :qmark f javascript:(%28function%28%29%7Bwindow.baseUrl%3D%27http%3A//www.readability.com%27%3Bwindow.readabilityToken%3D%27%27%3Bvar%20s%3Ddocument.createElement%28%27script%27%29%3Bs.setAttribute%28%27type%27%2C%27text/javascript%27%29%3Bs.setAttribute%28%27charset%27%2C%27UTF-8%27%29%3Bs.setAttribute%28%27src%27%2CbaseUrl%2B%27/bookmarklet/read.js%27%29%3Bdocument.documentElement.appendChild%28s%29%3B%7D%29%28%29)
 
