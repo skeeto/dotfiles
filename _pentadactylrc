@@ -11,6 +11,7 @@ set newtab='help'
 set incfind
 
 set! browser.download.dir='/tmp'
+set! browser.download.folderList=2
 set! general.warnOnAboutConfig=false
 set! browser.tabs.closeButtons=2
 set! browser.privatebrowsing.autostart=true
