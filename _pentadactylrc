@@ -16,6 +16,8 @@ set! browser.tabs.closeButtons=2
 set! browser.privatebrowsing.autostart=true
 set! browser.startup.page=0
 set! plugins.hide_infobar_for_missing_plugin=true
+set! browser.fixup.alternate.prefix=''
+set! browser.fixup.alternate.suffix=''
 
 silent :qmark t https://github.com/skeeto
 silent :qmark m https://mail.google.com/
