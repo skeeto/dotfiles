@@ -23,7 +23,7 @@ set! network.proxy.socks_remote_dns=true
 
 silent :qmark t https://github.com/skeeto
 silent :qmark m https://mail.google.com/
-silent :qmark r https://reader.google.com/
+silent :qmark r http://theoldreader.com/posts/all
 silent :qmark n http://nullprogram.com/
 silent :qmark p http://search.maven.org/
 silent :qmark d http://www.reddit.com/
