@@ -1,1 +1,2 @@
-openbox-session
+## Invoke via login bash so that Openbox sources the environment
+bash -lc 'exec openbox-session'
