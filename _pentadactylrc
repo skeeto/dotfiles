@@ -21,6 +21,7 @@ set! browser.fixup.alternate.prefix=''
 set! browser.fixup.alternate.suffix=''
 set! network.proxy.socks_remote_dns=true
 set! extensions.dactyl.first-run=false
+set! browser.feeds.handler='ask'
 
 silent :qmark t https://github.com/skeeto
 silent :qmark m https://mail.google.com/
