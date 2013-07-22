@@ -20,8 +20,11 @@ set! plugins.hide_infobar_for_missing_plugin=true
 set! browser.fixup.alternate.prefix=''
 set! browser.fixup.alternate.suffix=''
 set! network.proxy.socks_remote_dns=true
-set! extensions.dactyl.first-run=false
 set! browser.feeds.handler='ask'
+
+" Add-on specific settings
+set! extensions.dactyl.first-run=false
+set! extensions.adblockplus.subscriptions_exceptionsurl=''
 
 silent :qmark t https://github.com/skeeto
 silent :qmark m https://mail.google.com/
