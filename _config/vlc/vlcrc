@@ -24,6 +24,10 @@ key-jump+medium=Up
 key-jump-long=Page Down
 key-jump+long=Page Up
 
+## Zoom
+key-zoom=Shift+z
+key-unzoom=z
+
 ## Time jump sizes
 extrashort-jump-size=3
 short-jump-size=10
