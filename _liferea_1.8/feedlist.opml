@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<opml version="1.0">
+  <head>
+    <title>Web Feeds</title>
+  </head>
+  <body>
+    <outline title="Unread" type="vfolder">
+      <outline type="rule" text="Read status" rule="unread" value="" additive="true"/>
+    </outline>
+
+    <outline title="Subscriptions">
+      <outline id="wtqxike" xmlUrl="http://threesixty360.wordpress.com/feed/" title="360"/>
+      <outline id="pbnauzg" xmlUrl="http://www.50ply.com/atom.xml" title="50Ply Blog"/>
+      <outline id="bqbhguj" xmlUrl="http://abstrusegoose.com/feed.xml" title="Abstruse Goose"/>
+      <outline id="xdlaqsm" xmlUrl="http://curiousprogrammer.wordpress.com/feed/" title="A Curious Programmer"/>
+      <outline id="pwsrbws" xmlUrl="http://feeds.feedburner.com/amazingsuperpowers" title="AmazingSuperPowers"/>
+      <outline id="qqgkdii" xmlUrl="http://amitp.blogspot.com/feeds/posts/default" title="Amit's Thoughts"/>
+      <outline id="zmdoczj" xmlUrl="http://theatticlight.net/atom.xml" title="Andrews Website Feed"/>
+      <outline id="wwwxvld" xmlUrl="http://pages.cs.wisc.edu/~psilord/blog/rssfeed.rss" title="Angry Unix Prog."/>
+      <outline id="svjgfbq" xmlUrl="http://www.anticscomic.com/?feed=rss2" title="Antics"/>
+      <outline id="kjayhia" xmlUrl="http://feeds.feedburner.com/blogspot/TPQSS" title="Anything goes"/>
+      <outline id="ayxvskv" xmlUrl="http://www.rsspect.com/rss/asw.xml" title="A Softer World"/>
+      <outline id="ohaskyp" xmlUrl="http://beardfluff.com/feed/" title="BeardfluffBeardfluff"/>
+      <outline id="xlaptdt" xmlUrl="http://bit-player.org/feed" title="bit-player"/>
+      <outline id="syhixxx" xmlUrl="http://feeds.feedburner.com/bitquabit" title="bitquabit"/>
+      <outline id="ofngxbh" xmlUrl="http://simblob.blogspot.com/feeds/posts/default" title="Blobs in Games"/>
+      <outline id="gqgnfdd" xmlUrl="http://blogofholding.com/?feed=rss2" title="Blog of Holding"/>
+      <outline id="tpcudyd" xmlUrl="http://demonastery.org/rss.php" title="Blog of Zane Ashby"/>
+      <outline id="kvtmfas" xmlUrl="http://feeds.feedburner.com/Buttersafe" title="Buttersafe"/>
+      <outline id="kuxipjo" xmlUrl="http://feeds.feedburner.com/CatVersusHuman" title="cat versus human"/>
+      <outline id="imjvosd" xmlUrl="http://chainsawsuit.com/feed/" title="chainsawsuit"/>
+      <outline id="yytfcds" xmlUrl="http://feeds.feedburner.com/channelATE" title="Channelate"/>
+      <outline id="dlcjmyx" xmlUrl="http://www.cheeseburgersinthesky.com/feed/" title="Cheeseburgers in the Sky"/>
+      <outline id="fblpmyc" xmlUrl="http://feeds.feedburner.com/codeincomplete" title="Code inComplete"/>
+      <outline id="trcqrrv" xmlUrl="http://lisptips.com/rss" title="Common Lisp Tips"/>
+      <outline id="ejkqplu" xmlUrl="http://completelyseriouscomics.com/?feed=rss2" title="Completely Serious"/>
+      <outline id="twnwzdv" xmlUrl="http://feeds.feedburner.com/cowbirdsinlove" title="Cowbirds in Love"/>
+      <outline id="hxycqzm" xmlUrl="http://feeds.feedburner.com/DamnCoolPics" title="Damn Cool Pictures"/>
+      <outline id="ojgthcl" xmlUrl="http://echosa.github.io/atom.xml" title="Dev and Such"/>
+      <outline id="bdezgoz" xmlUrl="http://www.blogger.com/feeds/7683703637063287904/posts/default" title="devrand"/>
+      <outline id="fdfcwwm" xmlUrl="http://random.terminally-incoherent.com/rss" title="/dev/random"/>
+      <outline id="vwfgolz" xmlUrl="http://feeds.feedburner.com/wordpress/divisbyzero" title="Division by Zero"/>
+      <outline id="wwnyqji" xmlUrl="http://dorophone.blogspot.com/feeds/posts/default" title="Dorophone"/>
+      <outline id="hbhwthp" xmlUrl="http://feeds.feedburner.com/DUIF" title="Draw Until It's Funny"/>
+      <outline id="nyooeqy" xmlUrl="http://crawl.develz.org/wordpress/feed" title="Dungeon Crawl Stone Soup"/>
+      <outline id="klacxja" xmlUrl="http://dvdp.tumblr.com/rss" title="dvdp"/>
+      <outline id="pwjggsk" xmlUrl="http://bay12games.com/dwarves/dev_now.rss" title="Dwarf Fortress Devlog"/>
+      <outline id="gugvrle" xmlUrl="http://www.soa-world.de/echelon/feed" title="echelon"/>
+      <outline id="khdtlib" xmlUrl="http://emacs-fu.blogspot.com/feeds/posts/default" title="emacs-fu"/>
+      <outline id="vzvgqdw" xmlUrl="http://www.ericsink.com/rss.xml" title="Eric Sink"/>
+      <outline id="nlklmxt" xmlUrl="http://feeds.feedburner.com/Explosm" title="Explosm.net"/>
+      <outline id="dopgvkv" xmlUrl="http://www.extrafabulouscomics.com/1/feed" title="Extra Fabulous"/>
+      <outline id="xnxjwve" xmlUrl="http://exocomics.com/feed" title="Extra Ordinary"/>
+      <outline id="gonwaaw" xmlUrl="http://feeds.feedburner.com/Pidjin" title="Fredo and Pidjin"/>
+      <outline id="ojvofmd" xmlUrl="http://www.rsspect.com/rss/vagrant.xml" title="Hark, A Vagrant!"/>
+      <outline id="nvtkdci" xmlUrl="http://inkwellideas.com/feed/" title="Inkwell Ideas"/>
+      <outline id="dabface" xmlUrl="http://feeds.feedburner.com/InvisibleBread" title="Invisible Bread"/>
+      <outline id="zsidrub" xmlUrl="http://blog.ioactive.com/feeds/posts/default" title="IOActive Labs Research"/>
+      <outline id="nawsday" xmlUrl="http://irreal.org/blog/?feed=rss2" title="Irreal"/>
+      <outline id="yqpvccr" xmlUrl="http://feeds.feedburner.com/JoelKirchartz" title="JKirchartz"/>
+      <outline id="kedeqtb" xmlUrl="http://jorgetavares.com/feed/" title="Jorge Tavares weblog"/>
+      <outline id="visxzgt" xmlUrl="http://feeds.feedburner.com/kinokofryfeed" title="KinokoFry"/>
+      <outline id="mcjjdgb" xmlUrl="http://www.leadpaintcomics.com/feed/" title="Lead Paint Comics"/>
+      <outline id="gtazjvd" xmlUrl="http://feeds.feedburner.com/lefthandedtoons/awesome" title="Left-Handed Toons"/>
+      <outline id="wtxcpdz" xmlUrl="http://gottwurfelt.wordpress.com/feed/" title="Liferea Feed List Export"/>
+      <outline id="yusrwyg" xmlUrl="http://loldwell.com/?feed=rss2" title="Loldwell"/>
+      <outline id="stuchgx" xmlUrl="http://www.malloc47.com/rss.xml" title="malloc47"/>
+      <outline id="kdiwqlr" xmlUrl="http://maneggs.com/feed/" title="Maneggs"/>
+      <outline id="remcvgy" xmlUrl="http://www.masteringemacs.org/feed/" title="Mastering Emacs"/>
+      <outline id="rvknxfh" xmlUrl="http://www.ma3comic.com/comic.rss" title="Menage a 3"/>
+      <outline id="ihcmiyu" xmlUrl="http://www.mercworks.net/feed/" title="MercWorks"/>
+      <outline id="kjhxaax" xmlUrl="http://feeds.feedburner.com/MimiAndEunice" title="Mimi and Eunice"/>
+      <outline id="kpcmhgo" xmlUrl="http://mrdiv.tumblr.com/rss" title="mr. div"/>
+      <outline id="wstzuak" xmlUrl="http://www.mrlovenstein.com/rss.xml" title="Mr. Lovenstein"/>
+      <outline id="uweahzi" xmlUrl="http://mycardboardlife.com/feed" title="My Cardboard Life"/>
+      <outline id="lsnjyez" xmlUrl="http://nedroid.com/feed/" title="Nedroid Picture Diary"/>
+      <outline id="ibokgau" xmlUrl="http://nklein.com/feed/" title="nklein software"/>
+      <outline id="tohtfnm" xmlUrl="http://feeds.feedburner.com/NpcComic" title="NPC Comic"/>
+      <outline id="idsbfiu" xmlUrl="http://nullprogram.com/blog/index.rss" title="null program"/>
+      <outline id="qbmstxb" xmlUrl="http://feeds.feedburner.com/Optipess" title="Optipess"/>
+      <outline id="juvjbqy" xmlUrl="http://www.giantitp.com/comics/oots.rss" title="Order of the Stick"/>
+      <outline id="ogannha" xmlUrl="http://pandyland.net/feed/" title="Pandyland"/>
+      <outline id="bnylsat" xmlUrl="http://www.rsspect.com/rss/pfsc.xml" title="pictures for sad children"/>
+      <outline id="buaqbfg" xmlUrl="http://possiblywrong.wordpress.com/feed/" title="Possibly Wrong"/>
+      <outline id="xytownj" xmlUrl="http://problemtown.com/feed/" title="Problemtown"/>
+      <outline id="ixxnjew" xmlUrl="http://raganwald.com/atom.xml" title="raganwald.com"/>
+      <outline id="uxrtkqp" xmlUrl="http://research.swtch.com/feed.atom" title="research!rsc"/>
+      <outline id="islxpyq" xmlUrl="http://feeds.feedburner.com/RichardWisemansBlog" title="Richard Wiseman"/>
+      <outline id="tzihmip" xmlUrl="http://feeds.feedburner.com/ReasonableDeviations" title="Rod Carvalho"/>
+      <outline id="hmzqxsj" xmlUrl="http://feeds.feedburner.com/rolang" title="Rolang's Creeping Doom"/>
+      <outline id="pumvdih" xmlUrl="http://www.safelyendangered.com/feed/" title="Safely Endangered"/>
+      <outline id="nonnmta" xmlUrl="http://feeds.feedburner.com/schneier/fulltext" title="Schneier on Security"/>
+      <outline id="fxmicrj" xmlUrl="http://sea-of-memes.com/rss.xml" title="Sea of Memes"/>
+      <outline id="xtcvvrz" xmlUrl="http://seemikedraw.com.au/feed" title="SeeMikeDraw"/>
+      <outline id="psysbod" xmlUrl="http://www.skullsecurity.org/blog/feed" title="SkullSecurity"/>
+      <outline id="kmlxlfq" xmlUrl="http://feeds.feedburner.com/smbc-comics/PvLb" title="SMBC"/>
+      <outline id="pqqemna" xmlUrl="http://sorrycomics.blogspot.com/feeds/posts/default" title="Sorry Comics"/>
+      <outline id="qkujjqv" xmlUrl="http://feeds.feedburner.com/spaceavalanche1" title="Space Avalanche"/>
+      <outline id="quguosy" xmlUrl="http://stevelosh.com/feed/" title="Steve Losh"/>
+      <outline id="fdozywo" xmlUrl="http://storyboardcomics.blogspot.com/feeds/posts/default" title="Storyboards"/>
+      <outline id="ezcicbd" xmlUrl="http://www.terminally-incoherent.com/blog/feed/" title="Terminally Incoherent"/>
+      <outline id="kafpjpm" xmlUrl="http://feeds.feedburner.com/thebrads" title="The Brads"/>
+      <outline id="tgxwofc" xmlUrl="http://thecodelesscode.com/rss" title="The Codeless Code"/>
+      <outline id="aelrqmy" xmlUrl="https://github.com/blog.atom" title="The GitHub Blog"/>
+      <outline id="astzfoc" xmlUrl="http://blog.theoldreader.com/rss" title="The Old Reader: behind the scenes"/>
+      <outline id="zaddcuy" xmlUrl="http://feeds.feedburner.com/thetechnium" title="The Technium"/>
+      <outline id="bkgevzz" xmlUrl="http://notch.tumblr.com/rss" title="The Word of Notch"/>
+      <outline id="gyjzhko" xmlUrl="http://batsov.com/atom.xml" title="(think)"/>
+      <outline id="mebimof" xmlUrl="http://www.threewordphrase.com/rss.xml" title="Three Word Phrase"/>
+      <outline id="omlfijm" xmlUrl="http://towerdive.com/feed/" title="Tower Dive!"/>
+      <outline id="nrwcdqs" xmlUrl="http://www.shamusyoung.com/twentysidedtale/?feed=rss2" title="Twenty Sided"/>
+      <outline id="qlxixsw" xmlUrl="http://blog.vivekhaldar.com/rss" title="Vivek Haldar"/>
+      <outline id="tztxhro" xmlUrl="http://what-if.xkcd.com/feed.atom" title="What If?"/>
+      <outline id="ryjpmuu" xmlUrl="http://whattheemacsd.com/atom.xml" title="What the .emacs.d!?"/>
+      <outline id="spmqioq" xmlUrl="http://www.whompcomic.com/category/comics/feed/" title="Whomp!"/>
+      <outline id="tviqryg" xmlUrl="http://blag.xkcd.com/feed/" title="xkcd"/>
+      <outline id="qywvlvt" xmlUrl="http://xkcd.com/atom.xml" title="xkcd.com"/>
+
+      <outline id="emclrau" xmlUrl="http://gdata.youtube.com/feeds/base/users/Base14Productions/uploads" title="Uploads by Base14Productions"/>
+      <outline id="qcanlah" xmlUrl="http://gdata.youtube.com/feeds/base/users/BlueXephos/uploads" title="Uploads by BlueXephos"/>
+      <outline id="ptnegwk" xmlUrl="http://gdata.youtube.com/feeds/base/users/Campster/uploads" title="Uploads by Campster"/>
+      <outline id="dturlih" xmlUrl="http://gdata.youtube.com/feeds/base/users/GetDaved/uploads" title="Uploads by GetDaved"/>
+      <outline id="ucvcwwn" xmlUrl="http://gdata.youtube.com/feeds/base/users/JonTronShow/uploads" title="Uploads by JonTronShow"/>
+      <outline id="vaxsoco" xmlUrl="http://gdata.youtube.com/feeds/base/users/Mestherion/uploads" title="Uploads by Mestherion"/>
+      <outline id="xysytqu" xmlUrl="http://gdata.youtube.com/feeds/base/users/Scruit/uploads" title="Uploads by Scruit"/>
+      <outline id="cmojiip" xmlUrl="http://gdata.youtube.com/feeds/base/users/ZombieOrpheusEnt/uploads" title="Uploads by ZombieOrpheusEnt"/>
+      <outline id="fllpjih" xmlUrl="http://gdata.youtube.com/feeds/base/users/davidr64yt/uploads" title="Uploads by davidr64yt"/>
+      <outline id="kbxmvxz" xmlUrl="http://gdata.youtube.com/feeds/base/users/emacsrocks/uploads" title="Uploads by emacsrocks"/>
+      <outline id="gluaxok" xmlUrl="http://gdata.youtube.com/feeds/base/users/friendznet/uploads" title="Uploads by friendznet"/>
+      <outline id="hnsfeec" xmlUrl="http://gdata.youtube.com/feeds/base/users/jefmajor/uploads" title="Uploads by jefmajor"/>
+      <outline id="grvgana" xmlUrl="http://gdata.youtube.com/feeds/base/users/phreakindee/uploads" title="Uploads by phreakindee"/>
+      <outline id="svaaame" xmlUrl="http://gdata.youtube.com/feeds/base/users/quill18/uploads" title="Uploads by quill18"/>
+      <outline id="pedyyrw" xmlUrl="http://gdata.youtube.com/feeds/base/users/zzandr1o/uploads" title="Uploads by zzandr1o"/>
+    </outline>
+  </body>
+</opml>
+
+<!--
+    Local Variables:
+    truncate-lines:t
+    End:
+
+(defun insert-liferea-id ()
+  "Use this to generate an ID for a new Liferea entry."
+  (interactive)
+  (insert (coerce (loop repeat 7 collect (+ ?a (random 26))) 'string)))
+-->
