@@ -1,2 +1,3 @@
+xset -b
 ## Invoke via login bash so that Openbox sources the environment
 bash -lc 'exec openbox-session'
