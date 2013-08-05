@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec sudo openconnect -u wellocc1 -s /etc/vpnc/vpnc-script asavpn.jhuapl.edu
