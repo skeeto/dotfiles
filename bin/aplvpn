@@ -1,3 +1,4 @@
 #!/bin/bash
 
-exec sudo openconnect -u wellocc1 -s /etc/vpnc/vpnc-script asavpn.jhuapl.edu
+exec sudo openconnect \
+    --authgroup Entrust_Bingo_Card -u wellocc1 asavpn.jhuapl.edu
