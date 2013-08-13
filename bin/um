@@ -1,0 +1,5 @@
+#!/bin/bash
+
+shopt -s extglob
+
+pmount $(ls /dev/sd* | tail -n1) "${1%%+(/)}"
