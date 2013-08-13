@@ -25,6 +25,7 @@ alias vi='emacsclient -ta ""'
 # Debian
 alias ins='sudo apt-get install'
 alias sapt='apt-cache search'
+alias a='sudo apt-get '
 
 # Tweak standard commands
 alias egrep='egrep --color=auto'
