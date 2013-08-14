@@ -2,4 +2,4 @@
 
 shopt -s extglob
 
-pmount $(ls /dev/sd* | tail -n1) "${1%%+(/)}"
+pmount $(ls /dev/sd* | tail -n1) "/media/${1%%+(/)}"
