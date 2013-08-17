@@ -153,9 +153,4 @@
     Local Variables:
     truncate-lines:t
     End:
-
-(defun insert-liferea-id ()
-  "Use this to generate an ID for a new Liferea entry."
-  (interactive)
-  (insert (coerce (loop repeat 7 collect (+ ?a (random 26))) 'string)))
 -->
