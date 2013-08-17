@@ -23,6 +23,7 @@ set! network.proxy.socks_remote_dns=true
 set! browser.feeds.handler='ask'
 set! privacy.donottrackheader.enabled=true
 set! signon.rememberSignons=false
+set! middlemouse.contentLoadURL=false
 
 " Add-on specific settings
 set! extensions.dactyl.first-run=false
