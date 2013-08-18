@@ -53,7 +53,8 @@ Check rc.xml for all of my fancy Openbox keyboard shortcuts. Examples,
  * <kbd>C-S-[arrow]</kbd>: move window, with focus, to another desktop
  * <kbd>W-[arrow]</kbd>: change focus to window in a direction
  * <kbd>W-S-[arrow]</kbd>: move window to an edge in a direction
- * <kbd>C-W-[arrow]</kbd>: grow window to an edge
+ * <kbd>W-A-[arrow]</kbd>: grow window to nearest edge in a direction
+ * <kbd>W-C-[arrow]</kbd>: shrink window away from an edge in a direction
  * <kbd>W-l</kbd>: toggle the window always-on-top
 
 The desktop environment traditionally fills the role for a number of
