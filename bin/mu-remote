@@ -1,9 +1,0 @@
-#!/bin/bash
-
-if [ ! "$(ls -A ~/Maildir)" ]; then
-    sshfs -p443 wellons@mail.nullprogram.com:Maildir ~/Maildir
-fi
-
-ssh -p443 -L 2525:0:25 wellons@mail.nullprogram.com mu "${@}"
-
-fusermount -u ~/Maildir
