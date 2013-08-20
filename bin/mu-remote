@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ ! "$(ls -A Maildir)" ]; then
+    sshfs -p443 mail.nullprogram.com:Maildir ~/Maildir
+fi
+
+ssh -L 2525:0:25 mail.nullprogram.com mu "${@}"
+
+fusermount -u ~/Maildir
