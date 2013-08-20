@@ -20,7 +20,7 @@ _PS1 ()
 export PS1='\[\e[1;32m\]\h\[\e[m\]\
 \[\e[1;35m\]$(_PS1 "$PWD" 30)\[\e[m\] '
 export PATH=~/bin:/sbin:$PATH
-export EDITOR="emacsclient -ca ''"
+export EDITOR="emacsclient -a ''"
 export BROWSER="firefox"
 
 ## Identity
