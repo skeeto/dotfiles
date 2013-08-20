@@ -26,7 +26,7 @@ export BROWSER="firefox"
 ## Identity
 export REALNAME="Christopher Wellons"
 export NAME="$REALNAME"
-export EMAIL="mosquitopsu@gmail.com"
+export EMAIL="wellons@nullprogram.com"
 
 ## Places
 export LIBRARY_PATH=~/lib
