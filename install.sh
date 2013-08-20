@@ -76,3 +76,4 @@ done
 ## Special cases
 ln -sf /dev/null ~/.bash_history
 chmod -w _config/vlc/vlcrc  # Disables annoying VLC clobbering
+awk 'FNR==1{print ""}1' ~/.ssh/config.d/* > ~/.ssh/config
