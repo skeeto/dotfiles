@@ -17,6 +17,7 @@ set! browser.tabs.closeButtons=2
 set! browser.privatebrowsing.autostart=true
 set! browser.startup.page=0
 set! plugins.hide_infobar_for_missing_plugin=true
+set! plugins.notifyMissingFlash=false
 set! browser.fixup.alternate.prefix=''
 set! browser.fixup.alternate.suffix=''
 set! network.proxy.socks_remote_dns=true
