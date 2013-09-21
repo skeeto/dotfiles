@@ -1,2 +1,3 @@
 #!/bin/bash
-exec ssh mail.nullprogram.com notmuch "${@}"
+printf -v ARGS "%q " "$@"
+exec ssh mail.nullprogram.com notmuch ${ARGS}
