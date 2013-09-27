@@ -5,6 +5,7 @@ map c <C-i>
 map v :emenu Edit.Preferences<CR>
 map gI 2gi
 map <F12> :emenu Tools.Web Developer.Web Console<CR>
+map l :set go!=Tm<CR>
 
 set editor='emacsclient -ca "" +<line>:<column> <file>'
 set newtab='help'
