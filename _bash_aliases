@@ -8,6 +8,7 @@ alias tmp='mkdir /tmp/$$ ; cd /tmp/$$'
 alias untmp='rm -rf /tmp/$$'
 alias q32='qemu-system-i386 --enable-kvm'
 alias q64='qemu-system-x86_64 --enable-kvm'
+alias hr='printf $(printf "%%%ds\n" $(tput cols)) | tr " " ='
 
 # Media
 alias adump='mplayer -vc dummy -vo null -ao pcm'
