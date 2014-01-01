@@ -26,10 +26,12 @@ set! browser.feeds.handler='ask'
 set! privacy.donottrackheader.enabled=true
 set! signon.rememberSignons=false
 set! middlemouse.contentLoadURL=false
+set! browser.newtab.url='about:blank'
 
 " Add-on specific settings
 set! extensions.dactyl.first-run=false
 set! extensions.adblockplus.subscriptions_exceptionsurl=''
+set! extensions.adblockplus.hideContributeButton=true
 
 silent :qmark t https://github.com/skeeto
 silent :qmark n http://nullprogram.com/
