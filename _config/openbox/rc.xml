@@ -52,13 +52,14 @@
 </theme>
 
 <desktops>
-  <number>4</number>
+  <number>5</number>
   <firstdesk>1</firstdesk>
   <names>
     <name>Main</name>
     <name>Browser</name>
     <name>Misc 1</name>
     <name>Misc 2</name>
+    <name>Dump</name>
   </names>
   <popupTime>875</popupTime>
 </desktops>
