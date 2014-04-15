@@ -213,6 +213,9 @@
   <keybind key="W-b">
     <action name="Execute"><command>notify-battery</command></action>
   </keybind>
+  <keybind key="W-m">
+    <action name="Execute"><command>gnome-alsamixer</command></action>
+  </keybind>
 
   <!-- dmenu -->
   <keybind key="A-F1">
