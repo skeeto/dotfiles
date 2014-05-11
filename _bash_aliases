@@ -40,7 +40,7 @@ alias ll='ls -alF'
 alias ls='ls --color=auto'
 alias p='pushd'
 alias po='popd'
-alias s='less -S'
+alias s='less -SR'
 alias bat="acpitool -b"
 alias pu='pumount'
 alias pm='pmount'
