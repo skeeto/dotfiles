@@ -34,6 +34,7 @@ set! extensions.dactyl.first-run=false
 set! extensions.adblockplus.subscriptions_exceptionsurl=''
 set! extensions.adblockplus.hideContributeButton=true
 
+silent :qmark e about:blank
 silent :qmark t https://github.com/skeeto
 silent :qmark n http://nullprogram.com/
 silent :qmark p http://search.maven.org/
