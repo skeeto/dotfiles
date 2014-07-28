@@ -15,7 +15,6 @@ set incfind
 set! browser.download.dir='/tmp'
 set! browser.download.folderList=2
 set! general.warnOnAboutConfig=false
-set! browser.tabs.closeButtons=2
 set! browser.privatebrowsing.autostart=true
 set! browser.startup.page=0
 set! plugins.hide_infobar_for_missing_plugin=true
