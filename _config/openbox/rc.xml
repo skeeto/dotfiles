@@ -198,9 +198,6 @@
   <keybind key="W-a">
     <action name="Execute"><command>emacsclient -ca ""</command></action>
   </keybind>
-  <keybind key="W-e">
-    <action name="Execute"><command>thunar</command></action>
-  </keybind>
   <keybind key="W-n">
     <action name="Execute"><command>lxterminal</command></action>
   </keybind>
