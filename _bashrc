@@ -22,6 +22,9 @@ export PS1='\[\e[1;32m\]\h\[\e[m\]\
 export PATH=~/bin:/sbin:$PATH
 export EDITOR="emacsclient -a ''"
 export BROWSER="firefox"
+if [ "$TERM" = "dumb" ]; then
+    export PS1="> "
+fi
 
 ## Identity
 export REALNAME="Christopher Wellons"
