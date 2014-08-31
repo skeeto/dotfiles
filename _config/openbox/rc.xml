@@ -214,6 +214,18 @@
   <keybind key="W-m">
     <action name="Execute"><command>gnome-alsamixer</command></action>
   </keybind>
+  <keybind key="W-bracketright">
+    <action name="Execute"><command>amixer set Master 10%+</command></action>
+  </keybind>
+  <keybind key="W-bracketleft">
+    <action name="Execute"><command>amixer set Master 10%-</command></action>
+  </keybind>
+  <keybind key="W-p">
+    <action name="Execute">
+      <command>amixer sset Master 1+ toggle-</command>
+    </action>
+  </keybind>
+
 
   <!-- dmenu -->
   <keybind key="A-F1">
