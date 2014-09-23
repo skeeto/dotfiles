@@ -1,0 +1,3 @@
+set confirm off
+set verbose off
+set prompt \033[1;32mgdb> \033[0m
