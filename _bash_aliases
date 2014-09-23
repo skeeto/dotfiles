@@ -45,3 +45,4 @@ alias bat="acpitool -b"
 alias pu='pumount'
 alias pm='pmount'
 alias reportbug='reportbug --gnupg'
+alias gdb='gdb -q'
