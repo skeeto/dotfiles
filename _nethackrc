@@ -1,0 +1,14 @@
+# Display Options
+OPTIONS=color, IBMgraphics, lit_corridor, time, showexp
+
+# Interface
+OPTIONS=boulder:0, autodig, !cmdassist, !autopickup, number_pad:0
+OPTIONS=!mail, !prayconfirm, pushweapon, suppress_alert:3.4.3
+
+# Messages
+OPTIONS=disclose:+i +a +v +g +c, !legacy, !splash_screen
+OPTIONS=msg_window:reversed, msghistory:60
+
+# Customize
+OPTIONS=pettype:cat
+NAME=Skeeto

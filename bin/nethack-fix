@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec nethack | konwert cp437-utf8
