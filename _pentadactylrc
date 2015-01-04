@@ -44,7 +44,7 @@ silent :qmark w http://www.wunderground.com/weather-forecast/US/MD/Columbia.html
 silent :qmark k javascript:(function(){var d=document;var s=d.createElement('script');s.src='http://localhost:8080/skewer';d.body.appendChild(s);})()
 silent :qmark f javascript:(%28function%28%29%7Bwindow.baseUrl%3D%27http%3A//www.readability.com%27%3Bwindow.readabilityToken%3D%27%27%3Bvar%20s%3Ddocument.createElement%28%27script%27%29%3Bs.setAttribute%28%27type%27%2C%27text/javascript%27%29%3Bs.setAttribute%28%27charset%27%2C%27UTF-8%27%29%3Bs.setAttribute%28%27src%27%2CbaseUrl%2B%27/bookmarklet/read.js%27%29%3Bdocument.documentElement.appendChild%28s%29%3B%7D%29%28%29)
 
-bmark -t=TPB         -k=tpb     http://thepiratebay.se/search/%s/0/7/0
+bmark -t=torrent     -k=t       http://kickass.so/usearch/%s/
 bmark -t=subreddit   -k=r       http://www.reddit.com/r/%s
 bmark -t=reddituser  -k=u       http://www.reddit.com/u/%s
 bmark -t=Wikipedia   -k=w       http://en.wikipedia.org/w/index.php?search=%s
