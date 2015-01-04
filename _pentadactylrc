@@ -28,6 +28,9 @@ set! signon.rememberSignons=false
 set! middlemouse.contentLoadURL=false
 set! browser.newtab.url='about:blank'
 
+" This doesn't actually work when set from here?
+set! ui.key.menuAccessKeyFocuses=false
+
 " Add-on specific settings
 set! extensions.dactyl.first-run=false
 set! extensions.adblockplus.subscriptions_exceptionsurl=''
