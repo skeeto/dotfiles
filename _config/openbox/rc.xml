@@ -78,7 +78,12 @@
 </margins>
 
 <keyboard>
-  <chainQuitKey>C-g</chainQuitKey>
+  <chainQuitKey>C-A-g</chainQuitKey>
+
+  <!-- Key quoting (for VNC sessions) -->
+  <keybind key="C-A-q" chroot="true">
+    <keybind key="C-A-q"><action name="BreakChroot"/></keybind>
+  </keybind>
 
   <!-- Keybindings for desktop switching -->
   <keybind key="C-A-Left">
