@@ -25,6 +25,7 @@ export BROWSER="firefox"
 if [ "$TERM" = "dumb" ]; then
     export PS1="> "
 fi
+export WINEDEBUG=fixme-all
 
 ## Identity
 export REALNAME="Christopher Wellons"
