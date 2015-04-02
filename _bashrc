@@ -59,7 +59,7 @@ if [[ "$-" == *"i"* ]]; then
     echo -ne '\e]4;10;#8AE234\a'  # bright green
     echo -ne '\e]4;11;#FCE94F\a'  # bright yellow
     echo -ne '\e]4;12;#729FCF\a'  # bright blue
-    echo -ne '\e]4;13;#AD7FA8\a'  # bright magenta
+    echo -ne '\e]4;13;#D15CD1\a'  # bright magenta
     echo -ne '\e]4;14;#34E2E2\a'  # bright cyan
     echo -ne '\e]4;15;#EEEEEC\a'  # bright white
     echo -ne '\e]10;#FFFFFF\a'    # default foreground
