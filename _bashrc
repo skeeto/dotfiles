@@ -45,7 +45,7 @@ export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:bin/javac::")
 eval $(keychain --eval --quiet)
 
 ## Custom Colors
-if [[ "$-" == *"i"* ]]; then
+if [[ "$-" == *"i"* ]] && [[ "$TERM" != "dumb" ]]; then
     echo -ne '\e]4;0;#2E3436\a'   # black
     echo -ne '\e]4;1;#CC0000\a'   # red
     echo -ne '\e]4;2;#4E9A06\a'   # green
