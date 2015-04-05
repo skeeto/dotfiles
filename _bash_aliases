@@ -22,7 +22,6 @@ alias ys='youtube-dl --title --no-mtime --restrict-filenames -r 150k'
 # Emacs
 alias e='emacsclient -ca ""'
 alias et='emacsclient -ta ""'
-alias vi='emacsclient -ta ""'
 alias ebc='emacs -Q -batch -f batch-byte-compile'
 
 # Debian
