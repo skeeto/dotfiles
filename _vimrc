@@ -12,6 +12,7 @@ set hidden
 set modelines=0
 set autochdir
 set guioptions=
+set viminfo="NONE"
 
 " Search
 set incsearch
