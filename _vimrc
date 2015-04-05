@@ -26,7 +26,7 @@ set background=dark
 
 " Show trailing whitespace
 set list
-set listchars=tab:>-,trail:.,extends:#,nbsp:.
+set listchars=tab:>-,trail:░,extends:#,nbsp:.
 
 " Tab configuration
 set expandtab
@@ -35,12 +35,14 @@ set shiftround
 set smarttab
 
 " No noise
-set novisualbell
+set visualbell
 set noerrorbells
 
 " Bindings
 map Q gq
 map B :buffer 
+map <silent> [b :bp<cr>
+map <silent> ]b :bn<cr>
 
 filetype plugin indent on
 autocmd FileType text setlocal textwidth=72
