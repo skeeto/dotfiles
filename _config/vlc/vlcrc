@@ -3,6 +3,7 @@ ignore-config=1
 qt-privacy-ask=0
 album-art=2
 qt-autosave-volume=0
+video-title-show=0
 
 ## Be more like mplayer
 #play-and-exit=1
