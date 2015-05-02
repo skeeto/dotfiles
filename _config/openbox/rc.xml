@@ -220,7 +220,7 @@
     <action name="Execute"><command>notify-battery</command></action>
   </keybind>
   <keybind key="W-m">
-    <action name="Execute"><command>gnome-alsamixer</command></action>
+    <action name="Execute"><command>lxterminal --command=alsamixer</command></action>
   </keybind>
   <keybind key="W-bracketright">
     <action name="Execute"><command>amixer set Master 10%+</command></action>
