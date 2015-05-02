@@ -37,10 +37,10 @@ wrong sooner than later.
 ## Openbox
 
 An Openbox config is included. To use it fully, make sure you install
-`feh` (wallpapers) and `xcompmgr` (window transparency). I like to use
-`lxterminal`, which works properly with `xcompmgr`.
+`feh` (wallpapers) and `compton` (window transparency). I like to use
+`lxterminal`, which works properly with `compton`.
 
-    apt-get install openbox feh xcompmgr lxterminal
+    apt-get install openbox feh compton lxterminal
 
 There's a `.xsession` file for launching Openbox, so the display
 manager should be told to use something like "user preference" or

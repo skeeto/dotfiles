@@ -1,6 +1,6 @@
 #!/bin/bash
 
-xcompmgr -nc &
+compton -zc &
 firefox &
 lxterminal &
 ~/.wallpaper/random.sh &
