@@ -1,4 +1,0 @@
-#!/bin/bash
-# Restart xcompmgr. For use when it's having drawing issues (bugs).
-
-killall xcompmgr && xcompmgr >& /dev/null &
