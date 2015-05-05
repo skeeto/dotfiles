@@ -40,6 +40,7 @@ export LD_LIBRARY_PATH=~/lib
 export PKG_CONFIG_PATH=~/lib/pkgconfig
 export PERL5LIB=~/lib
 export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:bin/javac::")
+export LIBVIRT_DEFAULT_URI=qemu:///system
 
 ## Agents
 eval $(keychain --eval --quiet)
