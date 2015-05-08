@@ -28,6 +28,7 @@ alias ebc='emacs -Q -batch -f batch-byte-compile'
 alias ins='sudo apt-get install'
 alias sapt='apt-cache search'
 alias a='sudo apt-get '
+alias d='sudo systemctl'
 
 # Tweak standard commands
 alias egrep='egrep --color=auto'
