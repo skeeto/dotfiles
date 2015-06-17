@@ -1,27 +1,27 @@
 [user]
-        name = Christopher Wellons
-        signingkey = 0C276D5D
+    name = Christopher Wellons
+    signingkey = 0C276D5D
 
 [core]
-        autoclrf = false
+    autoclrf = false
 
 [color]
-        branch = auto
-        diff = auto
-        interactive = auto
-        status = auto
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
 
 [fetch]
-        prune = true
+    prune = true
 
 [push]
-        default = simple
+    default = simple
 
 [alias]
-        lol = log --graph --decorate --pretty=oneline --abbrev-commit
-        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-        optimize = repack -a -d -f --depth=250 --window=250
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    optimize = repack -a -d -f --depth=250 --window=250
 
 [sendemail]
-        smtpserver = localhost
-        smtpserverport = 2525
+    smtpserver = localhost
+    smtpserverport = 2525
