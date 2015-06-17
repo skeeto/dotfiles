@@ -28,6 +28,12 @@ alias ins='sudo apt-get install'
 alias sapt='apt-cache search'
 alias a='sudo apt-get '
 alias d='sudo systemctl'
+alias reportbug='reportbug --gnupg'
+
+# Dev
+alias g='git'
+alias q='quilt'
+alias gdb='gdb -q'
 
 # Tweak standard commands
 alias egrep='egrep --color=auto'
@@ -43,5 +49,3 @@ alias s='less -SR'
 alias bat="acpitool -b"
 alias pu='pumount'
 alias pm='pmount'
-alias reportbug='reportbug --gnupg'
-alias gdb='gdb -q'
