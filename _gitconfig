@@ -1,13 +1,19 @@
 [user]
         name = Christopher Wellons
         signingkey = 0C276D5D
+
 [color]
         branch = auto
         diff = auto
         interactive = auto
         status = auto
+
+[fetch]
+        prune = true
+
 [push]
         default = simple
+
 [alias]
         lol = log --graph --decorate --pretty=oneline --abbrev-commit
         lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
