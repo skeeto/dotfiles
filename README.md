@@ -71,12 +71,9 @@ I use dmenu to launch applications.
 
 ### Mounting
 
-I'm using Thunar and `pmount` (command line) for removable drive
-mounting.
+I'm using `pmount` (command line) for removable drive mounting.
 
-    apt-get install thunar pmount
-
- * <kbd>W-e</kbd>: launch Thunar (file management)
+    apt-get install pmount
 
 ### Screen locking
 
