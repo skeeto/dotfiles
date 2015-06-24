@@ -4,6 +4,7 @@
 
 [core]
     autoclrf = false
+    whitespace = cr-at-eol
 
 [color]
     branch = auto
