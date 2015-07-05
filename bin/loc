@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# With no arguments, rebuilds the database. Otherwise searches for
+# files matching the first argument as a POSIX extended regex.
+
+# Pros:
+#   * Significantly faster than the system's locate command
+#   * Available anywhere with bash
+# Cons;
+#   * Fewer features than standard locate command
+#   * Requires bash
+#   * Incorrectly handles files with newlines
+
+set -e
+umask 0077
+
+DBFILE=~/.cache/floc.db
+
+if [[ "$#" -lt 1 ]]; then
+    mkdir -p $(dirname $DBFILE)
+    exec find / \
+            -path '/proc' -prune \
+         -o -path '/tmp'  -prune \
+         -o -path '/dev'  -prune \
+         -o -path '/sys'  -prune \
+         -o -print \
+         > $DBFILE \
+         2> /dev/null
+else
+    exec egrep $1 $DBFILE
+fi
