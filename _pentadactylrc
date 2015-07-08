@@ -50,6 +50,7 @@ silent :qmark k javascript:(function(){var d=document;var s=d.createElement('scr
 silent :qmark j http://mumak:9091/transmission/web/
 silent :qmark a http://www.myanonamouse.net/
 silent :qmark T https://baconbits.org/
+silent :qmark l http://gen.lib.rus.ec/
 
 bmark -t=torrent     -k=t       http://kickass.to/usearch/%s/
 bmark -t=subreddit   -k=r       http://www.reddit.com/r/%s
