@@ -1,5 +1,5 @@
 # Display Options
-OPTIONS=color, IBMgraphics, lit_corridor, time, showexp
+OPTIONS=color, IBMgraphics, lit_corridor, time, showexp, showrace
 
 # Interface
 OPTIONS=boulder:0, autodig, !cmdassist, !autopickup, number_pad:0
