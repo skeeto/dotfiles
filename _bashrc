@@ -73,6 +73,10 @@ fi
 
 ## Fun
 
+title() {
+    printf "\e]2;%s\a" $1
+}
+
 say() {
     if [[ "${1}" =~ -[a-z]{2} ]]; then
         local lang=${1#-};
