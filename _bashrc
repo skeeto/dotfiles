@@ -9,8 +9,7 @@ shopt -s globstar
 set +o histexpand
 
 ## Environment
-_PS1 ()
-{
+_PS1() {
     local PRE= NAME="$1" LENGTH="$2";
     [[ "$NAME" != "${NAME#$HOME/}" || -z "${NAME#$HOME}" ]] &&
         PRE+='~' NAME="${NAME#$HOME}" LENGTH=$[LENGTH-1];
