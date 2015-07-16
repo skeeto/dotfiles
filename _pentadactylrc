@@ -28,6 +28,7 @@ set! privacy.donottrackheader.enabled=true
 set! signon.rememberSignons=false
 set! middlemouse.contentLoadURL=false
 set! browser.newtab.url='about:blank'
+set! devtools.selfxss.count=100
 
 " This doesn't actually work when set from here?
 set! ui.key.menuAccessKeyFocuses=false
