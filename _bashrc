@@ -63,7 +63,7 @@ if [[ "$-" == *"i"* ]] && [[ "$TERM" != "dumb" ]]; then
     echo -ne '\e]4;14;#34E2E2\a'  # bright cyan
     echo -ne '\e]4;15;#EEEEEC\a'  # bright white
     echo -ne '\e]10;#FFFFFF\a'    # default foreground
-    echo -ne '\e]11;#000000\a'    # default background
+    echo -ne '\e]11;#1D1F21\a'    # default background
 fi
 
 ## Local configuration
