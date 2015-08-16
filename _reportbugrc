@@ -5,5 +5,3 @@ compress
 paranoid
 
 smtphost localhost:2525
-sign gpg
-keyid 48B2B841
