@@ -7,7 +7,7 @@ usage: $0 [options]
 OPTIONS:
   -h    Show this message
   -p    Don't install private dotfiles
-  -s    Don't install ~/bin/ scripts
+  -s    Don't install bin/ scripts
 EOF
 }
 
@@ -38,10 +38,11 @@ chmod go-rwx gnupg
 ln -Tsf $(pwd)/gnupg ~/.gnupg
 
 ## Install scripts
-mkdir -p ~/bin
+ROOT=~/.local/bin
+mkdir -p $ROOT
 if [ -z "$NO_SCRIPTS" ]; then
-    echo Installing '~/bin/'
-    find bin/ -type f | xargs -I{} ln -fs $(pwd)/{} ~/bin/
+    echo Installing $ROOT
+    find bin/ -type f | xargs -I{} ln -fs $(pwd)/{} "$ROOT"
 fi
 
 ## Install each _-prefixed file
