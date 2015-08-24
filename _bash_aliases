@@ -21,7 +21,7 @@ alias y='youtube-dl --format mp4 --title --no-mtime --restrict-filenames'
 # Emacs
 alias e='emacsclient -ca ""'
 alias et='emacsclient -ta ""'
-alias ebc='emacs -Q -batch -f batch-byte-compile'
+alias ebc='emacs -Q -batch -L . -f batch-byte-compile'
 
 # Debian
 alias ins='sudo apt-get install'
