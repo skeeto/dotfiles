@@ -30,6 +30,41 @@ set! middlemouse.contentLoadURL=false
 set! browser.newtab.url='about:blank'
 set! devtools.selfxss.count=100
 
+" Bullshit removal (https://gist.github.com/haasn/69e19fc2fe0e25f3cff5)
+set! media.peerconnection.enabled=false
+set! loop.enabled=false
+set! browser.beacen.enabled=false
+set! geo.enabled=false
+set! geo.wifi.logging.enabled=false
+set! geo.wifi.uri=""
+set! browser.safebrowsing.enabled=false
+set! browser.safebrowsing.downloads.enabled=false
+set! browser.safebrowsing.malware.enabled=false
+set! social.directories=""
+set! social.whitelist=""
+set! social.manifest.facebook=""
+set! social.remote-install.enabled=false
+set! social.toast-notifications.enabled=false
+set! device.sensors.enabled=false
+set! camera.control.face_detection.enabled=false
+set! camera.control.autofocus_moving_callback.enabled=false
+set! privacy.trackingprotection.enabled=true
+set! security.tls.unrestricted_rc4_fallback=false
+set! security.tls.insecure_fallback_hosts.use_static_list=false
+set! security.tls.version.min=1
+set! security.ssl.require_safe_negotiation=true
+set! security.ssl.treat_unsafe_negotiation_as_broken=true
+set! security.ssl3.rsa_seed_sha=true
+set! security.OCSP.enabled=1
+set! security.OCSP.require=true
+set! security.ssl3.rsa_rc4_128_sha=false
+set! security.ssl3.rsa_rc4_128_md5=false
+set! security.ssl3.rsa_des_ede3_sha=false
+set! security.ssl3.ecdhe_ecdsa_rc4_128_sha=false
+set! security.ssl3.ecdhe_rsa_rc4_128_sha=false
+set! browser.newtabpage.directory.ping=""
+set! browser.newtabpage.directory.source=""
+
 " This doesn't actually work when set from here?
 set! ui.key.menuAccessKeyFocuses=false
 
