@@ -65,6 +65,11 @@ set! security.ssl3.ecdhe_rsa_rc4_128_sha=false
 set! browser.newtabpage.directory.ping=""
 set! browser.newtabpage.directory.source=""
 
+" Fonts
+font.name.serif.x-western='Droid Serif'
+font.name.sans-serif.x-western='Droid Sans'
+font.name.monospace.x-western='Droid Sans Mono'
+
 " This doesn't actually work when set from here?
 set! ui.key.menuAccessKeyFocuses=false
 
