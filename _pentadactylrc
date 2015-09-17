@@ -66,9 +66,9 @@ set! browser.newtabpage.directory.ping=""
 set! browser.newtabpage.directory.source=""
 
 " Fonts
-font.name.serif.x-western='Droid Serif'
-font.name.sans-serif.x-western='Droid Sans'
-font.name.monospace.x-western='Droid Sans Mono'
+set! font.name.serif.x-western='Droid Serif'
+set! font.name.sans-serif.x-western='Droid Sans'
+set! font.name.monospace.x-western='Droid Sans Mono'
 
 " This doesn't actually work when set from here?
 set! ui.key.menuAccessKeyFocuses=false
