@@ -86,7 +86,7 @@ say() {
     fi;
     local base="http://translate.google.com/translate_tts?ie=UTF-8&client=t"
     curl --data-urlencode "tl=${lang}" \
-              --data-urlencode "q=${text}" \
-              -A Mozilla --get --silent $base | \
-        vlc --play-and-exit --quiet -Idummy - &> /dev/null
+         --data-urlencode "q=${text}" \
+         -A Mozilla --get --silent $base | \
+      vlc --play-and-exit --quiet -Idummy - &> /dev/null
 }
