@@ -194,6 +194,9 @@
   <keybind key="W-l">
     <action name="ToggleAlwaysOnTop"/>
   </keybind>
+  <keybind key="W-o">
+    <action name="ToggleOmnipresent"/>
+  </keybind>
 
   <!-- Keybindings for window switching -->
   <keybind key="A-Tab">
