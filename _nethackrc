@@ -1,3 +1,5 @@
+## -*- default-directory: "~/.dotfiles"; -*-
+
 # Display Options
 OPTIONS=color, IBMgraphics, lit_corridor, time, showexp, showrace
 

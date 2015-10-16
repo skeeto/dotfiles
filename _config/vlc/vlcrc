@@ -1,3 +1,5 @@
+## -*- default-directory: "~/.dotfiles"; -*-
+
 ## Annoying stuff
 ignore-config=1
 qt-privacy-ask=0

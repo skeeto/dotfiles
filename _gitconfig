@@ -1,3 +1,5 @@
+## -*- default-directory: "~/.dotfiles"; -*-
+
 [user]
     name = Christopher Wellons
     signingkey = 0C276D5D

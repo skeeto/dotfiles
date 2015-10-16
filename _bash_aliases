@@ -1,3 +1,5 @@
+## -*- default-directory: "~/.dotfiles"; -*-
+
 # Misc
 alias httpd='screen -S httpd python -m SimpleHTTPServer 8001'
 alias oct='octave -q'

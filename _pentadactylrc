@@ -1,3 +1,5 @@
+" -*- default-directory: "~/.dotfiles"; -*-
+
 map w gT
 map e gt
 map x <C-o>

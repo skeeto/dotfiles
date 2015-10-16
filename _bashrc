@@ -1,3 +1,5 @@
+## -*- default-directory: "~/.dotfiles"; -*-
+
 ## Includes
 source ~/.bash_aliases
 if [ -e /etc/bash_completion ]; then

@@ -1,3 +1,5 @@
+" -*- default-directory: "~/.dotfiles"; -*-
+
 set nocompatible
 set encoding=utf-8
 set backspace=indent,eol,start
