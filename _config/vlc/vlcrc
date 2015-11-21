@@ -27,9 +27,11 @@ key-jump+medium=Up
 key-jump-long=Page Down
 key-jump+long=Page Up
 
-## Zoom
+## Video Adjustment
 key-zoom=Shift+z
 key-unzoom=z
+key-crop-bottom=Alt+c
+key-uncrop-bottom=Alt+Shift+c
 
 ## Time jump sizes
 extrashort-jump-size=3
