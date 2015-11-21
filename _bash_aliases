@@ -18,7 +18,7 @@ alias writeback='watch -n0.5 grep Writeback: /proc/meminfo'
 alias adump='mplayer -vc dummy -vo null -ao pcm'
 alias m='vlc --play-and-exit --qt-minimal-view --quiet'
 alias ms='vlc --random --quiet --qt-minimal-view'
-alias npr='mplayer http://wamu-1.streamguys.com'
+alias npr='vlc --quiet -Irc http://wamu-1.streamguys.com'
 alias y='youtube-dl --format mp4 --title --no-mtime --restrict-filenames'
 
 # Emacs
