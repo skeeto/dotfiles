@@ -15,11 +15,11 @@ alias sql='sqlite3 -interactive :memory:'
 alias writeback='watch -n0.5 grep Writeback: /proc/meminfo'
 
 # Media
-alias adump='mplayer -vc dummy -vo null -ao pcm'
-alias m='vlc --play-and-exit --qt-minimal-view --quiet'
-alias ms='vlc --random --quiet --qt-minimal-view'
-alias npr='vlc --quiet -Irc http://wamu-1.streamguys.com'
-alias y='youtube-dl --format mp4 --title --no-mtime --restrict-filenames'
+alias adump='mpv --untimed --vd=dummy -vo null -ao pcm'
+alias m='mpv --really-quiet'
+alias ms='mpv --really-quiet --shuffle'
+alias npr='mpv http://wamu-1.streamguys.com'
+alias y='youtube-dl --title --no-mtime --restrict-filenames'
 
 # Emacs
 alias e='emacsclient -ca ""'
