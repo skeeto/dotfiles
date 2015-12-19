@@ -7,9 +7,15 @@
 set HOME=%HOMEDRIVE%%HOMEPATH%
 
 echo Installing vlcrc
+if not exist %APPDATA%\vlc mkdir %APPDATA%\vlc
 attrib -r %HOME%\AppData\Roaming\vlc\vlcrc
 copy _config\vlc\vlcrc %HOME%\AppData\Roaming\vlc\vlcrc
 attrib +r %HOME%\AppData\Roaming\vlc\vlcrc
+
+echo Installing mpv.conf
+if not exist %APPDATA%\mpv mkdir %APPDATA%\mpv
+copy _config\mpv\mpv.conf %APPDATA%\mpv\mpv.conf
+copy _config\mpv\input.conf %APPDATA%\mpv\input.conf
 
 echo Installing _pentadactylrc
 copy _pentadactylrc %HOME%
