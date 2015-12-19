@@ -14,3 +14,10 @@ OPTIONS=msg_window:reversed, msghistory:60
 # Customize
 OPTIONS=pettype:cat
 NAME=Skeeto
+
+# Colors
+OPTIONS=menucolors
+MENUCOLOR="cursed"=orange
+MENUCOLOR="uncursed"=green
+MENUCOLOR="blessed"=cyan
+MENUCOLOR="loadstone\|wand \(of\|called\) cancellation"=underline
