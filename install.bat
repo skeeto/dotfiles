@@ -17,8 +17,8 @@ if not exist %APPDATA%\mpv mkdir %APPDATA%\mpv
 copy _config\mpv\mpv.conf %APPDATA%\mpv\mpv.conf
 copy _config\mpv\input.conf %APPDATA%\mpv\input.conf
 
-echo Installing _pentadactylrc
-copy _pentadactylrc %HOME%
+echo Installing _vimperatorrc
+copy _vimperatorrc %HOME%
 
 echo Installing bash dotfiles
 copy _bashrc       %HOME%\.bashrc

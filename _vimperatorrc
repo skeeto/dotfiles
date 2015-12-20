@@ -1,5 +1,7 @@
 " -*- default-directory: "~/.dotfiles"; -*-
 
+set gui=nonavigation
+
 map w gT
 map e gt
 map x <C-o>
@@ -7,7 +9,6 @@ map c <C-i>
 map v :emenu Edit.Preferences<CR>
 map gI 2gi
 map <F12> :emenu Tools.Web Developer.Web Console<CR>
-map l :set go!=Tm<CR>
 map D :emenu Tools.Downloads<CR>
 map <C-p> :emenu File.Print Preview<CR>
 
@@ -76,7 +77,7 @@ set! font.name.monospace.x-western='Droid Sans Mono'
 set! ui.key.menuAccessKeyFocuses=false
 
 " Add-on specific settings
-set! extensions.dactyl.first-run=false
+set! extensions.vimperator.firsttime=false
 set! extensions.adblockplus.subscriptions_exceptionsurl=''
 set! extensions.adblockplus.hideContributeButton=true
 
