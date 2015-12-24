@@ -12,7 +12,7 @@ map <F12> :emenu Tools.Web Developer.Web Console<CR>
 map D :emenu Tools.Downloads<CR>
 map <C-p> :emenu File.Print Preview<CR>
 
-set editor='emacsclient -ca "" +<line>:<column> <file>'
+set editor='emacsclient -ca ""'
 set newtab='help'
 set incfind
 
