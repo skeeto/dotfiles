@@ -1,4 +1,4 @@
-" -*- default-directory: "~/.dotfiles"; -*-
+" -*- default-directory: "~/.dotfiles/"; -*-
 
 set nocompatible
 set encoding=utf-8

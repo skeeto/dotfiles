@@ -1,4 +1,4 @@
-## -*- default-directory: "~/.dotfiles"; -*-
+## -*- default-directory: "~/.dotfiles/"; -*-
 
 # Misc
 alias httpd='screen -S httpd python -m SimpleHTTPServer 8001'
