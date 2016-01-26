@@ -15,6 +15,7 @@ map <C-p> :emenu File.Print Preview<CR>
 set editor='emacsclient -ca ""'
 set newtab='help'
 set incfind
+set defsearch=google
 
 set! browser.download.dir='/tmp'
 set! browser.download.folderList=2
