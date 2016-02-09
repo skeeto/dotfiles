@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+exec chromium --proxy-server=socks://localhost:9998 "$@"
