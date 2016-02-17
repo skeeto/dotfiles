@@ -1,6 +1,6 @@
 #!/bin/bash
 
-compton -zc &
+compton -CG --config /dev/null --backend glx --vsync opengl &
 firefox &
 lxterminal &
 ~/.wallpaper/random.sh &
