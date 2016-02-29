@@ -96,15 +96,12 @@ silent :qmark a http://www.myanonamouse.net/
 silent :qmark T https://baconbits.org/
 silent :qmark l http://gen.lib.rus.ec/
 
-bmark -t=torrent     -k=t       http://kickass.to/usearch/%s/
-bmark -t=subreddit   -k=r       http://www.reddit.com/r/%s
-bmark -t=reddituser  -k=u       http://www.reddit.com/u/%s
-bmark -t=subreddit   -k=v       http://voat.co/v/%s
-bmark -t=subreddit   -k=vu      http://voat.co/u/%s
-bmark -t=Wikipedia   -k=w       http://en.wikipedia.org/w/index.php?search=%s
-bmark -t=Google      -k=g       http://www.google.com/search?q=%s
-bmark -t=Wiktionary  -k=wd      http://en.wiktionary.org/wiki/?search=%s
-bmark -t=DCSS        -k=crawl   http://crawl.chaosforge.org/index.php?search=%s
+bmark -t=torrent     -k=t       https://kickass.to/usearch/%s/
+bmark -t=subreddit   -k=r       https://www.reddit.com/r/%s
+bmark -t=reddituser  -k=u       https://www.reddit.com/u/%s
+bmark -t=Wikipedia   -k=w       https://en.wikipedia.org/w/index.php?search=%s
+bmark -t=Google      -k=g       https://www.google.com/search?q=%s
+bmark -t=Wiktionary  -k=wd      https://en.wiktionary.org/wiki/?search=%s
 bmark -t=caniuse     -k=caniuse http://caniuse.com/#search=%s
 bmark -t=MSDN        -k=msdn    https://social.msdn.microsoft.com/search?query=%s
 
