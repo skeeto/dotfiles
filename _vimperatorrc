@@ -15,7 +15,6 @@ map <C-p> :emenu File.Print Preview<CR>
 set editor='emacsclient -ca ""'
 set newtab='help'
 set incfind
-set defsearch=google
 
 set! browser.download.dir='/tmp'
 set! browser.download.folderList=2
@@ -107,5 +106,7 @@ bmark -t=Google      -k=g       http://www.google.com/search?q=%s
 bmark -t=Wiktionary  -k=wd      http://en.wiktionary.org/wiki/?search=%s
 bmark -t=DCSS        -k=crawl   http://crawl.chaosforge.org/index.php?search=%s
 bmark -t=caniuse     -k=caniuse http://caniuse.com/#search=%s
+
+set defsearch=google
 
 echo "Happy Browsing!"
