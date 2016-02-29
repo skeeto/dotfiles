@@ -1,0 +1,14 @@
+#!/bin/bash
+
+## Splits arbitrary media files into 30 minute MP4 files using avconv.
+
+set -e
+
+split=$[30*60]
+duration=$[$(mediainfo --Inform="General;%Duration%" "$1") / 1000]
+nparts=$[($duration + $split) / $split]
+
+for i in $(seq 0 $[$nparts - 1]); do
+    out=$(printf "$2%02d.mp4" $i)
+    avconv -v quiet -i "$1" -c:v copy -c:a copy -ss $[$i * $split] -t $split "$out"
+done
