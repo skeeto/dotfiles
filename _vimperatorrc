@@ -106,6 +106,7 @@ bmark -t=Google      -k=g       http://www.google.com/search?q=%s
 bmark -t=Wiktionary  -k=wd      http://en.wiktionary.org/wiki/?search=%s
 bmark -t=DCSS        -k=crawl   http://crawl.chaosforge.org/index.php?search=%s
 bmark -t=caniuse     -k=caniuse http://caniuse.com/#search=%s
+bmark -t=MSDN        -k=msdn    https://social.msdn.microsoft.com/search?query=%s
 
 set defsearch=google
 
