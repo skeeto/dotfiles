@@ -16,6 +16,9 @@ set editor='emacsclient -ca ""'
 set newtab='help'
 set incfind
 
+" GitHub annoyance workaround
+inoremap <C-S-i> <C-i>
+
 set! browser.download.dir='/tmp'
 set! browser.download.folderList=2
 set! general.warnOnAboutConfig=false
