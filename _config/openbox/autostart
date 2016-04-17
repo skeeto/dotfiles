@@ -1,6 +1,5 @@
 #!/bin/bash
 
 compton -zc &
-firefox &
 lxterminal &
 ~/.wallpaper/random.sh &
