@@ -8,6 +8,7 @@ fi
 
 ## Options
 shopt -s globstar
+shopt -s checkwinsize
 set +o histexpand
 
 ## Environment
