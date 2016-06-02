@@ -11,6 +11,7 @@ map gI 2gi
 map <F12> :emenu Tools.Web Developer.Web Console<CR>
 map D :emenu Tools.Downloads<CR>
 map <C-p> :emenu File.Print Preview<CR>
+map <C-r> :emenu View.Enter Reader View<CR>
 
 set editor='emacsclient -ca ""'
 set newtab='help'
