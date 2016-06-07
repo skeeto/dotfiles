@@ -4,13 +4,17 @@
 
 @echo off
 
-set HOME=%HOMEDRIVE%%HOMEPATH%
+set HOME=%UserProfile%
+
+echo Installing scripts
+if not exist %HOME%\bin mkdir %HOME%\bin
+copy w32bin\*.bat %HOME%\bin
 
 echo Installing vlcrc
 if not exist %APPDATA%\vlc mkdir %APPDATA%\vlc
-attrib -r %HOME%\AppData\Roaming\vlc\vlcrc
-copy _config\vlc\vlcrc %HOME%\AppData\Roaming\vlc\vlcrc
-attrib +r %HOME%\AppData\Roaming\vlc\vlcrc
+attrib -r %APPDATA%\vlc\vlcrc
+copy _config\vlc\vlcrc %APPDATA%\vlc\vlcrc
+attrib +r %APPDATA%\vlc\vlcrc
 
 echo Installing mpv.conf
 if not exist %APPDATA%\mpv mkdir %APPDATA%\mpv
