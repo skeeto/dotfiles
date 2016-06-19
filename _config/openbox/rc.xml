@@ -226,10 +226,10 @@
     <action name="Execute"><command>lxterminal --command=alsamixer</command></action>
   </keybind>
   <keybind key="W-bracketright">
-    <action name="Execute"><command>amixer set Master 10%+</command></action>
+    <action name="Execute"><command>amixer -M set Master 10%+</command></action>
   </keybind>
   <keybind key="W-bracketleft">
-    <action name="Execute"><command>amixer set Master 10%-</command></action>
+    <action name="Execute"><command>amixer -M set Master 10%-</command></action>
   </keybind>
   <keybind key="W-p">
     <action name="Execute">
