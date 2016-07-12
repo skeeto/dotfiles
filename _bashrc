@@ -34,7 +34,7 @@ export NAME="$REALNAME"
 export EMAIL="wellons@nullprogram.com"
 
 ## Places
-export PATH=~/.local/bin:/sbin:~/.local/games:$PATH
+export PATH=~/.local/bin:/sbin:/usr/sbin:~/.local/games:$PATH
 export LIBRARY_PATH=~/.local/lib
 export C_INCLUDE_PATH=~/.local/include
 export CPLUS_INCLUDE_PATH=~/.local/include
