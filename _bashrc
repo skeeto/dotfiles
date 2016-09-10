@@ -93,3 +93,8 @@ say() {
          -A Mozilla --get --silent $base | \
       vlc --play-and-exit --quiet -Idummy - &> /dev/null
 }
+
+quickuuid() {
+    local x=$(tr -cd 'a-f0-9' < /dev/urandom | head -c32)
+    echo "${x:0:8}-${x:8:4}-${x:12:4}-${x:15:4}-${x:19:12}"
+}
