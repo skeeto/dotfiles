@@ -24,6 +24,7 @@
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     optimize = repack -a -d -f --depth=250 --window=250
+    pr = !sh -c 'git fetch origin pull/$1/head:pr-$1' -
 
 [sendemail]
     smtpserver = localhost
