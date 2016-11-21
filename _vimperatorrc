@@ -98,7 +98,7 @@ silent :qmark D http://www.reddit.com/user/skeeto/
 silent :qmark R http://www.reddit.com/r/mod/about/modqueue/
 silent :qmark w http://www.wunderground.com/weather-forecast/US/MD/Columbia.html
 silent :qmark k javascript:(function(){var d=document;var s=d.createElement('script');s.src='http://localhost:8080/skewer';d.body.appendChild(s);})()
-silent :qmark j http://mumak:9091/transmission/web/
+silent :qmark j http://odroid64:9091/transmission/web/
 silent :qmark a http://www.myanonamouse.net/
 silent :qmark T https://baconbits.org/
 silent :qmark l http://gen.lib.rus.ec/
