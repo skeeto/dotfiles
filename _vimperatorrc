@@ -103,7 +103,7 @@ silent :qmark a http://www.myanonamouse.net/
 silent :qmark T https://baconbits.org/
 silent :qmark l http://gen.lib.rus.ec/
 
-bmark -t=torrent     -k=t       http://www.1337x.to/search/%s/1/
+bmark -t=torrent     -k=t       https://thepiratebay.org/search/%s/0/99/0
 bmark -t=subreddit   -k=r       https://www.reddit.com/r/%s
 bmark -t=reddituser  -k=u       https://www.reddit.com/u/%s
 bmark -t=Wikipedia   -k=w       https://en.wikipedia.org/w/index.php?search=%s
