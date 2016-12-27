@@ -26,6 +26,7 @@
     optimize = repack -a -d -f --depth=250 --window=250
     pf = pull --ff-only
     pr = !sh -c 'git fetch origin pull/$1/head:pr-$1' -
+    host = !touch .git/git-daemon-export-ok && git daemon --base-path=. --reuseaddr
 
 [sendemail]
     smtpserver = localhost
