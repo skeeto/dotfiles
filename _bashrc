@@ -79,21 +79,6 @@ title() {
     printf "\e]2;%s\a" $1
 }
 
-say() {
-    if [[ "${1}" =~ ^-[a-z]{2} ]]; then
-        local lang=${1#-};
-        local text="${*#$1}";
-    else
-        local lang=${LANG%_*};
-        local text="$*";
-    fi;
-    local base="http://translate.google.com/translate_tts?ie=UTF-8&client=t"
-    curl --data-urlencode "tl=${lang}" \
-         --data-urlencode "q=${text}" \
-         -A Mozilla --get --silent $base | \
-      vlc --play-and-exit --quiet -Idummy - &> /dev/null
-}
-
 quickuuid() {
     local x=$(tr -cd 'a-f0-9' < /dev/urandom | head -c32)
     echo "${x:0:8}-${x:8:4}-${x:12:4}-${x:15:4}-${x:19:12}"
