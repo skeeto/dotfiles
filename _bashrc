@@ -98,3 +98,22 @@ quickuuid() {
     local x=$(tr -cd 'a-f0-9' < /dev/urandom | head -c32)
     echo "${x:0:8}-${x:8:4}-${x:12:4}-${x:15:4}-${x:19:12}"
 }
+
+httpsd() {
+    remote_port=${1:-9443}
+    local_port=${2:-9080}
+    keyfile="${TMPDIR:-/tmp}/K_$(tr -cd 'a-f0-9' < /dev/urandom | head -c32)"
+    # Generate a fresh, unencrypted, self-signed key. Since stunnel3
+    # cannot read a key from a pipe, write it to a temporary file.
+    # Also, create a daemon suicide pact via subshell trap.
+    (trap 'rm -f "$keyfile"; kill $(jobs -p) 2> /dev/null' SIGINT SIGTERM EXIT
+     umask 0177
+     openssl req -x509 -nodes \
+             -subj "/CN=$(hostname)" \
+             -newkey rsa:2048 \
+             -keyout /dev/stdout \
+             -out /dev/stdout \
+             -days 365 > "$keyfile"
+     python3 -m http.server "$local_port" --bind 127.0.0.1 &
+     stunnel3 -f -P '' -r "$local_port" -d "$remote_port" -p "$keyfile")
+}
