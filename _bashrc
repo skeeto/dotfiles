@@ -92,6 +92,7 @@ httpsd() {
     # cannot read a key from a pipe, write it to a temporary file.
     # Also, create a daemon suicide pact via subshell trap.
     (trap 'rm -f "$keyfile"; kill $(jobs -p) 2> /dev/null' SIGINT SIGTERM EXIT
+     set -euo pipefail
      umask 0177
      openssl req -x509 -nodes \
              -subj "/CN=$(hostname)" \
