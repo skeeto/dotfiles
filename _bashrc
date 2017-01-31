@@ -10,6 +10,7 @@ fi
 shopt -s globstar
 shopt -s checkwinsize
 set +o histexpand
+complete -d cd
 
 ## Environment
 _PS1() {
