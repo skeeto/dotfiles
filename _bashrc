@@ -10,6 +10,13 @@ fi
 shopt -s globstar
 shopt -s checkwinsize
 set +o histexpand
+
+## Completions
+_systemctl() {
+    _completion_loader systemctl
+    _systemctl "${@}"
+}
+complete -F _systemctl d
 complete -d cd
 
 ## Environment
