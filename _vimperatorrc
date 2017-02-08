@@ -83,11 +83,6 @@ set! font.name.monospace.x-western='Droid Sans Mono'
 " This doesn't actually work when set from here?
 set! ui.key.menuAccessKeyFocuses=false
 
-" Add-on specific settings
-set! extensions.vimperator.firsttime=false
-set! extensions.adblockplus.subscriptions_exceptionsurl=''
-set! extensions.adblockplus.hideContributeButton=true
-
 silent :qmark e about:blank
 silent :qmark t https://github.com/skeeto
 silent :qmark n http://nullprogram.com/
