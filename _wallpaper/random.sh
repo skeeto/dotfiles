@@ -1,15 +1,20 @@
-#!/bin/bash
+#!/bin/sh
 
-DELAY=600
-DIR=~/.wallpaper
-SHOW="feh --bg-fill"
+set -e
 
-while true
-do
-    find $DIR -type f -print0 | shuf -z | while read -d $'\0' image
-    do
-        $SHOW "$image"
-        if [ "$1" == --once ]; then exit; fi
-        sleep $DELAY
+delay=600
+wallpapers="$HOME/.wallpaper"
+
+IFS='
+'
+while true; do
+    ## "sort -R" is slightly more portable than "shuf"
+    images="$(find "$wallpapers" -type f | sort -R)"
+    for image in $images; do
+        feh --bg-fill "$image"
+        if [ "$1" = --once ]; then
+            exit 0;
+        fi
+        sleep $delay
     done
 done
