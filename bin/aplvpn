@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 exec sudo openconnect \
     --authgroup Entrust_Bingo_Card -u wellocc1 asavpn.jhuapl.edu

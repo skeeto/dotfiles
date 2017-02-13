@@ -1,2 +1,2 @@
-#!/bin/bash
-exec ssh mail.nullprogram.com addrlookup "${@}" 2> /dev/null
+#!/bin/sh
+exec ssh mail.nullprogram.com addrlookup "$@" 2> /dev/null
