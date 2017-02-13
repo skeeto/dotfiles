@@ -1,96 +1,89 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 set -e
+IFS='
+'
 
-AWK=awk
-MKDIR=mkdir
-if find --version &> /dev/null; then
-    # Looks like GNU coreutils/findutils
-    CHMOD=chmod
-    FIND=find
-    LN=ln
-else
-    # Guess GNU tools have "g" prefix
-    CHMOD=gchmod
-    FIND=gfind
-    LN=gln
-fi
+install_private=yes
+install_scripts=yes
 
 usage() {
-cat << EOF
-usage: $0 [options]
+    cat << EOF
+usage: install.sh [options]
 
 OPTIONS:
   -h    Show this message
   -p    Don't install private dotfiles
   -s    Don't install bin/ scripts
 EOF
+    exit $1
 }
 
 ## Parse command line switches
-while getopts "hps" OPTION
-do
-    case $OPTION in
-        h)
-            usage
-            exit
-            ;;
-        p)
-            NO_PRIVATE=1
-            ;;
-        s)
-            NO_SCRIPTS=1
-            ;;
-        ?)
-            usage
-            exit 1
-             ;;
+while getopts "hps" option; do
+    case "$option" in
+        h) usage 0 ;;
+        p) install_private=no ;;
+        s) install_scripts=no ;;
+        ?) usage 1 ;;
     esac
 done
 
 ## Setup GPG
 echo Installing .gnupg
-$CHMOD go-rwx gnupg
-$LN -Tsf $(pwd)/gnupg ~/.gnupg
+chmod go-rwx gnupg
+if [ -h ~/.gnupg ]; then
+    rm ~/.gnupg
+elif [ -d ~/.gnupg ]; then
+    rm -rf ~/.gnupg
+fi
+ln -sf -- "$(pwd)/gnupg" ~/.gnupg
 
 ## Install scripts
-ROOT=~/.local/bin
-$MKDIR -p $ROOT
-if [ -z "$NO_SCRIPTS" ]; then
-    echo Installing $ROOT
-    $FIND bin/ -type f | xargs -I{} ln -fs $(pwd)/{} "$ROOT"
+bin=~/.local/bin
+mkdir -p "$bin"
+if [ $install_scripts = yes ]; then
+    echo Installing scripts
+    for script in $(find bin -type f -perm -+x); do
+        ln -fs -- "$(pwd)/$script" "$bin"
+    done
 fi
 
-## Install each _-prefixed file
-$FIND . -regex "./_.*" -type f -print0 | sort -z | while read -d $'\0' file
-do
-    dotfile=${file/.\/_/.}
-    decfile=${dotfile/.priv.gpg/}
-
-    ## Install directory first
-    if [ ! -e $(dirname ~/$dotfile) ]; then
-        $MKDIR -p -m 700  $(dirname ~/$dotfile)
-    fi
-
-    ## Install the file
-    if [[ "$file" =~ priv.gpg$ ]]; then
-        ## Decrypt into place
-        if [ -z "$NO_PRIVATE" -a $file -nt ~/$decfile ]; then
-            echo Decrypting ~/$decfile
-            gpg --quiet --yes --decrypt --output ~/$decfile $file
-            $CHMOD go-rwx ~/$decfile
+## Installs an individual dotfile
+install() {
+    dotfile="$1"
+    dest="$HOME/.${dotfile#./_*}"
+    if [ "$dotfile" = "${dotfile##*.priv.gpg}" ]; then
+        echo Installing "$dotfile"
+        mkdir -p -m 700 "$(dirname "$dest")"
+        ln -fs "$(pwd)/$dotfile" "$dest"
+        chmod go-rwx "$dest"
+    elif [ $install_private = yes ]; then
+        dest="${dest%.priv.gpg}"
+        if [ ! -e "$dest" -o "$dotfile" -nt "$dest" ]; then
+            echo Decrypting "$dotfile"
+            mkdir -p -m 700 "$(dirname "$dest")"
+            gpg --quiet --yes --decrypt --output "$dest" "$dotfile"
+            chmod go-rwx "$dest"
         else
-            echo Skipping $dotfile
+            echo Skipping "$dotfile"
         fi
+    fi
+}
+
+## Install each _-prefixed file
+for source in $(find . -name '_*' | sort); do
+    if [ -d "$source" ]; then
+        for dotfile in $(find "$source" -type f | sort); do
+            install "$dotfile"
+        done
     else
-        ## Create a link to the repository version
-        echo Installing $dotfile
-        $LN -fs $(pwd)/$file ~/$dotfile
-        $CHMOD go-rwx $file
+        install "$source"
     fi
 done
 
 ## Special cases
-$LN -sf /dev/null ~/.bash_history
-$CHMOD -w _config/vlc/vlcrc  # Disables annoying VLC clobbering
-$AWK 'FNR==1{print ""}1' ~/.ssh/config.d/* > ~/.ssh/config
+rm -f ~/.bash_history
+ln -sf /dev/null ~/.bash_history
+chmod -w _config/vlc/vlcrc  # Disables annoying VLC clobbering
+awk 'FNR==1{print ""}1' ~/.ssh/config.d/* > ~/.ssh/config
