@@ -83,7 +83,6 @@ for source in $(find . -name '_*' | sort); do
 done
 
 ## Special cases
-rm -f ~/.bash_history
 ln -sf /dev/null ~/.bash_history
 chmod -w _config/vlc/vlcrc  # Disables annoying VLC clobbering
 awk 'FNR==1{print ""}1' ~/.ssh/config.d/* > ~/.ssh/config
