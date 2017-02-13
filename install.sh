@@ -63,8 +63,8 @@ install() {
         if [ ! -e "$dest" -o "$dotfile" -nt "$dest" ]; then
             echo Decrypting "$dotfile"
             mkdir -p -m 700 "$(dirname "$dest")"
-            gpg --quiet --yes --decrypt --output "$dest" "$dotfile"
-            chmod go-rwx "$dest"
+            (umask 0177;
+             gpg --quiet --yes --decrypt --output "$dest" "$dotfile")
         else
             echo Skipping "$dotfile"
         fi
