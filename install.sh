@@ -56,8 +56,8 @@ install() {
     if [ "$dotfile" = "${dotfile##*.priv.gpg}" ]; then
         echo Installing "$dotfile"
         mkdir -p -m 700 "$(dirname "$dest")"
+        chmod go-rwx "$dotfile"
         ln -fs "$(pwd)/$dotfile" "$dest"
-        chmod go-rwx "$dest"
     elif [ $install_private = yes ]; then
         dest="${dest%.priv.gpg}"
         if [ ! -e "$dest" -o "$dotfile" -nt "$dest" ]; then
