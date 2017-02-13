@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # With no arguments, rebuilds the database. Otherwise searches for
 # files matching the first argument as a POSIX extended regex.
@@ -13,19 +13,15 @@
 
 set -e
 umask 0077
+db="$HOME/.cache/floc.db"
 
-DBFILE=~/.cache/floc.db
-
-if [[ "$#" -lt 1 ]]; then
-    mkdir -p $(dirname $DBFILE)
-    exec find / \
-            -path '/proc' -prune \
+if [ "$#" -lt 1 ]; then
+    mkdir -p "$(dirname $db)"
+    find /  -path '/proc' -prune \
          -o -path '/tmp'  -prune \
          -o -path '/dev'  -prune \
          -o -path '/sys'  -prune \
-         -o -print \
-         > $DBFILE \
-         2> /dev/null
+         -o -print > "$db" 2> /dev/null
 else
-    exec egrep $1 $DBFILE
+    grep -E -- "$1" "$db"
 fi
