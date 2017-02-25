@@ -27,11 +27,10 @@ alias et='emacsclient -ta ""'
 alias ebc='emacs -Q -batch -L . -f batch-byte-compile'
 
 # Debian
-alias ins='sudo apt-get install'
+alias ins='sudo apt install'
 alias sapt='apt-cache search'
-alias a='sudo apt-get '
+alias a='sudo apt'
 alias d='sudo systemctl'
-alias reportbug='reportbug --gnupg'
 
 # Dev
 alias g='git'
