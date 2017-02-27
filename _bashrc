@@ -20,6 +20,7 @@ complete -F _systemctl d
 complete -d cd
 
 ## Environment
+unset PS1
 _PS1() {
     local PRE= NAME="$1" LENGTH="$2";
     [[ "$NAME" != "${NAME#$HOME/}" || -z "${NAME#$HOME}" ]] &&
@@ -27,12 +28,12 @@ _PS1() {
     ((${#NAME}>$LENGTH)) && NAME="/...${NAME:$[${#NAME}-LENGTH+4]}";
     echo "$PRE$NAME"
 }
-export PS1='\[\e[1;32m\]\h\[\e[m\]\
+PS1='\[\e[1;32m\]\h\[\e[m\]\
 \[\e[1;35m\]$(_PS1 "$PWD" 30)\[\e[m\] '
 export EDITOR="emacsclient -a ''"
 export BROWSER="firefox"
 if [ "$TERM" = "dumb" ]; then
-    export PS1="> "
+    PS1="> "
 fi
 export WINEDEBUG=fixme-all
 
