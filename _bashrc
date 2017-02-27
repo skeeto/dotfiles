@@ -47,7 +47,9 @@ export PERL5LIB=~/.local/lib
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
 ## Agents
-eval $(keychain --eval --quiet)
+if $(command -v keychain > /dev/null 2>&1); then
+    eval $(keychain --eval --quiet)
+fi
 
 ## Custom Colors
 if [[ "$-" == *"i"* ]] && [[ "$TERM" != "dumb" ]]; then
