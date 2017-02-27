@@ -36,6 +36,7 @@ alias d='sudo systemctl'
 alias g='git'
 alias q='quilt'
 alias gdb='gdb -q'
+alias b="make -kj$(nproc)"
 alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
 
 # Tweak standard commands
