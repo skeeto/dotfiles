@@ -1,11 +1,5 @@
 ## -*- default-directory: "~/.dotfiles/"; -*-
 
-## Includes
-source ~/.bash_aliases
-if [ -e /etc/bash_completion ]; then
-    source /etc/bash_completion
-fi
-
 ## Options
 shopt -s globstar
 shopt -s checkwinsize
@@ -122,3 +116,10 @@ httpsd() {
      python3 -m http.server "$local_port" --bind 127.0.0.1 &
      stunnel3 -f -P '' -r "$local_port" -d "$remote_port" -p "$keyfile")
 }
+
+## Aliases
+
+source ~/.bash_aliases
+if [ -e /etc/bash_completion ]; then
+    source /etc/bash_completion
+fi
