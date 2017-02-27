@@ -82,7 +82,7 @@ if [ -f ~/.bash_local ]; then
    . ~/.bash_local
 fi
 
-## Fun
+## Functions
 
 title() {
     printf "\e]2;%s\a" $1
@@ -91,6 +91,16 @@ title() {
 quickuuid() {
     local x=$(tr -cd 'a-f0-9' < /dev/urandom | head -c32)
     echo "${x:0:8}-${x:8:4}-${x:12:4}-${x:15:4}-${x:19:12}"
+}
+
+nproc() {
+    if $(which nproc >/dev/null 2>&1); then
+        command nproc
+    elif [ -e /proc/cpuinfo ]; then
+        grep ^processor < /proc/cpuinfo | wc -l
+    else
+        sysctl -n hw.ncpu
+    fi
 }
 
 httpsd() {
