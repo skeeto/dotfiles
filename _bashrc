@@ -90,7 +90,7 @@ quickuuid() {
 }
 
 nproc() {
-    if $(command -v nproc >/dev/null 2>&1); then
+    if $(which nproc >/dev/null 2>&1); then
         command nproc
     elif [ -e /proc/cpuinfo ]; then
         grep ^processor < /proc/cpuinfo | wc -l
