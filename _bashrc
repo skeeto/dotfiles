@@ -73,11 +73,6 @@ if [[ "$-" == *"i"* ]] && [[ "$TERM" != "dumb" ]]; then
     echo -ne '\e]11;#1D1F21\a'    # default background
 fi
 
-## Local configuration
-if [ -f ~/.bash_local ]; then
-   . ~/.bash_local
-fi
-
 ## Functions
 
 title() {
@@ -124,4 +119,10 @@ httpsd() {
 source ~/.bash_aliases
 if [ -e /etc/bash_completion ]; then
     source /etc/bash_completion
+fi
+
+## Local configuration (loaded last for overrides)
+
+if [ -f ~/.bash_local ]; then
+   . ~/.bash_local
 fi
