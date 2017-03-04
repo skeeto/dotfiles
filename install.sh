@@ -4,8 +4,12 @@ set -e
 IFS='
 '
 
-install_private=yes
 install_scripts=yes
+if $(command -v enchive > /dev/null 2>&1); then
+    install_private=yes
+else
+    install_private=no
+fi
 
 usage() {
     cat << EOF
@@ -29,16 +33,6 @@ while getopts "hps" option; do
     esac
 done
 
-## Setup GPG
-echo Installing .gnupg
-chmod go-rwx gnupg
-if [ -h ~/.gnupg ]; then
-    rm ~/.gnupg
-elif [ -d ~/.gnupg ]; then
-    rm -rf ~/.gnupg
-fi
-ln -sf -- "$(pwd)/gnupg" ~/.gnupg
-
 ## Install scripts
 bin=~/.local/bin
 mkdir -p "$bin"
@@ -53,18 +47,18 @@ fi
 install() {
     dotfile="$1"
     dest="$HOME/.${dotfile#./_*}"
-    if [ "$dotfile" = "${dotfile##*.priv.gpg}" ]; then
+    if [ "$dotfile" = "${dotfile##*.enchive}" ]; then
         echo Installing "$dotfile"
         mkdir -p -m 700 "$(dirname "$dest")"
         chmod go-rwx "$dotfile"
         ln -fs "$(pwd)/$dotfile" "$dest"
     elif [ $install_private = yes ]; then
-        dest="${dest%.priv.gpg}"
+        dest="${dest%.enchive}"
         if [ ! -e "$dest" -o "$dotfile" -nt "$dest" ]; then
             echo Decrypting "$dotfile"
             mkdir -p -m 700 "$(dirname "$dest")"
             (umask 0177;
-             gpg --quiet --yes --decrypt --output "$dest" "$dotfile")
+             enchive extract "$dotfile" "$dest")
         else
             echo Skipping "$dotfile"
         fi
