@@ -58,7 +58,7 @@ install() {
             echo Decrypting "$dotfile"
             mkdir -p -m 700 "$(dirname "$dest")"
             (umask 0177;
-             enchive extract "$dotfile" "$dest")
+             enchive --agent extract "$dotfile" "$dest")
         else
             echo Skipping "$dotfile"
         fi
