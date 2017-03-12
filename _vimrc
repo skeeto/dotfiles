@@ -1,20 +1,7 @@
-" -*- default-directory: "~/.dotfiles/"; -*-
-
-set nocompatible
 set encoding=utf-8
 set backspace=indent,eol,start
-set nobackup
-set noswapfile
-set history=100
-set undolevels=100
-set ruler
-set showcmd
-set autoindent
-set hidden
-set modelines=0
-set autochdir
+set history=64
 set guioptions=
-set viminfo="NONE"
 
 " Search
 set incsearch
@@ -24,7 +11,6 @@ set smartcase
 
 " Colors
 syntax on
-set t_Co=256
 colorscheme desert
 set background=dark
 
@@ -37,20 +23,20 @@ set expandtab
 set shiftwidth=4
 set shiftround
 set smarttab
+set autoindent
 
 " No noise
-set visualbell
+set novisualbell
 set noerrorbells
 
 " Bindings
-map Q gq
 map B :buffer 
 map <silent> [b :bp<cr>
 map <silent> ]b :bn<cr>
 
-filetype plugin indent on
-autocmd FileType text setlocal textwidth=72
+" Statusline
+set statusline=%m%n\ %F%=%l/%L\ %3v\ U+%04B
+set laststatus=2
+hi StatusLine guibg=Gray16 guifg=White
 
-if has('mouse')
-  set mouse=a
-endif
+filetype plugin indent on
