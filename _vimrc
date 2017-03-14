@@ -28,6 +28,9 @@ set autoindent
 " No noise
 set novisualbell
 set noerrorbells
+if exists('&belloff')
+   set belloff=all
+endif
 
 " Bindings
 map B :buffer 
