@@ -1,7 +1,12 @@
 set encoding=utf-8
 set backspace=indent,eol,start
-set history=64
 set guioptions=
+set autochdir
+set hidden
+set cpoptions+=$
+set lazyredraw
+set wildmenu
+set virtualedit=all
 
 " Search
 set incsearch
@@ -32,14 +37,12 @@ if exists('&belloff')
    set belloff=all
 endif
 
-" Bindings
-map B :buffer 
-map <silent> [b :bp<cr>
-map <silent> ]b :bn<cr>
-
 " Statusline
-set statusline=%m%n\ %F%=%l/%L\ %3v\ U+%04B
+set statusline=%m%F%=%y\ %l/%L\ %3v\ U+%04B
 set laststatus=2
 hi StatusLine guibg=Gray16 guifg=White
 
-filetype plugin indent on
+" Filetypes
+filetype on
+filetype plugin on
+filetype indent on
