@@ -38,6 +38,7 @@ alias q='quilt'
 alias gdb='gdb -q'
 alias b="make -kj$(nproc)"
 alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
+alias v='gvim --remote-silent'
 
 # Tweak standard commands
 if ls --color=auto > /dev/null 2>&1; then
