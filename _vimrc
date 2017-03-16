@@ -49,3 +49,7 @@ filetype indent on
 
 " Build
 set makeprg=smake
+
+" Spelling
+set spelllang=en_us
+set spellfile=~/.vim/en.utf-8.add
