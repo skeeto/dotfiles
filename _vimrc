@@ -46,3 +46,6 @@ hi StatusLine guibg=Gray16 guifg=White
 filetype on
 filetype plugin on
 filetype indent on
+
+" Build
+set makeprg=smake
