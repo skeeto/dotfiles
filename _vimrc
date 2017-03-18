@@ -8,6 +8,9 @@ set lazyredraw
 set wildmenu
 set virtualedit=all
 
+" Never use backslashes for paths.
+set shellslash
+
 " Search
 set incsearch
 set hlsearch
