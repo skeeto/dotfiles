@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+newline='
+'
+while getopts "n" option; do
+    case "$option" in
+        n) newline= ;;
+        ?) exit 2 ;;
+    esac
+done
+
+digits=$(tr -cd 'a-f0-9' < /dev/urandom | dd count=1 bs=31 2> /dev/null)
+printf "%s-%s-4%s-%s-%s%s" \
+    $(printf $digits | cut -c1-8)   \
+    $(printf $digits | cut -c9-12)  \
+    $(printf $digits | cut -c13-15) \
+    $(printf $digits | cut -c16-19) \
+    $(printf $digits | cut -c20-31) \
+    "$newline"

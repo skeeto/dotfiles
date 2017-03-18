@@ -79,11 +79,6 @@ title() {
     printf "\e]2;%s\a" $1
 }
 
-quickuuid() {
-    local x=$(tr -cd 'a-f0-9' < /dev/urandom | head -c32)
-    echo "${x:0:8}-${x:8:4}-${x:12:4}-${x:15:4}-${x:19:12}"
-}
-
 nproc() {
     if $(which nproc >/dev/null 2>&1); then
         command nproc
