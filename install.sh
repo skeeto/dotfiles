@@ -4,6 +4,7 @@ set -e
 IFS='
 '
 
+lnflags=-s
 install_scripts=yes
 if $(command -v enchive > /dev/null 2>&1); then
     install_private=yes
@@ -16,19 +17,19 @@ usage() {
 usage: install.sh [options]
 
 OPTIONS:
-  -h    Show this message
+  -l    Install config files as hard links
   -p    Don't install private dotfiles
-  -s    Don't install bin/ scripts
+  -h    Show this message
 EOF
     exit $1
 }
 
 ## Parse command line switches
-while getopts "hps" option; do
+while getopts "lph" option; do
     case "$option" in
-        h) usage 0 ;;
+        l) lnflags= ;;
         p) install_private=no ;;
-        s) install_scripts=no ;;
+        h) usage 0 ;;
         ?) usage 1 ;;
     esac
 done
@@ -51,7 +52,7 @@ install() {
         echo Installing "$dotfile"
         mkdir -p -m 700 "$(dirname "$dest")"
         chmod go-rwx "$dotfile"
-        ln -fs "$(pwd)/$dotfile" "$dest"
+        ln -f $lnflags "$(pwd)/$dotfile" "$dest"
     elif [ $install_private = yes ]; then
         dest="${dest%.enchive}"
         if [ ! -e "$dest" -o "$dotfile" -nt "$dest" ]; then
