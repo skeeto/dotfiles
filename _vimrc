@@ -1,3 +1,8 @@
+" Mappings for working with this file.
+map <Leader>ev :edit ~/.vimrc<CR>
+map <Leader>es :source ~/.vimrc<CR>
+
+" Miscellaneous
 set encoding=utf-8
 set backspace=indent,eol,start
 set guioptions=
@@ -8,6 +13,9 @@ set lazyredraw
 set wildmenu
 set virtualedit=all
 
+" One space between sentences please.
+set nojoinspaces
+
 " Never use backslashes for paths.
 set shellslash
 
@@ -17,7 +25,7 @@ set hlsearch
 set ignorecase
 set smartcase
 
-" Colors
+" Colors and themes
 syntax on
 colorscheme desert
 set background=dark
