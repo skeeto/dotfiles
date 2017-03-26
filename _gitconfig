@@ -2,7 +2,6 @@
 
 [user]
     name = Christopher Wellons
-    signingkey = 0C276D5D
 
 [core]
     autoclrf = false
