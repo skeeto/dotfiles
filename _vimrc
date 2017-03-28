@@ -54,6 +54,9 @@ set statusline=%m%F%=%y\ %l/%L\ %3v\ U+%04B
 set laststatus=2
 hi StatusLine guibg=Gray16 guifg=White
 
+" netrw
+let g:netrw_banner=0
+
 " Filetypes
 filetype on
 filetype plugin on
