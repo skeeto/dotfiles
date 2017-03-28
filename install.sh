@@ -81,4 +81,10 @@ done
 mkdir -p ~/.vim
 ln -sf /dev/null ~/.bash_history
 chmod -w _config/vlc/vlcrc  # Disables annoying VLC clobbering
-awk 'FNR==1{print ""}1' ~/.ssh/config.d/* > ~/.ssh/config
+
+## Compile ssh config
+printf "## WARNING: do not edit directly\n" > ~/.ssh/config
+for f in ~/.ssh/config.d/*; do
+    printf '\n' >> ~/.ssh/config
+    cat "$f" >> ~/.ssh/config
+done
