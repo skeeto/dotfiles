@@ -11,7 +11,6 @@ set hidden
 set cpoptions+=$
 set lazyredraw
 set wildmenu
-set virtualedit=all
 set autowrite
 
 " One space between sentences please.
