@@ -67,6 +67,3 @@ set makeprg=smake
 " Spelling
 set spelllang=en_us
 set spellfile=~/.vim/en.utf-8.add
-
-" Snippets
-nmap <Leader>sp gg:-1r ~/.vim/snippets/post.yaml<CR>5j:r !puuid<CR>kJ4kA<Space>
