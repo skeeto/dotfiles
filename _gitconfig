@@ -25,7 +25,8 @@
     optimize = repack -a -d -f --depth=250 --window=250
     pf = pull --ff-only
     pr = !sh -c 'git fetch origin pull/$1/head:pr-$1' -
-    host = !touch .git/git-daemon-export-ok && git daemon --base-path=. --reuseaddr
+    host = daemon --base-path=. --reuseaddr --export-all
+    whost = daemon --base-path=. --reuseaddr --export-all --enable=receive-pack
     ca = commit -am
     cm = commit -m
 
