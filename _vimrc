@@ -4,6 +4,7 @@ map <Leader>es :source ~/.vimrc<CR>
 
 " Miscellaneous
 set encoding=utf-8
+set shellslash
 set backspace=indent,eol,start
 set guioptions=
 set autochdir
@@ -11,13 +12,9 @@ set hidden
 set cpoptions+=$
 set lazyredraw
 set wildmenu
-set autowrite
 
 " One space between sentences please.
 set nojoinspaces
-
-" Never use backslashes for paths.
-set shellslash
 
 " Search
 set incsearch
@@ -28,11 +25,6 @@ set smartcase
 " Colors and themes
 syntax on
 colorscheme desert
-set background=dark
-
-" Show trailing whitespace
-set list
-set listchars=tab:>-,trail:░,extends:#,nbsp:.
 
 " Tab configuration
 set expandtab
@@ -63,6 +55,7 @@ filetype indent on
 
 " Build
 set makeprg=smake
+set autowrite
 
 " Spelling
 set spelllang=en_us
