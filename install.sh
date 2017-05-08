@@ -5,12 +5,7 @@ IFS='
 '
 
 lnflags=-s
-install_scripts=yes
-if $(command -v enchive > /dev/null 2>&1); then
-    install_private=yes
-else
-    install_private=no
-fi
+install_scripts=no
 
 usage() {
     cat << EOF
@@ -18,7 +13,7 @@ usage: install.sh [options]
 
 OPTIONS:
   -l    Install config files as hard links
-  -p    Don't install private dotfiles
+  -p    Install private dotfiles
   -h    Show this message
 EOF
     exit $1
@@ -28,7 +23,7 @@ EOF
 while getopts "lph" option; do
     case "$option" in
         l) lnflags= ;;
-        p) install_private=no ;;
+        p) install_private=yes ;;
         h) usage 0 ;;
         ?) usage 1 ;;
     esac
