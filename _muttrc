@@ -1,0 +1,71 @@
+# Identity
+set realname="Christopher Wellons"
+
+# Mail format
+set mbox_type="Maildir"
+set folder="~/Maildir"
+set spoolfile="+"
+set header_cache="~/.cache/mutt"
+set postponed="+drafts"
+set record="+"
+
+# Editor
+set editor="vim +/^$ '+setlocal fo+=w'"
+set edit_headers
+set text_flowed
+
+# Outgoing
+set smtp_url="smtp://localhost:2525"
+
+# Contact management
+set alias_file="~/Maildir/aliases"
+source $alias_file
+
+# Index interface
+set mail_check=15
+set timeout=30
+unset mark_old
+set thorough_search
+set quit
+set menu_scroll
+set include
+set fast_reply
+bind index G last-entry
+bind index gg first-entry
+bind index R group-reply
+bind index <space> collapse-thread
+bind index V collapse-all
+macro index a "<limit>~A<enter>"
+macro index i "<limit>~U<enter>"
+set sort="threads"
+set sort_aux="reverse-date"
+set strict_threads
+unset collapse_unread
+
+# mu search
+unset wait_key
+macro index S "<save-message>"
+macro index s "<shell-escape>mu find --clearlinks --format=links --linksdir=~/.search "
+macro index gs "<change-folder-readonly>~/.search<enter>"
+
+# Index style
+set date_format="%Y-%m-%d"
+set index_format="%D %Z %-15.15L %s"
+color index white black ~A
+color index brightgreen black ~U
+color tree yellow black
+color index brightgreen black "~v~(~U)"
+
+# Pager interface
+bind pager gg top
+bind pager G bottom
+bind pager j next-line
+bind pager k previous-line
+bind pager \Cu half-up
+bind pager \Cd half-down
+bind pager \Cf next-page
+bind pager \Cb previous-page
+bind pager <space> next-page
+bind pager <backspace> previous-page
+
+push "<collapse-all>"
