@@ -6,6 +6,7 @@ IFS='
 
 lnflags=-s
 install_scripts=no
+install_private=no
 
 usage() {
     cat << EOF
