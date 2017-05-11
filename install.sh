@@ -77,6 +77,7 @@ done
 mkdir -p ~/.vim
 ln -sf /dev/null ~/.bash_history
 chmod -w _config/vlc/vlcrc  # Disables annoying VLC clobbering
+if [ -n "$DISPLAY" ]; then xrdb -merge ~/.Xresources; fi
 
 ## Compile ssh config
 printf "## WARNING: do not edit directly\n" > ~/.ssh/config
