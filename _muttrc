@@ -41,6 +41,7 @@ set sort="threads"
 set sort_aux="reverse-date"
 set strict_threads
 unset collapse_unread
+unset help
 
 # mu search
 unset wait_key
