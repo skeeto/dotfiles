@@ -12,6 +12,7 @@ set hidden
 set cpoptions+=$
 set lazyredraw
 set wildmenu
+set showcmd
 
 " One space between sentences please.
 set nojoinspaces
