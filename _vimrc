@@ -30,7 +30,7 @@ set smartcase
 
 " Colors and themes
 syntax on
-colorscheme desert
+colorscheme wombat256dave
 
 " Tab configuration
 set expandtab
