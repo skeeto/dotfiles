@@ -74,7 +74,7 @@ for source in $(find . -name '_*' | sort); do
 done
 
 ## Special cases
-mkdir -p ~/.vim
+mkdir -p ~/.vim/spell
 ln -sf /dev/null ~/.bash_history
 chmod -w _config/vlc/vlcrc  # Disables annoying VLC clobbering
 if [ -n "$DISPLAY" ]; then xrdb -merge ~/.Xresources; fi
