@@ -207,6 +207,9 @@
   <keybind key="W-a">
     <action name="Execute"><command>emacsclient -ca ""</command></action>
   </keybind>
+  <keybind key="W-g">
+    <action name="Execute"><command>gvim</command></action>
+  </keybind>
   <keybind key="W-n">
     <action name="Execute"><command>urxvt</command></action>
   </keybind>
@@ -576,6 +579,13 @@
     <desktop>1</desktop>
   </application>
   <application name="emacs">
+    <focus>yes</focus>
+    <position>
+      <x>0</x><y>0</y>
+    </position>
+    <maximized>vertical</maximized>
+  </application>
+  <application name="gvim">
     <focus>yes</focus>
     <position>
       <x>0</x><y>0</y>
