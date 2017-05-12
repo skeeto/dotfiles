@@ -11,8 +11,13 @@ set autochdir
 set hidden
 set cpoptions+=$
 set lazyredraw
-set wildmenu
 set showcmd
+set nobackup
+set noswapfile
+
+" Wildmenu
+set wildmenu
+set wildmode=longest,list
 
 " One space between sentences please.
 set nojoinspaces
