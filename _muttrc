@@ -15,7 +15,7 @@ set edit_headers
 set text_flowed
 
 # Outgoing
-set smtp_url="smtp://localhost:25"
+set smtp_url="smtp://localhost:26"
 
 # Contact management
 set alias_file="~/Maildir/aliases"
