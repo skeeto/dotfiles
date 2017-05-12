@@ -30,7 +30,11 @@ set smartcase
 
 " Colors and themes
 syntax on
-colorscheme wombat256dave
+if has('gui_running') || &t_Co == 256
+    colorscheme wombat256dave
+else
+    colorscheme elflord
+end
 
 " Tab configuration
 set expandtab
