@@ -592,6 +592,14 @@
     </position>
     <maximized>vertical</maximized>
   </application>
+  <application name="xterm">
+    <focus>yes</focus>
+    <position>
+      <x>-0</x>
+      <y>0</y>
+    </position>
+    <maximized>vertical</maximized>
+  </application>
   <application name="urxvt">
     <focus>yes</focus>
     <position>

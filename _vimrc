@@ -35,6 +35,10 @@ if has('gui_running') || &t_Co == 256
 else
     colorscheme elflord
 end
+if &term =~ "xterm"
+    let &t_SI = "\<Esc>[6 q"
+    let &t_EI = "\<Esc>[2 q"
+end
 
 " Tab configuration
 set expandtab
