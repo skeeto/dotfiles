@@ -211,7 +211,7 @@
     <action name="Execute"><command>gvim</command></action>
   </keybind>
   <keybind key="W-n">
-    <action name="Execute"><command>urxvt</command></action>
+    <action name="Execute"><command>xterm</command></action>
   </keybind>
   <keybind key="W-k">
     <action name="Execute"><command>virt-manager</command></action>
@@ -226,7 +226,7 @@
     <action name="Execute"><command>notify-battery</command></action>
   </keybind>
   <keybind key="W-m">
-    <action name="Execute"><command>urxvt -e alsamixer</command></action>
+    <action name="Execute"><command>xterm -e alsamixer</command></action>
   </keybind>
   <keybind key="W-bracketright">
     <action name="Execute"><command>amixer -M set Master 10%+</command></action>
