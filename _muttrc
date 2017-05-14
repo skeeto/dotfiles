@@ -60,10 +60,10 @@ macro index gs "<change-folder-readonly>~/.search<enter>"
 set date_format="%Y-%m-%d"
 set index_format="%D %Z %-15.15L %s"
 color index color255 color235 ~A
-color index brightgreen black ~U
+color index brightgreen color235 ~U
 color indicator brightyellow color17
-color tree yellow black
-color index brightgreen black "~v~(~U)"
+color tree yellow color235
+color index brightgreen color235 "~v~(~U)"
 color status brightgreen blue
 
 # Message style
