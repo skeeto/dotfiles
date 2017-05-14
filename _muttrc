@@ -45,7 +45,7 @@ macro index a "<limit>~A<enter>"
 macro index i "<limit>~U | ~F<enter>"
 macro index I "<limit>~U<enter>"
 set sort="threads"
-set sort_aux="reverse-date"
+set sort_aux="reverse-last-date-received"
 set strict_threads
 unset collapse_unread
 unset help
