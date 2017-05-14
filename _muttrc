@@ -13,6 +13,7 @@ set record="+"
 set editor="vim +/^$ '+setlocal fo+=w'"
 set edit_headers
 set text_flowed
+set tmpdir="~/"
 
 # Message formatting
 alternative_order text/plain text/html
