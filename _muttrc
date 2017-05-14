@@ -64,6 +64,7 @@ color index brightgreen black ~U
 color indicator brightyellow color17
 color tree yellow black
 color index brightgreen black "~v~(~U)"
+color status brightgreen blue
 
 # Message style
 color normal color255 color235
