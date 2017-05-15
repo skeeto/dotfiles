@@ -1,6 +1,6 @@
 " Mappings for working with this file.
-map <Leader>ev :edit ~/.vimrc<CR>
-map <Leader>es :source ~/.vimrc<CR>
+map <Leader>ev :edit $MYVIMRC<CR>
+map <Leader>es :source $MYVIMRC<CR>
 
 " Miscellaneous
 set encoding=utf-8
