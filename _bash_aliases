@@ -51,7 +51,7 @@ if echo x | grep --color=auto x > /dev/null 2>&1; then
 fi
 alias p='pushd'
 alias po='popd'
-alias s='less -SR'
+alias s='less -cSR'
 alias bat="acpitool -b"
 alias pu='pumount'
 alias pm='pmount'
