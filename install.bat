@@ -31,3 +31,8 @@ copy _bash_profile %HOME%\.bash_profile
 
 echo Installing _gitconfig
 copy _gitconfig %HOME%\.gitconfig
+
+echo Installing _vim
+copy _vimrc %HOME%\_vimrc
+xcopy _vim %HOME%\vimfiles /i /q /s /y
+if not exist %HOME%\_vim\spell mkdir %HOME%\_vim\spell
