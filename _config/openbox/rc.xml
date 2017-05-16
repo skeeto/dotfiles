@@ -92,23 +92,11 @@
   <keybind key="C-A-Right">
     <action name="DesktopRight"><wrap>no</wrap></action>
   </keybind>
-  <keybind key="C-A-Up">
-    <action name="DesktopUp"><wrap>no</wrap></action>
-  </keybind>
-  <keybind key="C-A-Down">
-    <action name="DesktopDown"><wrap>no</wrap></action>
-  </keybind>
   <keybind key="S-C-Left">
     <action name="SendToDesktopLeft"><wrap>no</wrap></action>
   </keybind>
   <keybind key="S-C-Right">
     <action name="SendToDesktopRight"><wrap>no</wrap></action>
-  </keybind>
-  <keybind key="S-C-Up">
-    <action name="SendToDesktopUp"><wrap>no</wrap></action>
-  </keybind>
-  <keybind key="S-C-Down">
-    <action name="SendToDesktopDown"><wrap>no</wrap></action>
   </keybind>
 
   <!-- Keybindings for windows -->
@@ -138,8 +126,11 @@
   <keybind key="W-h">
     <action name="ToggleMaximizeHorz"/>
   </keybind>
-  <keybind key="W-f">
-    <action name="ToggleMaximize"/>
+  <keybind key="W-Up">
+    <action name="MaximizeFull"/>
+  </keybind>
+  <keybind key="W-Down">
+    <action name="UnmaximizeFull"/>
   </keybind>
 
   <!-- Window sizing -->
@@ -168,25 +159,25 @@
     <action name="ShrinkToEdge"><direction>south</direction></action>
   </keybind>
 
-  <!-- Window focus -->
+  <!-- Window tiling -->
   <keybind key="W-Left">
-    <action name="DirectionalFocusWest">
-      <dialog>no</dialog>
+    <action name="MoveResizeTo">
+      <width>50%</width>
+    </action>
+    <action name="MaximizeVert"/>
+    <action name="MoveResizeTo">
+      <x>0</x>
+      <y>0</y>
     </action>
   </keybind>
   <keybind key="W-Right">
-    <action name="DirectionalFocusEast">
-      <dialog>no</dialog>
+    <action name="MoveResizeTo">
+      <width>50%</width>
     </action>
-  </keybind>
-  <keybind key="W-Up">
-    <action name="DirectionalFocusNorth">
-      <dialog>no</dialog>
-    </action>
-  </keybind>
-  <keybind key="W-Down">
-    <action name="DirectionalFocusSouth">
-      <dialog>no</dialog>
+    <action name="MaximizeVert"/>
+    <action name="MoveResizeTo">
+      <x>-0</x>
+      <y>0</y>
     </action>
   </keybind>
 
