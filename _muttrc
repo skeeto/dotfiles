@@ -53,6 +53,8 @@ macro index I "<limit>~U<enter>"
 set sort="threads"
 set sort_aux="reverse-last-date-received"
 set strict_threads
+set narrow_tree
+unset confirmappend
 unset collapse_unread
 unset help
 
@@ -80,6 +82,7 @@ color hdrdefault color250 color235
 color tilde color250 color235
 
 # Pager interface
+set pager_stop
 bind pager gg top
 bind pager G bottom
 bind pager j next-line
