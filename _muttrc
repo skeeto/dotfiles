@@ -19,6 +19,8 @@ set tmpdir="~/"
 alternative_order text/plain text/html
 auto_view text/html
 set pipe_decode
+set print_decode
+set print_command='muttprint -P letter -F Helvetica -p TO_FILE:$HOME/mail.ps'
 
 # Outgoing
 set smtp_url="smtp://localhost:26"
