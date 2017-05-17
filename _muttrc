@@ -43,6 +43,7 @@ bind index gg first-entry
 bind index R group-reply
 bind index <space> collapse-thread
 bind index V collapse-all
+bind index \cD noop
 macro index a "<limit>~A<enter>"
 macro index i "<limit>~U | ~F<enter>"
 macro index I "<limit>~U<enter>"
