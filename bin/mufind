@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec mu find --clearlinks --format=links --linksdir=~/.search "$@"

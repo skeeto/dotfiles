@@ -61,7 +61,7 @@ unset help
 # mu search
 unset wait_key
 macro index S "<save-message>"
-macro index s "<shell-escape>mu find --clearlinks --format=links --linksdir=~/.search "
+macro index s "<shell-escape>mufind "
 macro index gs "<change-folder-readonly>~/.search<enter>"
 
 # Index style
