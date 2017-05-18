@@ -4,10 +4,10 @@ set realname="Christopher Wellons"
 # Mail format
 set mbox_type="Maildir"
 set folder="~/Maildir"
-set spoolfile="+"
 set header_cache="~/.cache/mutt"
-set postponed="+drafts"
-set record="+"
+set spoolfile="="
+set postponed="=drafts"
+set record="="
 
 # Editor
 set editor='vim +/^$ "+setlocal fo+=w" +:noh'
