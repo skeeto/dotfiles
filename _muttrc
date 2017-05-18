@@ -26,7 +26,7 @@ set print_command='muttprint -P letter -F Helvetica -p TO_FILE:$HOME/mail.ps'
 set smtp_url="smtp://localhost:26"
 
 # Contact management
-set alias_file="~/Maildir/aliases"
+set alias_file="=aliases"
 source $alias_file
 
 # Index interface
