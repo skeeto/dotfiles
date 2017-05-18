@@ -93,3 +93,6 @@ bind pager \Cf next-page
 bind pager \Cb previous-page
 bind pager <space> next-page
 bind pager <backspace> previous-page
+
+# Editor interface
+bind editor <space> noop
