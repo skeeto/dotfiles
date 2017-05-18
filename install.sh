@@ -5,7 +5,7 @@ IFS='
 '
 
 lnflags=-s
-install_scripts=no
+install_scripts=yes
 install_private=no
 
 usage() {
