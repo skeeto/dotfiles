@@ -10,7 +10,7 @@ set postponed="+drafts"
 set record="+"
 
 # Editor
-set editor="vim +/^$ '+setlocal fo+=w'"
+set editor='vim +/^$ "+setlocal fo+=w" +:noh'
 set edit_headers
 set text_flowed
 set tmpdir="~/"
