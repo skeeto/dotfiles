@@ -96,3 +96,6 @@ bind pager <backspace> previous-page
 
 # Editor interface
 bind editor <space> noop
+
+# Load local config file for local overrides
+source `x=~/.muttrc.local; if [ -e "$x" ]; then echo "$x"; fi; echo /dev/null`
