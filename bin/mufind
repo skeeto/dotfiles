@@ -1,3 +1,4 @@
 #!/bin/sh
 
-exec mu find --clearlinks --format=links --linksdir=~/.search "$@"
+mu find --clearlinks --format=links --linksdir=~/.search "$@" 2> /dev/null
+exit 0
