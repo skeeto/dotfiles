@@ -47,6 +47,7 @@ bind index \cU half-up
 bind index \cD half-down
 bind index \cB previous-page
 bind index \cF next-page
+macro index d "<save-message>=trash<enter>"
 macro index a "<limit>~A<enter>"
 macro index i "<limit>~U | ~F<enter>"
 macro index I "<limit>~U<enter>"
