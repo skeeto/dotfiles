@@ -49,8 +49,8 @@ bind index \cB previous-page
 bind index \cF next-page
 macro index d "<save-message>=trash<enter>"
 macro index a "<limit>~A<enter>"
-macro index i "<limit>~U | ~F<enter>"
-macro index I "<limit>~U<enter>"
+macro index i "<limit>~(~U) | ~F<enter>"
+macro index I "<limit>~(~U)<enter>"
 set sort="threads"
 set sort_aux="reverse-last-date-received"
 set strict_threads
