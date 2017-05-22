@@ -84,6 +84,7 @@ color tilde color250 color235
 
 # Pager interface
 set pager_stop
+unset markers
 bind pager gg top
 bind pager G bottom
 bind pager j next-line
