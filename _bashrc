@@ -24,7 +24,7 @@ _PS1() {
 }
 PS1='\[\e[1;32m\]\h\[\e[m\]\
 \[\e[1;35m\]$(_PS1 "$PWD" 30)\[\e[m\] '
-export EDITOR="emacsclient -a ''"
+export EDITOR="vim"
 export BROWSER="firefox"
 if [ "$TERM" = "dumb" ]; then
     PS1="> "
