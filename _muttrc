@@ -88,6 +88,7 @@ set pager_stop
 unset markers
 bind pager gg top
 bind pager G bottom
+bind index R group-reply
 bind pager j next-line
 bind pager k previous-line
 bind pager \Cu half-up
