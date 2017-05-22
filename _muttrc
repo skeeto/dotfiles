@@ -58,6 +58,7 @@ set narrow_tree
 unset confirmappend
 unset collapse_unread
 unset help
+set delete="yes"
 
 # mu search
 unset wait_key
