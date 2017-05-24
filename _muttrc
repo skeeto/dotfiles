@@ -30,8 +30,8 @@ set alias_file="=aliases"
 source $alias_file
 
 # Index interface
-set mail_check=15
-set timeout=30
+set mail_check=5
+set timeout=10
 unset mark_old
 set thorough_search
 set quit
