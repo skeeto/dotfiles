@@ -6,7 +6,7 @@ map <Leader>es :source $MYVIMRC<CR>
 set encoding=utf-8
 set shellslash
 set backspace=indent,eol,start
-set guioptions=
+set guioptions=c
 set autochdir
 set hidden
 set cpoptions+=$
