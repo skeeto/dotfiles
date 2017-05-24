@@ -88,7 +88,7 @@ set pager_stop
 unset markers
 bind pager gg top
 bind pager G bottom
-bind index R group-reply
+bind pager R group-reply
 bind pager j next-line
 bind pager k previous-line
 bind pager \Cu half-up
@@ -97,6 +97,7 @@ bind pager \Cf next-page
 bind pager \Cb previous-page
 bind pager <space> next-page
 bind pager <backspace> previous-page
+macro pager d "<save-message>=trash<enter>"
 
 # Editor interface
 bind editor <space> noop
