@@ -39,9 +39,7 @@ if &term =~ "xterm" || &term =~ "screen"
     let &t_SI = "\<Esc>[6 q"
     let &t_EI = "\<Esc>[2 q"
 end
-if has("x11")
-    set guifont=Droid\ Sans\ Mono\ 10
-elseif has("gui_win32")
+if has("gui_win32")
     set guifont=Lucida\ Console:h11
 end
 
