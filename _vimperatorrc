@@ -81,9 +81,9 @@ set! browser.newtabpage.directory.source=""
 set! dom.webnotifications.enabled=false
 
 " Fonts
-set! font.name.serif.x-western='Droid Serif'
-set! font.name.sans-serif.x-western='Droid Sans'
-set! font.name.monospace.x-western='Droid Sans Mono'
+set! font.name.serif.x-western='Noto Serif'
+set! font.name.sans-serif.x-western='Noto Sans'
+set! font.name.monospace.x-western='Noto Sans Mono'
 
 " This doesn't actually work when set from here?
 set! ui.key.menuAccessKeyFocuses=false
