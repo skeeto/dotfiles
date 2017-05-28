@@ -1,12 +1,12 @@
 URxvt*scrollBar: false
-URxvt.font: xft:Droid Sans Mono:size=9
+URxvt.font: xft:Noto Mono:size=9
 URxvt.internalBorder: 0
 URxvt.color12: rgb:5c/5c/ff
 URxvt*background: #1D1F21
 
 XTerm.termName: xterm-256color
 XTerm.vt100.locale: true
-XTerm.vt100.faceName: Droid Sans Mono:size=9
+XTerm.vt100.faceName: Noto Mono:size=9
 XTerm.vt100.backarrowKey: false
 XTerm.ttyModes: erase ^?
 XTerm.vt100.metaSendsEscape: true
