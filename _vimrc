@@ -7,7 +7,6 @@ set encoding=utf-8
 set shellslash
 set backspace=indent,eol,start
 set guioptions=ac
-set autochdir
 set hidden
 set cpoptions+=$
 set lazyredraw
