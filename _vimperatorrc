@@ -18,7 +18,7 @@ noremap k 4k
 " Strip https from broken websites (Steam, etc.)
 map gS :js window.content.window.location=window.content.window.location.toString().replace(/^https/,"http")<CR>
 
-set editor='gvim -f "+set ft=markdown spell"'
+set editor='gvim -f "+set ft=markdown tw=72 spell"'
 set newtab='help'
 set incfind
 
