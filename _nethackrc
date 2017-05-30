@@ -4,7 +4,7 @@
 OPTIONS=color, IBMgraphics, lit_corridor, time, showexp, showrace
 
 # Interface
-OPTIONS=boulder:0, autodig, !cmdassist, !autopickup, number_pad:0
+OPTIONS=boulder:0, autodig, !cmdassist, !autopickup, number_pad:1
 OPTIONS=mail, !prayconfirm, pushweapon, suppress_alert:3.4.3
 
 # Messages
