@@ -10,7 +10,7 @@ XTerm.vt100.faceName: Noto Mono:size=9
 XTerm.vt100.backarrowKey: false
 XTerm.ttyModes: erase ^?
 XTerm.vt100.metaSendsEscape: true
-XTerm*charClass: 33:48, 37:48, 42:48, 45-47:48, 58:48, 63-64:48, 126:48
+XTerm*charClass: 33:48, 35:48, 37:48, 42-43:48, 45-47:48, 58:48, 61:48, 63-64:48, 126:48
 XTerm*highlightColorMode: true
 XTerm*jumpScroll: true
 xterm*multiScroll: true
