@@ -24,7 +24,7 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     optimize = repack -a -d -f --depth=250 --window=250
     pf = pull --ff-only
-    pr = !sh -c 'git fetch origin pull/$1/head:pr-$1' -
+    pr = !sh -c 'git fetch --force origin pull/$1/head:pr-$1' -
     host = daemon --base-path=. --reuseaddr --export-all
     whost = daemon --base-path=. --reuseaddr --export-all --enable=receive-pack
     ca = commit -am
