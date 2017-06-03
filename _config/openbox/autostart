@@ -4,5 +4,4 @@ if $(command -v setxkbmap > /dev/null 2>&1); then
     setxkbmap -option ctrl:nocaps
 fi
 
-compton -zc &
 ~/.wallpaper/random.sh &
