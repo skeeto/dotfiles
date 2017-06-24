@@ -2,7 +2,7 @@
 
 # Misc
 alias httpd='screen -S httpd python3 -m http.server 8001' # --bind 127.0.0.1
-alias oct='octave -q'
+alias oct='octave-cli -q'
 alias sr='screen -dr'
 alias ss='DISPLAY=:0 import -window root'
 alias t='tar -axvf'
