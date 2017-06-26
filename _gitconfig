@@ -33,3 +33,10 @@
 [sendemail]
     smtpserver = localhost
     smtpserverport = 2525
+
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+
+[mergetool]
+    prompt = false
