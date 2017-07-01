@@ -72,6 +72,9 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" C style
+set cinoptions+=t0
+
 " Build
 set makeprg=smake
 set autowrite
