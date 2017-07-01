@@ -76,7 +76,7 @@ filetype indent on
 set cinoptions+=t0
 
 " Build
-set makeprg=smake
+set makeprg=make\ -kj$(nproc)
 set autowrite
 
 " Spelling
