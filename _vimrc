@@ -39,7 +39,11 @@ if &term =~ "xterm" || &term =~ "screen"
     let &t_EI = "\<Esc>[2 q"
 end
 if has("x11")
-    let &guifont="Noto Mono 10"
+    if system("xdpyinfo|grep 'dimensions:'|tr x ' '|awk '{print $2}'") > 1440
+        let &guifont="Noto Mono 11"
+    else
+        let &guifont="Noto Mono 10"
+    end
 elseif has("gui_win32")
     let &guifont="Lucida Console:h11"
 end

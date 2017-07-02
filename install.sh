@@ -77,7 +77,17 @@ done
 mkdir -p ~/.vim/spell
 ln -sf /dev/null ~/.bash_history
 chmod -w _config/vlc/vlcrc  # Disables annoying VLC clobbering
-if [ -n "$DISPLAY" ]; then xrdb -merge ~/.Xresources; fi
+
+## Reload .Xresources
+if [ -n "$DISPLAY" ]; then
+    width=$(xdpyinfo | grep 'dimensions:' | tr x ' ' | awk '{print $2}')
+    if [ $width -gt 1440 ]; then
+        font_size=10
+    else
+        font_size=9
+    fi
+    xrdb -DFONT_SIZE=$font_size -merge ~/.Xresources
+fi
 
 ## Compile ssh config
 printf "## WARNING: do not edit directly\n" > ~/.ssh/config
