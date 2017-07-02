@@ -55,7 +55,7 @@ set autoindent
 set novisualbell
 set noerrorbells
 if exists('&belloff')
-   set belloff=all
+    set belloff=all
 endif
 
 " Statusline
