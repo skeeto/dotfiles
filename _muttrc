@@ -82,6 +82,7 @@ color quoted color85 color235
 color signature color245 color235
 color hdrdefault color250 color235
 color tilde color250 color235
+color search black white
 
 # Pager interface
 set pager_stop
