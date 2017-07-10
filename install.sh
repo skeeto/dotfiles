@@ -86,7 +86,10 @@ if [ -n "$DISPLAY" ]; then
     else
         font_size=9
     fi
-    xrdb -DFONT_SIZE=$font_size -merge ~/.Xresources
+    echo "#define FONT_SIZE $font_size" > ~/.Xresources.h
+    xrdb -merge ~/.Xresources
+elif [ ! -e ~/.Xresources.h ]; then
+    echo "#define FONT_SIZE 9" > ~/.Xresources.h
 fi
 
 ## Compile ssh config

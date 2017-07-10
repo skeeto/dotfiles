@@ -1,3 +1,5 @@
+#include ".Xresources.h"
+
 URxvt*scrollBar: false
 URxvt.font: xft:Noto Mono:size=FONT_SIZE
 URxvt.internalBorder: 0
