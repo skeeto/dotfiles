@@ -86,3 +86,7 @@ set autowrite
 " Spelling
 set spelllang=en_us
 set spellfile=~/.vim/spell/en.utf-8.add
+
+" Extras
+map <Leader>q :hi Error NONE<CR>
+map <Leader>t :silent !ctags -R<CR>
