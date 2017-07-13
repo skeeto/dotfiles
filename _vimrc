@@ -90,3 +90,4 @@ set spellfile=~/.vim/spell/en.utf-8.add
 " Extras
 map <Leader>q :hi Error NONE<CR>
 map <Leader>t :silent !ctags -R<CR>
+map <Leader>w :nnoremap j gj<CR>:nnoremap k gk<CR>
