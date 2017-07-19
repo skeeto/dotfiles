@@ -34,9 +34,10 @@ if has('gui_running') || &t_Co == 256
 else
     colorscheme elflord
 end
-if &term =~ "xterm" || &term =~ "screen"
+if &term =~ "256color"
     let &t_SI = "\<Esc>[6 q"
     let &t_EI = "\<Esc>[2 q"
+    let &t_SR = "\<Esc>[4 q"
 end
 if has("x11")
     if system("xdpyinfo|grep 'dimensions:'|tr x ' '|awk '{print $2}'") > 1440
