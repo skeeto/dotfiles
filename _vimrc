@@ -34,7 +34,7 @@ if has('gui_running') || &t_Co == 256
 else
     colorscheme elflord
 end
-if &term =~ "256color"
+if &term =~ "256color" || &term =~ "xterm"
     let &t_SI = "\<Esc>[6 q"
     let &t_EI = "\<Esc>[2 q"
     if exists("&t_SR")
