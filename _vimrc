@@ -37,7 +37,9 @@ end
 if &term =~ "256color"
     let &t_SI = "\<Esc>[6 q"
     let &t_EI = "\<Esc>[2 q"
-    let &t_SR = "\<Esc>[4 q"
+    if exists("&t_SR")
+        let &t_SR = "\<Esc>[4 q"
+    end
 end
 if has("x11")
     if system("xdpyinfo|grep 'dimensions:'|tr x ' '|awk '{print $2}'") > 1440
