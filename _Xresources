@@ -5,7 +5,7 @@ URxvt.font: xft:Noto Mono:size=FONT_SIZE
 URxvt.internalBorder: 0
 URxvt.color12: rgb:5c/5c/ff
 URxvt*background: #1D1F21
-URxvt.letterSpace: -1
+URxvt.letterSpace: 0
 
 XTerm.termName: xterm-256color
 XTerm.vt100.locale: true
