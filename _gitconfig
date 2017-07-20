@@ -29,6 +29,7 @@
     whost = daemon --base-path=. --reuseaddr --export-all --enable=receive-pack
     ca = commit -am
     cm = commit -m
+    addw = -c interactive.diffFilter='git diff --color=always --word-diff' add -p
 
 [sendemail]
     smtpserver = localhost
