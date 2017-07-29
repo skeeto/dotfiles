@@ -1,5 +1,3 @@
-" -*- default-directory: "~/.dotfiles/"; -*-
-
 set gui=nonavigation
 
 map w gT
@@ -15,9 +13,6 @@ map <C-r> :emenu View.Enter Reader View<CR>
 noremap j 4j
 noremap k 4k
 
-" Strip https from broken websites (Steam, etc.)
-map gS :js window.content.window.location=window.content.window.location.toString().replace(/^https/,"http")<CR>
-
 set editor='gvim -f "+set ft=markdown tw=72 spell"'
 set newtab='help'
 set incfind
@@ -25,68 +20,58 @@ set incfind
 " GitHub annoyance workaround
 inoremap <C-S-i> <C-i>
 
+" Use custom downloads directory
 set! browser.download.dir='/tmp'
 set! browser.download.folderList=2
-set! general.warnOnAboutConfig=false
-set! browser.privatebrowsing.autostart=true
-set! browser.startup.page=0
-set! plugins.hide_infobar_for_missing_plugin=true
-set! plugins.notifyMissingFlash=false
-set! browser.fixup.alternate.prefix=''
-set! browser.fixup.alternate.suffix=''
-set! network.proxy.socks_remote_dns=true
-set! browser.feeds.handler='ask'
-set! privacy.donottrackheader.enabled=true
-set! signon.rememberSignons=false
-set! middlemouse.contentLoadURL=false
-set! browser.newtab.url='about:blank'
-set! devtools.selfxss.count=100
 
-" Bullshit removal (https://gist.github.com/haasn/69e19fc2fe0e25f3cff5)
-set! media.peerconnection.enabled=false
-set! loop.enabled=false
-set! browser.beacen.enabled=false
-set! geo.enabled=false
-set! geo.wifi.logging.enabled=false
-set! geo.wifi.uri=""
-set! browser.safebrowsing.enabled=false
-set! browser.safebrowsing.downloads.enabled=false
-set! browser.safebrowsing.malware.enabled=false
-set! social.directories=""
-set! social.whitelist=""
-set! social.manifest.facebook=""
-set! social.remote-install.enabled=false
-set! social.toast-notifications.enabled=false
+" Privacy enhancement
+set! browser.privatebrowsing.autostart=true
+set! signon.rememberSignons=false
+set! privacy.donottrackheader.enabled=true
 set! device.sensors.enabled=false
 set! camera.control.face_detection.enabled=false
 set! camera.control.autofocus_moving_callback.enabled=false
 set! privacy.trackingprotection.enabled=true
-set! security.tls.unrestricted_rc4_fallback=false
-set! security.tls.insecure_fallback_hosts.use_static_list=false
-set! security.tls.version.min=1
-" set! security.ssl.require_safe_negotiation=true
-set! security.ssl.treat_unsafe_negotiation_as_broken=true
-set! security.ssl3.rsa_seed_sha=true
-set! security.OCSP.enabled=1
-" set! security.OCSP.require=true
-set! security.ssl3.rsa_rc4_128_sha=false
-set! security.ssl3.rsa_rc4_128_md5=false
-set! security.ssl3.rsa_des_ede3_sha=false
-set! security.ssl3.ecdhe_ecdsa_rc4_128_sha=false
-set! security.ssl3.ecdhe_rsa_rc4_128_sha=false
 set! browser.newtabpage.directory.ping=""
 set! browser.newtabpage.directory.source=""
+set! media.peerconnection.enabled=false
+set! beacon.enabled=false
+set! geo.enabled=false
+set! geo.wifi.uri=""
 
-" Annoying, focus-stealing pop-up
+" Blank tabs by default
+set! browser.startup.page=0
+set! browser.newtab.url='about:blank'
+
+" Fix annoyances
+set! general.warnOnAboutConfig=false
+set! browser.fixup.alternate.enabled=false
+set! network.proxy.socks_remote_dns=true
+set! middlemouse.contentLoadURL=false
+set! devtools.selfxss.count=100
 set! dom.webnotifications.enabled=false
+
+" Disable safe browsing information leaks
+set! browser.safebrowsing.enabled=false
+set! browser.safebrowsing.downloads.enabled=false
+set! browser.safebrowsing.malware.enabled=false
+set! browser.safebrowsing.phishing.enabled=false
+
+" Disable social media integration
+set! social.directories=""
+set! social.whitelist=""
+set! social.remote-install.enabled=false
+set! social.toast-notifications.enabled=false
 
 " Fonts
 set! font.name.serif.x-western='Noto Serif'
 set! font.name.sans-serif.x-western='Noto Sans'
 set! font.name.monospace.x-western='Noto Mono'
 
-" This doesn't actually work when set from here?
+" These settings don't actually work from here due to bugs
+set! ui.key.menuAccessKey=0
 set! ui.key.menuAccessKeyFocuses=false
+set! ui.key.generalAccessKey=0
 
 silent :qmark e about:blank
 silent :qmark t https://github.com/skeeto
