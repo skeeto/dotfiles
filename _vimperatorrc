@@ -86,7 +86,7 @@ silent :qmark k javascript:(function(){var d=document;var s=d.createElement('scr
 silent :qmark j http://odroid64:9091/transmission/web/
 silent :qmark a http://www.myanonamouse.net/
 silent :qmark T https://baconbits.org/
-silent :qmark l http://gen.lib.rus.ec/
+silent :qmark l http://libgen.io/
 
 bmark -t=torrent     -k=t       https://thepiratebay.org/search/%s/0/99/0
 bmark -t=subreddit   -k=r       https://www.reddit.com/r/%s
