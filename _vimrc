@@ -79,7 +79,8 @@ filetype plugin on
 filetype indent on
 
 " C style
-set cinoptions+=t0
+set cinoptions+=t0  " don't indent function type
+set cinoptions+=l1  " align with case label
 
 " Build
 set makeprg=make\ -kj$(nproc)
