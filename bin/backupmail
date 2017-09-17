@@ -1,0 +1,5 @@
+#!/bin/sh
+
+outfile="Maildir-$(date -u +%Y%m%dT%H%M%SZ).tar.xz.enchive"
+printf "%s\n" "$outfile"
+ssh mail tar zc Maildir | gunzip | xz -9e | enchive archive > "$outfile"
