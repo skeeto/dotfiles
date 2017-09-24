@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Print the total duration of all media files matching the blob given as
+# the first and only argument.
+
+set -e
+find . -name "$1" -type f \
+    -exec mediainfo --Inform='General;%Duration%\n' {} \; | \
+    awk '{x += $0} END {printf "%f hours\n", x / 1000 / 60 / 60}'
