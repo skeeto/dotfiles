@@ -22,7 +22,7 @@ alias npr='mpv http://wamu-1.streamguys.com'
 alias y='youtube-dl --no-mtime --restrict-filenames --format "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"'
 
 # Emacs
-alias e='emacsclient -ca ""'
+alias e='emacsclient -q -ca ""'
 alias et='emacsclient -ta ""'
 alias ebc='emacs -Q -batch -L . -f batch-byte-compile'
 
