@@ -52,26 +52,29 @@ if $(command -v keychain > /dev/null 2>&1); then
 fi
 
 ## Custom Colors
-if [[ "$-" == *"i"* ]] && [[ "$TERM" != "dumb" ]]; then
-    echo -ne '\e]4;0;#2E3436\a'   # black
-    echo -ne '\e]4;1;#CC0000\a'   # red
-    echo -ne '\e]4;2;#4E9A06\a'   # green
-    echo -ne '\e]4;3;#C4A000\a'   # yellow
-    echo -ne '\e]4;4;#3465A4\a'   # blue
-    echo -ne '\e]4;5;#75507B\a'   # magenta
-    echo -ne '\e]4;6;#06989A\a'   # cyan
-    echo -ne '\e]4;7;#BABDB6\a'   # white
-    echo -ne '\e]4;8;#555753\a'   # bright black
-    echo -ne '\e]4;9;#EF2929\a'   # bright red
-    echo -ne '\e]4;10;#8AE234\a'  # bright green
-    echo -ne '\e]4;11;#FCE94F\a'  # bright yellow
-    echo -ne '\e]4;12;#729FCF\a'  # bright blue
-    echo -ne '\e]4;13;#D15CD1\a'  # bright magenta
-    echo -ne '\e]4;14;#34E2E2\a'  # bright cyan
-    echo -ne '\e]4;15;#EEEEEC\a'  # bright white
-    echo -ne '\e]10;#FFFFFF\a'    # default foreground
-    echo -ne '\e]11;#1D1F21\a'    # default background
-fi
+colorscheme() {
+    if [[ "$-" == *"i"* ]] && [[ "$TERM" != "dumb" ]]; then
+        echo -ne '\e]4;0;#2E3436\a'   # black
+        echo -ne '\e]4;1;#CC0000\a'   # red
+        echo -ne '\e]4;2;#4E9A06\a'   # green
+        echo -ne '\e]4;3;#C4A000\a'   # yellow
+        echo -ne '\e]4;4;#3465A4\a'   # blue
+        echo -ne '\e]4;5;#75507B\a'   # magenta
+        echo -ne '\e]4;6;#06989A\a'   # cyan
+        echo -ne '\e]4;7;#BABDB6\a'   # white
+        echo -ne '\e]4;8;#555753\a'   # bright black
+        echo -ne '\e]4;9;#EF2929\a'   # bright red
+        echo -ne '\e]4;10;#8AE234\a'  # bright green
+        echo -ne '\e]4;11;#FCE94F\a'  # bright yellow
+        echo -ne '\e]4;12;#729FCF\a'  # bright blue
+        echo -ne '\e]4;13;#D15CD1\a'  # bright magenta
+        echo -ne '\e]4;14;#34E2E2\a'  # bright cyan
+        echo -ne '\e]4;15;#EEEEEC\a'  # bright white
+        echo -ne '\e]10;#FFFFFF\a'    # default foreground
+        echo -ne '\e]11;#1D1F21\a'    # default background
+    fi
+}
+colorscheme
 
 ## Functions
 
