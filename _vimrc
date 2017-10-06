@@ -98,3 +98,4 @@ map <Leader>c :set colorcolumn=80<CR>
 map <Leader>q :hi Error NONE<CR>
 map <Leader>t :silent !ctags -R<CR>
 map <Leader>w :nnoremap j gj<CR>:nnoremap k gk<CR>
+map <Leader>c :%s/\s\+$//e<CR>
