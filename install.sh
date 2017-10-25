@@ -87,7 +87,7 @@ if [ -n "$DISPLAY" ]; then
         font_size=9
     fi
     echo "#define FONT_SIZE $font_size" > ~/.Xresources.h
-    xrdb -merge ~/.Xresources
+    xrdb -I$HOME -merge ~/.Xresources
 elif [ ! -e ~/.Xresources.h ]; then
     echo "#define FONT_SIZE 9" > ~/.Xresources.h
 fi
