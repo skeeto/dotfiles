@@ -16,4 +16,5 @@ XTerm.vt100.metaSendsEscape: true
 XTerm*charClass: 33:48, 35:48, 37:48, 42-43:48, 45-47:48, 58:48, 61:48, 63-64:48, 126:48
 XTerm*highlightColorMode: true
 XTerm*jumpScroll: true
-xterm*multiScroll: true
+XTerm*multiScroll: true
+XTerm*scrollBar: false
