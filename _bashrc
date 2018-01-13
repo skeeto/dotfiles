@@ -5,6 +5,9 @@ shopt -s globstar 2>/dev/null || true  # quietly set if available
 shopt -s checkwinsize
 set +o histexpand
 
+## Key bindings
+bind '\C-w:backward-kill-word'
+
 ## Completions
 _systemctl() {
     _completion_loader systemctl
