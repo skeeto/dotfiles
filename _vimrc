@@ -83,8 +83,12 @@ set cinoptions+=t0  " don't indent function type
 set cinoptions+=l1  " align with case label
 
 " Build
-set makeprg=make\ -kj$(nproc)
 set autowrite
+if executable('make')
+    set makeprg=make\ -kj$(nproc)
+elseif executable('nmake')
+    set makeprg=nmake\ -nologo
+end
 
 " Spelling
 set spelllang=en_us
