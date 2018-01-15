@@ -6,7 +6,7 @@ shopt -s checkwinsize
 set +o histexpand
 
 ## Key bindings
-bind '\C-w:backward-kill-word'
+bind '\C-w:backward-kill-word' 2>/dev/null
 
 ## Completions
 _systemctl() {
