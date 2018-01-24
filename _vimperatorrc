@@ -87,7 +87,7 @@ silent :qmark j http://odroid64:9091/transmission/web/
 silent :qmark a http://www.myanonamouse.net/
 silent :qmark T https://baconbits.org/
 silent :qmark l http://libgen.io/
-silent :qmark o javascript:location+='/overview'
+silent :qmark o javascript:location=(location+'').replace(/\/?$/,'/overview')
 silent :qmark r javascript:(function(s){s.maxWidth='800px';s.marginLeft=s.marginRight='auto'}(document.body.style))
 
 bmark -t=torrent     -k=t       https://thepiratebay.org/search/%s/0/99/0
