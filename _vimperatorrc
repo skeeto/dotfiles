@@ -95,6 +95,7 @@ bmark -t=subreddit   -k=r       https://www.reddit.com/r/%s
 bmark -t=reddituser  -k=u       https://www.reddit.com/u/%s
 bmark -t=Wikipedia   -k=w       https://en.wikipedia.org/w/index.php?search=%s
 bmark -t=Google      -k=g       https://www.google.com/search?q=%s
+bmark -t=DuckDuckGo  -k=s       https://duckduckgo.com/?q=%s
 bmark -t=Wiktionary  -k=wd      https://en.wiktionary.org/wiki/?search=%s
 bmark -t=caniuse     -k=caniuse http://caniuse.com/#search=%s
 bmark -t=MSDN        -k=msdn    https://social.msdn.microsoft.com/search?query=%s
