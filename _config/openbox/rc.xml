@@ -562,13 +562,6 @@
     <desktop>2</desktop>
     <maximized>yes</maximized>
   </application>
-  <application name="xombrero">
-    <desktop>2</desktop>
-    <maximized>yes</maximized>
-  </application>
-  <application name="Pidgin">
-    <desktop>1</desktop>
-  </application>
   <application name="emacs">
     <focus>yes</focus>
     <position>
