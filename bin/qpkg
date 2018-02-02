@@ -1,0 +1,151 @@
+#!/bin/sh
+
+# qpkg ("Quick Package") crudely manages user-built and installed
+# software. Package files are tarballs created (-C) via DESTDIR
+# installs. These package files can be installed (-I) and uninstalled
+# (-U) at will.
+
+# The build helper (-B) will run the configure script and fire off make
+# with the appropriate number of jobs. It automatically handles the
+# --prefix=... configure argument.
+
+# There is no check that a package being installed will clobber an
+# existing package. It will overwrite any existing files. If you are
+# concerned, you can verify (-V) a package before installing it.
+
+# To assist with software that doesn't use a configure script, PREFIX is
+# automatically set during "make install" (-C). Like with build (-B),
+# all additional arguments are passed to make.
+
+# The environment variable QPKG_PREFIX determines the installation
+# prefix. It defaults to "$HOME/.local". This path is not stored
+# anywhere in the package, so you *must* ensure it is consistent across
+# all commands for a particular package.
+
+# Example: This sequence of commands will create an package file named
+# "emacs-25-minimal.tgz".
+# 
+#    $ tar xzf emacs-25.3.tar.gz
+#    $ qpkg -B -d minimal emacs-25.3/ --without-x --without-all
+#    $ qpkg -C -d minimal emacs-25-minimal
+#    $ rm -rf minimal/
+#
+# The build (-B) command creates a "minimal/" directory (-d) for the
+# build. This directory is used by the create (-C) command to generate a
+# package (via "make install"). The directory otherwise defaults to "."
+# for an in-source build.
+#
+# Then to install this package:
+#
+#    $ qpkg -I emacs-25-minimal.tgz
+#
+# And uninstall later:
+#
+#    $ qpkg -U emacs-25-minimal.tgz
+
+set -e
+IFS='
+'
+
+command='?'
+directory=.
+make=make
+prefix=${QPKG_PREFIX:-$HOME/.local}
+
+usage() {
+    printf "Usage: qpkg -B [-d BUILD_DIR] [-m MAKE] SRC/ [configure args...]\n"
+    printf "            -C [-d BUILD_DIR] [-m MAKE] PKG [make args...]\n"
+    printf "            -I PKG.tgz\n"
+    printf "            -U PKG.tgz\n"
+    printf "            -V PKG.tgz\n"
+}
+
+while getopts BCIUVd:hm: name
+do
+    case $name in
+    B) command=B;;
+    C) command=C;;
+    I) command=I;;
+    U) command=U;;
+    V) command=V;;
+    d) directory="$OPTARG";;
+    h) usage
+        exit 0;;
+    m) make="$OPTARG";;
+    ?) usage
+        exit 2;;
+    esac
+done
+shift $(($OPTIND - 1))
+
+nproc() {
+    if $(which nproc >/dev/null 2>&1); then
+        command nproc
+    elif [ -e /proc/cpuinfo ]; then
+        grep ^processor < /proc/cpuinfo | wc -l
+    else
+        sysctl -n hw.ncpu
+    fi
+}
+
+build() {
+    src="$(readlink -f "$1")"
+    mkdir -p "$directory"
+    build="$(readlink -f "$directory")"
+    jobs=$(nproc)
+    shift
+    (cd "$build"
+    $src/configure --prefix="$prefix" "$@"
+    "$make" -kj$jobs)
+}
+
+create() {
+    pkgfile="$(readlink -f $(dirname "$1.tgz"))/$(basename "$1.tgz")"
+    shift
+    rm -rf _install
+    mkdir _install
+    destdir="$(readlink -f _install)"
+    (cd "$directory"
+    "$make" install PREFIX="$prefix" DESTDIR="$destdir" "$@"
+    tar czf "$pkgfile" -C "$destdir$prefix" .
+    rm -rf "$destdir")
+}
+
+install() {
+    mkdir -p "$prefix"
+    pkgfile=$(realpath "$1")
+    (cd "$prefix"
+    tar xzf "$pkgfile")
+}
+
+uninstall() {
+    pkgfile=$(readlink -f "$1")
+    (cd "$prefix"
+    for file in $(tar tzf "$pkgfile" | grep -v '/$'); do
+        rm -f "$file"
+    done)
+    find "$prefix" -type d -empty -delete
+}
+
+verify() {
+    pkgfile=$(readlink -f "$1")
+    status=0
+    cd "$prefix"
+    for file in $(tar tzf "$pkgfile" | grep -v '/$'); do
+        if [ -e "$file" ]; then
+            printf "would clobber '%s'\n" "${file#./}"
+            status=2
+        fi
+    done
+    exit $status
+}
+
+case $command in
+    B) build "$@";;
+    C) create "$@";;
+    I) install "$@";;
+    U) uninstall "$@";;
+    V) verify "$@";;
+    ?) usage
+        exit 2;;
+esac
