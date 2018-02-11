@@ -21,6 +21,9 @@ set wildmode=longest,list
 " One space between sentences please.
 set nojoinspaces
 
+" Wrap to 72 columns by default
+set textwidth=72
+
 " Search
 set incsearch
 set ignorecase
