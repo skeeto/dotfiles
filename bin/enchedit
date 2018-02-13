@@ -2,14 +2,11 @@
 # Edit an Enchive-encrypted file using $EDITOR.
 #
 # Warning: By necessity, the decrypted file will temporarily exist on
-# the filesystem under $XDG_CACHE_HOME (~/.cache).
+# the filesystem under $TMPDIR (generally /tmp).
 
 set -e
 
-umask 0002
-DIR="${XDG_CACHE_HOME:-$HOME/.cache}"
-mkdir -p "$DIR"
-TEMP="$(mktemp "$DIR/enchedit-XXXXXX")"
+TEMP="$(mktemp)"
 trap "rm -f '$TEMP'" INT TERM EXIT
 
 if [ ! -f "$1" ]; then
