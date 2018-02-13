@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+TEMP="$(mktemp -d "${XDG_CACHE_HOME:-$HOME}/.cache/chromium-XXXXXX")"
+trap "rm -rf '$TEMP'" INT TERM EXIT
+chromium --user-data-dir="$TEMP" \
+         --no-default-browser-check \
+         --no-first-run \
+         "$@" >/dev/null 2>&1
