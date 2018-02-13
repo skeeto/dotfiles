@@ -1,3 +1,2 @@
 #!/bin/sh
-exec chromium --force-device-scale-factor=1 \
-              --proxy-server=socks://localhost:9998 "$@"
+exec chromium --proxy-server=socks://localhost:9998 "$@"
