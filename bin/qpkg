@@ -113,7 +113,7 @@ create() {
 
 install() {
     mkdir -p "$prefix"
-    pkgfile=$(realpath "$1")
+    pkgfile=$(readlink -f "$1")
     (cd "$prefix"
     tar xzf "$pkgfile")
 }
