@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+src="$1"
+dst="$2"
+if [ -z "$src" -o -z "$dst" ]; then
+    echo "Usage: s3pub FILE DESTINCATION"
+    echo "  s3pub file.pdf s3://bucket/path/to/dest/"
+    exit 2
+fi
+
+aws s3 cp --acl public-read "$src" "$dst"
+
+path="${dst#s3://*/}"
+strip="${dst##s3://}"
+bucket="${strip%%/*}"
+echo "http://$bucket.s3.amazonaws.com/$path$src"
