@@ -106,3 +106,7 @@ map <Leader>q :hi Error NONE<CR>
 map <Leader>t :silent !ctags -R<CR>
 map <Leader>w :nnoremap j gj<CR>:nnoremap k gk<CR>
 map <Leader>c :%s/\s\+$//e<CR>
+
+" Crypto (via Enchive)
+map <Leader>pe :'<,'>!enchive archive \| base64<CR>
+map <Leader>pd :'<,'>!base64 -d \| enchive --agent --pinentry extract<CR>
