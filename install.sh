@@ -80,14 +80,15 @@ chmod -w _config/vlc/vlcrc  # Disables annoying VLC clobbering
 
 ## Reload .Xresources
 if [ -n "$DISPLAY" ]; then
-    width=$(xdpyinfo | grep 'dimensions:' | tr x ' ' | awk '{print $2}')
-    if [ $width -gt 1440 ]; then
+    width=$(xdpyinfo 2> /dev/null | \
+                grep 'dimensions:' | tr x ' ' | awk '{print $2}')
+    if [ -z "$width" ] || [ "$width" -gt 1440 ]; then
         font_size=10
     else
         font_size=9
     fi
     echo "#define FONT_SIZE $font_size" > ~/.Xresources.h
-    xrdb -I$HOME -merge ~/.Xresources
+    xrdb -I$HOME -merge ~/.Xresources 2> /dev/null
 elif [ ! -e ~/.Xresources.h ]; then
     echo "#define FONT_SIZE 9" > ~/.Xresources.h
 fi
