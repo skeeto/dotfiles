@@ -86,16 +86,16 @@
   </keybind>
 
   <!-- Keybindings for desktop switching -->
-  <keybind key="C-A-Left">
+  <keybind key="W-j">
     <action name="DesktopLeft"><wrap>no</wrap></action>
   </keybind>
-  <keybind key="C-A-Right">
+  <keybind key="W-k">
     <action name="DesktopRight"><wrap>no</wrap></action>
   </keybind>
-  <keybind key="S-C-Left">
+  <keybind key="W-S-j">
     <action name="SendToDesktopLeft"><wrap>no</wrap></action>
   </keybind>
-  <keybind key="S-C-Right">
+  <keybind key="W-S-k">
     <action name="SendToDesktopRight"><wrap>no</wrap></action>
   </keybind>
 
@@ -203,9 +203,6 @@
   </keybind>
   <keybind key="W-n">
     <action name="Execute"><command>xterm</command></action>
-  </keybind>
-  <keybind key="W-k">
-    <action name="Execute"><command>virt-manager</command></action>
   </keybind>
   <keybind key="W-w">
     <action name="Execute"><command>wicd-gtk</command></action>
