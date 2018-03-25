@@ -51,16 +51,21 @@ command='?'
 directory=.
 make=make
 prefix=${QPKG_PREFIX:-$HOME/.local}
+keep=false
 
 usage() {
     printf "Usage: qpkg -B [-d BUILD_DIR] [-m MAKE] SRC/ [configure args...]\n"
-    printf "            -C [-d BUILD_DIR] [-m MAKE] PKG [make args...]\n"
+    printf "            -C [-d BUILD_DIR] [-k] [-m MAKE] PKG [make args...]\n"
     printf "            -I PKG.tgz\n"
     printf "            -U PKG.tgz\n"
     printf "            -V PKG.tgz\n"
+    printf "Options:\n"
+    printf "  -d DIR    path of the build directory\n"
+    printf "  -k        keep the DESTDIR install directory (_destdir/)\n"
+    printf "  -m MAKE   name of the make program (make)\n"
 }
 
-while getopts BCIUVd:hm: name
+while getopts BCIUVd:hkm: name
 do
     case $name in
     B) command=B;;
@@ -71,6 +76,7 @@ do
     d) directory="$OPTARG";;
     h) usage
         exit 0;;
+    k) keep=true;;
     m) make="$OPTARG";;
     ?) usage
         exit 2;;
@@ -101,14 +107,14 @@ build() {
 
 create() {
     pkgfile="$(readlink -f $(dirname "$1.tgz"))/$(basename "$1.tgz")"
+    destdir="$(readlink -f _destdir)"
     shift
-    rm -rf _install
-    mkdir _install
-    destdir="$(readlink -f _install)"
+    if [ $keep = false ]; then rm -rf "$destdir"; fi
+    mkdir -p "$destdir"
     (cd "$directory"
     "$make" install PREFIX="$prefix" DESTDIR="$destdir" "$@"
     tar czf "$pkgfile" -C "$destdir$prefix" .
-    rm -rf "$destdir")
+    if [ $keep = false ]; then rm -rf "$destdir"; fi)
 }
 
 install() {
