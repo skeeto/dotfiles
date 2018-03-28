@@ -4,24 +4,24 @@
 # software. Package files are tarballs created (-C) via DESTDIR
 # installs. These package files can be installed (-I) and uninstalled
 # (-U) at will.
-
+#
 # The build helper (-B) will run the configure script and fire off make
 # with the appropriate number of jobs. It automatically handles the
 # --prefix=... configure argument.
-
+#
 # There is no check that a package being installed will clobber an
 # existing package. It will overwrite any existing files. If you are
 # concerned, you can verify (-V) a package before installing it.
-
+#
 # To assist with software that doesn't use a configure script, PREFIX is
 # automatically set during "make install" (-C). Like with build (-B),
 # all additional arguments are passed to make.
-
+#
 # The environment variable QPKG_PREFIX determines the installation
 # prefix. It defaults to "$HOME/.local". This path is not stored
 # anywhere in the package, so you *must* ensure it is consistent across
 # all commands for a particular package.
-
+#
 # Example: This sequence of commands will create an package file named
 # "emacs-25-minimal.tgz".
 # 
@@ -42,6 +42,8 @@
 # And uninstall later:
 #
 #    $ qpkg -U emacs-25-minimal.tgz
+#
+# This is free and unencumbered software released into the public domain.
 
 set -e
 IFS='
