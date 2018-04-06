@@ -1,14 +1,18 @@
-#!/bin/bash
+#!/bin/sh
 
 ## Splits arbitrary media files into 30 minute MP4 files using ffmpeg.
 
 set -e
 
-split=$[30*60]
-duration=$[$(mediainfo --Inform="General;%Duration%" "$1") / 1000]
-nparts=$[($duration + $split) / $split]
+split=$((30 * 60))
+duration=$(mediainfo --Inform="General;%Duration%" "$1")
+nparts=$(((duration / 1000 + split) / split))
 
-for i in $(seq 0 $[$nparts - 1]); do
+for i in $(seq 1 $nparts); do
     out=$(printf "$2%02d.mp4" $i)
-    ffmpeg -v quiet -i "$1" -c:v copy -c:a copy -ss $[$i * $split] -t $split "$out"
+    ffmpeg -v quiet \
+           -i "$1" \
+           -c:v copy -c:a copy \
+           -ss $(((i - 1) * split)) -t \
+           "$split" "$out"
 done
