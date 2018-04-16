@@ -22,13 +22,13 @@
 [alias]
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    trim = reflog expire --expire-unreachable=now --all
+    chop = gc --prune=now
     optimize = repack -a -d -f --depth=250 --window=250
     pf = pull --ff-only
     pr = !sh -c 'git fetch --force origin pull/$1/head:pr-$1' -
     host = daemon --base-path=. --reuseaddr --export-all
     whost = daemon --base-path=. --reuseaddr --export-all --enable=receive-pack
-    ca = commit -am
-    cm = commit -m
     addw = -c interactive.diffFilter='git diff --color=always --word-diff' add -p
 
 [sendemail]
