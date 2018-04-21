@@ -32,7 +32,7 @@ export BROWSER="firefox"
 if [ "$TERM" = "dumb" ]; then
     PS1="> "
 fi
-export WINEDEBUG=fixme-all
+export WINEDEBUG=-all
 
 ## Identity
 export REALNAME="Christopher Wellons"
