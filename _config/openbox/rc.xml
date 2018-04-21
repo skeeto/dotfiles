@@ -598,15 +598,8 @@
     <maximized>vertical</maximized>
   </application>
   <application name="dosbox">
-    <focus>no</focus>
     <position>
-      <x>-0</x><y>0</y>
-    </position>
-  </application>
-  <application name="XDosEmu">
-    <focus>no</focus>
-    <position>
-      <x>-0</x><y>0</y>
+      <x>0</x><y>0</y>
     </position>
   </application>
 </applications>
