@@ -85,6 +85,9 @@ filetype indent on
 set cinoptions+=t0  " don't indent function type
 set cinoptions+=l1  " align with case label
 
+" Assembly style
+autocmd FileType asm setlocal noexpandtab shiftwidth=8
+
 " Build
 set autowrite
 if executable('make')
