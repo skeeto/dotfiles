@@ -88,6 +88,9 @@ set cinoptions+=l1  " align with case label
 " Assembly style
 autocmd FileType asm setlocal noexpandtab shiftwidth=8
 
+" Makefile style
+autocmd FileType make setlocal shiftwidth=8
+
 " Build
 set autowrite
 if executable('make')
