@@ -123,9 +123,6 @@
   <keybind key="W-v">
     <action name="ToggleMaximizeVert"/>
   </keybind>
-  <keybind key="W-h">
-    <action name="ToggleMaximizeHorz"/>
-  </keybind>
   <keybind key="W-Up">
     <action name="MaximizeFull"/>
   </keybind>
