@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# Create an archive file from the repository containing the current
+# directory. This is just a friendly front-end for "git archive" that
+# automatically determines a version string.
+
+mode=tar
+quiet=false
+commit=HEAD
+
+usage() {
+    cat << EOF
+usage: $(basename "$0") [-T|-Z] [-qh] <commit-ish>
+
+OPTIONS:
+    -T       Create a .tar.xz archive (default)
+    -Z       Create a .zip archive
+    -q       Don't print archive name
+    -h       Show this message
+EOF
+    exit $1
+}
+
+while getopts "TZhq" option; do
+    case "$option" in
+        T) mode=tar ;;
+        Z) mode=zip ;;
+        q) quiet=true ;;
+        h) usage 0 ;;
+        ?) usage 1 ;;
+    esac
+done
+shift $(($OPTIND - 1))
+
+# Check for commit-ish argument
+if [ $# -gt 0 ]; then
+    commit="$1"
+fi
+
+# Determine a package name and version
+package=$(basename "$PWD")
+version=$(git describe "$commit" 2>/dev/null || \
+          git log -1 --date=format:%Y%m%d --format=%cd "$commit")
+file=$package-$version
+
+# Announce and create archive
+if [ $mode = tar ]; then
+    if [ $quiet = false ]; then
+        echo $file.tar.xz;
+    fi
+    git archive --format=tar --prefix=$file/ "$commit" | xz -9e > $file.tar.xz
+else
+    if [ $quiet = false ]; then
+        echo $file.zip
+    fi
+    git archive --format=zip --prefix=$file/ "$commit" > $file.zip
+fi
