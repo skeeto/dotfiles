@@ -14,5 +14,5 @@ for i in $(seq 1 $nparts); do
            -i "$1" \
            -c:v copy -c:a copy \
            -ss $(((i - 1) * split)) -t \
-           "$split" "$out"
+           $((split + 10)) "$out"
 done
