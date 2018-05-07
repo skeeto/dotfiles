@@ -7,6 +7,7 @@
 mode=tar
 quiet=false
 commit=HEAD
+dest=.
 
 usage() {
     cat << EOF
@@ -15,16 +16,18 @@ usage: $(basename "$0") [-T|-Z] [-qh] <commit-ish>
 OPTIONS:
     -T       Create a .tar.xz archive (default)
     -Z       Create a .zip archive
+    -d DIR   Destination directory (.)
     -q       Don't print archive name
     -h       Show this message
 EOF
     exit $1
 }
 
-while getopts "TZhq" option; do
+while getopts "TZd:hq" option; do
     case "$option" in
         T) mode=tar ;;
         Z) mode=zip ;;
+        d) dest="$OPTARG" ;;
         q) quiet=true ;;
         h) usage 0 ;;
         ?) usage 1 ;;
@@ -48,10 +51,12 @@ if [ $mode = tar ]; then
     if [ $quiet = false ]; then
         echo $file.tar.xz;
     fi
-    git archive --format=tar --prefix=$file/ "$commit" | xz -9e > $file.tar.xz
+    git archive --format=tar --prefix=$file/ "$commit" | xz -9e > \
+        "$dest/$file.tar.xz"
 else
     if [ $quiet = false ]; then
         echo $file.zip
     fi
-    git archive --format=zip --prefix=$file/ "$commit" > $file.zip
+    git archive --format=zip --prefix=$file/ "$commit" > \
+        "$dest/$file.zip"
 fi
