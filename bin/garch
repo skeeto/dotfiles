@@ -44,7 +44,7 @@ fi
 package=$(basename "$PWD")
 version=$(git describe "$commit" 2>/dev/null || \
           git log -1 --date=format:%Y%m%d --format=%cd "$commit")
-file=$package-$version
+file=${package%%.git}-$version
 
 # Announce and create archive
 if [ $mode = tar ]; then
