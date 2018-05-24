@@ -103,9 +103,10 @@ end
 set spelllang=en_us
 set spellfile=~/.vim/spell/en.utf-8.add
 
-" colorcolumn
+" column stuff
 hi ColorColumn ctermbg=darkgray guibg=darkgray
 map <Leader>C :set colorcolumn=80<CR>
+map <Leader>8 :set columns=80<CR>
 
 " Extras
 map <Leader>q :hi Error NONE<CR>
