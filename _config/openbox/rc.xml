@@ -179,7 +179,7 @@
   </keybind>
 
   <!-- Window layer -->
-  <keybind key="W-l">
+  <keybind key="W-space">
     <action name="ToggleAlwaysOnTop"/>
   </keybind>
   <keybind key="W-o">
