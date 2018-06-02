@@ -1,0 +1,2 @@
+#!/bin/sh -e
+printf '0x%s\n' $(od -An -tx8 -N8 /dev/urandom)
