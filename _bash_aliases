@@ -18,7 +18,7 @@ alias adump='mpv --untimed --vd=dummy -vo null -ao pcm'
 alias m='mpv --really-quiet'
 alias ms='mpv --really-quiet --shuffle'
 alias npr='mpv http://wamu-1.streamguys.com'
-alias y='youtube-dl --no-mtime --restrict-filenames --format "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"'
+alias y='youtube-dl --no-mtime --restrict-filenames --format best'
 
 # Emacs
 alias e='emacsclient -q -ca ""'
