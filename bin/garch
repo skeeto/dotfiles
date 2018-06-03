@@ -42,7 +42,7 @@ fi
 
 # Determine a package name and version
 package=$(basename "$PWD")
-version=$(git describe "$commit" 2>/dev/null || \
+version=$(git describe --tags "$commit" 2>/dev/null || \
           git log -1 --date=format:%Y%m%d --format=%cd "$commit")
 file=${package%%.git}-$version
 
