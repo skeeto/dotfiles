@@ -114,7 +114,7 @@ create() {
     if [ $keep = false ]; then rm -rf "$destdir"; fi
     mkdir -p "$destdir"
     (cd "$directory"
-    "$make" install PREFIX="$prefix" DESTDIR="$destdir" "$@"
+    "$make" install prefix="$prefix" PREFIX="$prefix" DESTDIR="$destdir" "$@"
     tar czf "$pkgfile" -C "$destdir$prefix" .
     if [ $keep = false ]; then rm -rf "$destdir"; fi)
 }
