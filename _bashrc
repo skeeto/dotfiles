@@ -7,7 +7,7 @@ set +o histexpand
 
 ## Key bindings
 bind '\C-w:backward-kill-word' 2>/dev/null
-stty -ixon  # disable flow control (XON/XOFF)
+stty -ixon >/dev/null 2>&1 || true # disable flow control (XON/XOFF)
 
 ## Completions
 _systemctl() {
