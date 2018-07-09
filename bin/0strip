@@ -1,0 +1,44 @@
+#!/bin/sh -e
+
+# Strip leading zeros from each file (recursively) under the current
+# directory.
+
+# Options
+n=3
+
+usage() {
+    printf "Usage: 0strip [-n N]\n"
+    printf "  -n N    number of zeros to strip [$n]\n"
+}
+
+while getopts hn: option
+do
+    case $option in
+    n) n="$OPTARG";;
+    h) usage; exit 0;;
+    ?) usage; exit 2;;
+    esac
+done
+
+IFS='
+'
+for file in $(find . -name '0*' | sort); do
+    base=$(basename $file)
+    dir=$(dirname $file)
+    valid=yes
+    c=$n
+    while [ $c -gt 0 ]; do
+        next=${base#0}
+        if [ $next = $base ]; then
+            valid=no
+            break
+        else
+            base=$next
+        fi
+        c=$((c - 1))
+    done
+    if [ $valid = yes ]; then
+        mv -- $file $dir/$base
+    fi
+done
+
