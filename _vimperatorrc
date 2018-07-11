@@ -76,9 +76,9 @@ set! ui.key.generalAccessKey=0
 silent :qmark e about:blank
 silent :qmark t https://github.com/skeeto
 silent :qmark n http://nullprogram.com/
-silent :qmark d http://www.reddit.com/
-silent :qmark D http://www.reddit.com/user/skeeto/
-silent :qmark R http://www.reddit.com/r/mod/about/modqueue/
+silent :qmark d http://old.reddit.com/
+silent :qmark D http://old.reddit.com/user/skeeto/
+silent :qmark R http://old.reddit.com/r/mod/about/modqueue/
 silent :qmark w http://forecast.weather.gov/MapClick.php?lat=39.2&lon=-76.8
 silent :qmark k javascript:(function(){var d=document;var s=d.createElement('script');s.src='http://localhost:8080/skewer';d.body.appendChild(s);})()
 silent :qmark j http://odroid64:9091/transmission/web/
