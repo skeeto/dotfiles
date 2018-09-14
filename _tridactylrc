@@ -12,13 +12,11 @@ quickmark d http://old.reddit.com/
 quickmark D http://old.reddit.com/user/skeeto/
 quickmark R http://old.reddit.com/r/mod/about/modqueue/
 quickmark w http://forecast.weather.gov/MapClick.php?lat=39.2&lon=-76.8
-quickmark k javascript:(function(){var d=document;var s=d.createElement('script');s.src='http://localhost:8080/skewer';d.body.appendChild(s);})()
 quickmark j http://odroid64:9091/transmission/web/
 quickmark a http://www.myanonamouse.net/
 quickmark T https://baconbits.org/
 quickmark l http://libgen.io/
 quickmark o http://www.tujavortaro.net/
-quickmark r javascript:(function(s){s.maxWidth='800px';s.marginLeft=s.marginRight='auto'}(document.body.style))
 
 " Must be done manually once and restarted, keeping this here as a note
 "guiset gui none
