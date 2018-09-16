@@ -7,9 +7,10 @@ set -e
 split=$((30 * 60))
 duration=$(mediainfo --Inform="General;%Duration%" "$1")
 nparts=$(((duration / 1000 + split) / split))
+extension=${3:-mp4}
 
 for i in $(seq 1 $nparts); do
-    out=$(printf "$2%02d.mp4" $i)
+    out=$(printf "$2%02d.$extension" $i)
     ffmpeg -v quiet \
            -i "$1" \
            -c:v copy -c:a copy \
