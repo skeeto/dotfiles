@@ -30,8 +30,3 @@ set searchurls.caniuse https://caniuse.com/#search=%s
 " Use selection keyboard (requires native messenger)
 set yankto both
 set putfrom selection
-
-" Must be done manually once and restarted, keeping this here as a note
-"guiset gui none
-"guiset tabs always
-"guiset hoverlink left
