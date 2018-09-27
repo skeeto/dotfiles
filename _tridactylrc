@@ -18,7 +18,7 @@ quickmark T https://baconbits.org/
 quickmark l http://libgen.io/
 quickmark o https://www.tujavortaro.net/
 
-set searchurls.t       https://thepiratebay.org/search/%s/0/99/0
+set searchurls.t       https://thepiratebay3.org/index.php?q=%s
 set searchurls.r       https://old.reddit.com/r/%s
 set searchurls.u       https://old.reddit.com/u/%s
 set searchurls.w       https://en.wikipedia.org/w/index.php?search=%s
