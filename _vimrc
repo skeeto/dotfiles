@@ -108,10 +108,12 @@ hi ColorColumn ctermbg=darkgray guibg=darkgray
 map <Leader>C :set colorcolumn=80<CR>
 map <Leader>8 :set columns=80<CR>
 
+" One sentence per line
+map <Leader>w :nn j gj<CR>:nn k gk<CR>:se fo-=t<CR>:se lbr<CR>
+
 " Extras
 map <Leader>q :hi Error NONE<CR>
 map <Leader>t :silent !ctags -R<CR>
-map <Leader>w :nnoremap j gj<CR>:nnoremap k gk<CR>
 map <Leader>c :%s/\s\+$//e<CR>
 map <Leader>r :syntax sync fromstart<CR>
 map <Leader>( %%%r(r)%
