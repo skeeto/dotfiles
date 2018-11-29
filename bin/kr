@@ -1,0 +1,3 @@
+#!/bin/sh
+setxkbmap -option ctrl:nocaps
+setxkbmap -option lv3:ralt_switch,esperanto:qwerty
