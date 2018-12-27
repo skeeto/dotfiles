@@ -1,2 +1,6 @@
 #!/bin/sh -e
-printf '0x%s\n' $(od -An -tx8 -N8 /dev/urandom)
+count="${1:-1}"
+while [ "$count" -gt 0 ]; do
+    printf '0x%s\n' $(od -An -tx8 -N8 /dev/urandom)
+    count=$((count - 1))
+done
