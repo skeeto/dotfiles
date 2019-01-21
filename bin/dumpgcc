@@ -1,2 +1,2 @@
 #!/bin/sh
-exec gcc -dM -E - < /dev/null
+exec gcc -dM -E "$@" - < /dev/null
