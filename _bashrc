@@ -96,6 +96,14 @@ nproc() {
     fi
 }
 
+hh() {
+    if command -v hastyhex >/dev/null 2>&1; then
+        hastyhex "$@" | less -FRX
+    else
+        hexdump -C "$@" | less -FRX
+    fi
+}
+
 httpsd() {
     remote_port=${1:-9443}
     local_port=${2:-9080}
