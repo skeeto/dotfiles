@@ -12,13 +12,13 @@ quickmark d https://old.reddit.com/
 quickmark D https://old.reddit.com/user/skeeto/
 quickmark R https://old.reddit.com/r/mod/about/modqueue/
 quickmark w https://forecast.weather.gov/MapClick.php?lat=39.2&lon=-76.8
-quickmark j http://odroid64:9091/transmission/web/
+quickmark j http://192.168.1.19:9091/transmission/web/
 quickmark a https://www.myanonamouse.net/
 quickmark T https://baconbits.org/
 quickmark l http://libgen.io/
 quickmark o https://www.tujavortaro.net/
 
-set searchurls.t       https://thepiratebay3.org/index.php?q=%s
+set searchurls.t       https://www.thepiratebay.org/search/%s/0/99/0
 set searchurls.r       https://old.reddit.com/r/%s
 set searchurls.u       https://old.reddit.com/u/%s
 set searchurls.w       https://en.wikipedia.org/w/index.php?search=%s
