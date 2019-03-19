@@ -41,7 +41,17 @@ export NAME="$REALNAME"
 export EMAIL="wellons@nullprogram.com"
 
 ## Places
-export PATH=~/.local/bin:/sbin:/usr/sbin:~/.local/games:$PATH
+add() {
+    if [[ ":$2:" != *":$1:"* ]]; then
+        printf '%s' "$1:$2"
+    else
+        printf '%s' "$2"
+    fi
+}
+export PATH=$(add /usr/sbin "$PATH")
+export PATH=$(add /sbin "$PATH")
+export PATH=$(add ~/.local/games "$PATH")
+export PATH=$(add ~/.local/bin "$PATH")
 export LIBRARY_PATH=~/.local/lib
 export C_INCLUDE_PATH=~/.local/include
 export CPLUS_INCLUDE_PATH=~/.local/include
