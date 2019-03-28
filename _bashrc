@@ -52,12 +52,16 @@ export PATH=$(add /usr/sbin "$PATH")
 export PATH=$(add /sbin "$PATH")
 export PATH=$(add ~/.local/games "$PATH")
 export PATH=$(add ~/.local/bin "$PATH")
-export LIBRARY_PATH=~/.local/lib
-export C_INCLUDE_PATH=~/.local/include
-export CPLUS_INCLUDE_PATH=~/.local/include
-export LD_LIBRARY_PATH=~/.local/lib
-export PKG_CONFIG_PATH=~/.local/lib/pkgconfig
-export PERL5LIB=~/.local/lib
+export LIBRARY_PATH=$(add ~/.local/lib "$LIBRARY_PATH")
+export C_INCLUDE_PATH=$(add ~/.local/include "$C_INCLUDE_PATH")
+export CPLUS_INCLUDE_PATH=$(add ~/.local/include "$CPLUS_INCLUDE_PATH")
+export LD_LIBRARY_PATH=$(add ~/.local/lib "$LD_LIBRARY_PATH")
+if [[ "$(uname -m)" == *64* ]]; then
+    export LD_LIBRARY_PATH=$(add ~/.local/lib64 "$LD_LIBRARY_PATH")
+else
+    export LD_LIBRARY_PATH=$(add ~/.local/lib32 "$LD_LIBRARY_PATH")
+fi
+export PKG_CONFIG_PATH=$(add ~/.local/lib/pkgconfig "$PKG_CONFIG_PATH")
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
 ## Agents
