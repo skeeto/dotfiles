@@ -44,7 +44,11 @@ export EMAIL="wellons@nullprogram.com"
 add() {
     # Prepend $1 to $2 if not in $2
     if [[ ":$2:" != *":$1:"* ]]; then
-        printf '%s' "$1:$2"
+        if [ -z "$2" ]; then
+            printf '%s' "$1"
+        else
+            printf '%s' "$1:$2"
+        fi
     else
         printf '%s' "$2"
     fi
