@@ -35,6 +35,10 @@ if [ "$TERM" = "dumb" ]; then
 fi
 export WINEDEBUG=-all
 
+if [ -e ~/.dpi ]; then
+    source ~/.dpi
+fi
+
 ## Identity
 export REALNAME="Christopher Wellons"
 export NAME="$REALNAME"
