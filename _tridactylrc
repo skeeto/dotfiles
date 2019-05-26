@@ -24,7 +24,7 @@ set searchurls.r       https://old.reddit.com/r/%s
 set searchurls.u       https://old.reddit.com/u/%s
 set searchurls.w       https://en.wikipedia.org/w/index.php?search=%s
 set searchurls.g       https://www.google.com/search?q=%s
-set searchurls.s       https://duckduckgo.com/?q=%s
+set searchurls.s       https://duckduckgo.com/lite/?q=%s
 set searchurls.wd      https://en.wiktionary.org/wiki/?search=%s
 set searchurls.caniuse https://caniuse.com/#search=%s
 
