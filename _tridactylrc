@@ -28,6 +28,8 @@ set searchurls.s       https://duckduckgo.com/lite/?q=%s
 set searchurls.wd      https://en.wiktionary.org/wiki/?search=%s
 set searchurls.caniuse https://caniuse.com/#search=%s
 
+set searchengine s
+
 set editorcmd gvim -f "+set ft=markdown tw=72 spell"
 
 " Use selection keyboard (requires native messenger)
