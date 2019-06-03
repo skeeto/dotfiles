@@ -13,6 +13,7 @@ set lazyredraw
 set showcmd
 set nobackup
 set noswapfile
+set listchars=eol:$,tab:>-
 
 " Wildmenu
 set wildmenu
