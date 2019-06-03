@@ -87,7 +87,9 @@ set cinoptions+=t0  " don't indent function type
 set cinoptions+=l1  " align with case label
 
 " Go
-autocmd Filetype go set makeprg=go\ build
+autocmd Filetype go setlocal makeprg=go\ build
+autocmd Filetype go setlocal noexpandtab shiftwidth=4 tabstop=4
+map <LocalLeader>f m`:%!gofmt<CR>``
 
 " Assembly style
 autocmd FileType asm setlocal noexpandtab shiftwidth=8
