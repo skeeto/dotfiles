@@ -63,6 +63,7 @@ restore() {
         export PATH="$ORIG_PATH"
         export C_INCLUDE_PATH="$ORIG_C_INCLUDE_PATH"
         export CPLUS_INCLUDE_PATH="$ORIG_CPLUS_INCLUDE_PATH"
+        export LIBRARY_PATH="$ORIG_LIBRARY_PATH"
         export LD_LIBRARY_PATH="$ORIG_LD_LIBRARY_PATH"
         export PKG_CONFIG_PATH="$ORIG_PKG_CONFIG_PATH"
     fi
@@ -74,6 +75,7 @@ if [ "$ORIG_SAVED" != yes ]; then
     export ORIG_PATH="$PATH"
     export ORIG_C_INCLUDE_PATH="$C_INCLUDE_PATH"
     export ORIG_CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH"
+    export ORIG_LIBRARY_PATH="$LIBRARY_PATH"
     export ORIG_LD_LIBRARY_PATH="$LD_LIBRARY_PATH"
     export ORIG_PKG_CONFIG_PATH="$PKG_CONFIG_PATH"
 fi
