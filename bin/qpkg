@@ -5,6 +5,9 @@
 # installs. These package files can be installed (-I) and uninstalled
 # (-U) at will.
 #
+# Special Notes
+# =============
+#
 # The build helper (-B) will run the configure script and fire off make
 # with the appropriate number of jobs. It automatically handles the
 # --prefix=... configure argument. You may still need to manually
@@ -19,12 +22,28 @@
 # automatically set during "make install" (-C). Like with build (-B),
 # all additional arguments are passed to make.
 #
+# Environment
+# ===========
+#
 # The environment variable QPKG_PREFIX determines the installation
 # prefix. It defaults to "$HOME/.local". This path is not stored
 # anywhere in the package, so you *must* ensure it is consistent across
 # all commands for a particular package.
 #
-# Example: This sequence of commands will create an package file named
+# To make proper use of the packages you install, you very likely want
+# to set and export the following environment variables:
+#
+# export C_INCLUDE_PATH=$QPKG_PREFIX/include
+# export CPLUS_INCLUDE_PATH=$QPKG_PREFIX/include
+# export LIBRARY_PATH=$QPKG_PREFIX/lib
+# export LD_LIBRARY_PATH=$QPKG_PREFIX/lib
+# export LD_RUN_PATH=$QPKG_PREFIX/lib
+# export PKG_CONFIG_PATH=$QPKG_PREFIX/lib/pkgconfig
+#
+# Example Usage
+# =============
+#
+# This sequence of commands will create an package file named
 # "emacs-25-minimal.tgz".
 # 
 #    $ tar xzf emacs-25.3.tar.gz
