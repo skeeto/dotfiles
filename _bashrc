@@ -65,6 +65,7 @@ restore() {
         export CPLUS_INCLUDE_PATH="$ORIG_CPLUS_INCLUDE_PATH"
         export LIBRARY_PATH="$ORIG_LIBRARY_PATH"
         export LD_LIBRARY_PATH="$ORIG_LD_LIBRARY_PATH"
+        export LD_RUN_PATH="$ORIG_LD_RUN_PATH"
         export PKG_CONFIG_PATH="$ORIG_PKG_CONFIG_PATH"
     fi
     hash -r
@@ -77,16 +78,18 @@ if [ "$ORIG_SAVED" != yes ]; then
     export ORIG_CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH"
     export ORIG_LIBRARY_PATH="$LIBRARY_PATH"
     export ORIG_LD_LIBRARY_PATH="$LD_LIBRARY_PATH"
+    export ORIG_LD_RUN_PATH="$LD_LD_RUN_PATH"
     export ORIG_PKG_CONFIG_PATH="$PKG_CONFIG_PATH"
 fi
 export PATH=$(add /usr/sbin "$PATH")
 export PATH=$(add /sbin "$PATH")
 export PATH=$(add ~/.local/games "$PATH")
 export PATH=$(add ~/.local/bin "$PATH")
-export LIBRARY_PATH=$(add ~/.local/lib "$LIBRARY_PATH")
 export C_INCLUDE_PATH=$(add ~/.local/include "$C_INCLUDE_PATH")
 export CPLUS_INCLUDE_PATH=$(add ~/.local/include "$CPLUS_INCLUDE_PATH")
+export LIBRARY_PATH=$(add ~/.local/lib "$LIBRARY_PATH")
 export LD_LIBRARY_PATH=$(add ~/.local/lib "$LD_LIBRARY_PATH")
+export LD_RUN_PATH=$(add ~/.local/lib "$LD_RUN_PATH")
 if [[ "$(uname -m)" == *64* ]]; then
     export LD_LIBRARY_PATH=$(add ~/.local/lib64 "$LD_LIBRARY_PATH")
 else
