@@ -93,7 +93,7 @@ LD_RUN_PATH=$(add ~/.local/lib "$LD_RUN_PATH")
 if [[ "$(uname -m)" == *64* ]]; then
     LIBRARY_PATH=$(add ~/.local/lib64 "$LIBRARY_PATH")
     LD_LIBRARY_PATH=$(add ~/.local/lib64 "$LD_LIBRARY_PATH")
-    LD_RUN_PATH=$(add ~/.local/lib32 "$LD_RUN_PATH")
+    LD_RUN_PATH=$(add ~/.local/lib64 "$LD_RUN_PATH")
 else
     LIBRARY_PATH=$(add ~/.local/lib32 "$LIBRARY_PATH")
     LD_LIBRARY_PATH=$(add ~/.local/lib32 "$LD_LIBRARY_PATH")
