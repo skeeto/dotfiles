@@ -7,7 +7,9 @@
 #
 # The build helper (-B) will run the configure script and fire off make
 # with the appropriate number of jobs. It automatically handles the
-# --prefix=... configure argument.
+# --prefix=... configure argument. You may still need to manually
+# override LDFLAGS with -L options for $LIBRARY_PATH since that
+# environment variable does *not* override system libraries.
 #
 # There is no check that a package being installed will clobber an
 # existing package. It will overwrite any existing files. If you are
