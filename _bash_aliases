@@ -41,7 +41,7 @@ alias v='gvim --remote-silent'
 
 # Tweak standard commands
 if ls --color=auto > /dev/null 2>&1; then
-    alias ls='ls --color=auto'
+    alias ls='ls --literal --color=auto'
 elif ls -G > /dev/null 2>&1; then
     alias ls='ls -G'
 fi
