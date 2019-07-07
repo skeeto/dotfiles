@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+
+# q64: a simplifying wrapper for qemu-system
+#
+# Honestly, qemu-system command line interface is not great, and it's
+# getting worse over time as useful options are deprecated and removed.
+# The default VM configuration is good and reasonable, but using what
+# *should* be simple, obvious features requires manually configuring
+# parts of the VM without relying on those nice defaults. Simple things
+# are made much more difficult than necessary.
+#
+# Two examples covered by this script:
+#
+# 1) Port forwarding: In the old days there was a "-redir" option to do
+# the obvious thing of port forwarding on the only NIC. This option was
+# removed (to nobody's benefit), and using port forwarding requires
+# configuring both sides of the network from scratch. Can you remember
+# how to do that off the top of your head?
+#
+# 2) Raw hard drive images: Fortunately there is still a "-hda" option
+# for attaching images as drives. Being a simple option, it makes
+# reasonable attempts to auto-detect the image format. However, it's not
+# safe to auto-detect that the format is raw. There's no way to tell the
+# "-hda" option that it *is* safe to use the raw format. Accessing this
+# option requires switching to the complex "-drive" option. (The various
+# image formats, like qcow2, provide few practical benefits, so I always
+# use raw images.)
+#
+# This script not only provides convenient, simple options, it captures
+# this knowledge for future reference. I can never remember how these
+# complex options work, the official documentation isn't very helpful,
+# and I'm tired of looking up usage examples online when I need it.
+
+set -euo pipefail
+IFS=$'\n\t'
+
+memory=2048
+args=(--enable-kvm -vga qxl)
+hostfwd=
+
+usage() {
+    printf 'usage [-c CDROM] [-d IMAGE] [-h] [-p SRC_PORT:DST_PORT]\n'
+}
+
+while getopts c:d:hm:p: opt
+do
+    case $opt in
+        c)  args+=(-cdrom)
+            args+=("$OPTARG")
+            ;;
+        d)  args+=(-drive)
+            args+=("file=$OPTARG,format=raw")
+            ;;
+        h)  usage
+            exit 0
+            ;;
+        m)  memory="$OPTARG"
+            ;;
+        p)  hostfwd="$hostfwd,hostfwd=tcp::${OPTARG#*:}-:${OPTARG%:*}"
+            ;;
+        ?)  usage
+            exit 1
+            ;;
+    esac
+done
+shift $((OPTIND - 1))
+
+# Construct network configuration (only if necessary)
+if [[ -n "$hostfwd" ]]; then
+    args+=(-netdev "user$hostfwd,id=eth0")
+    args+=(-device rtl8139,netdev=eth0)
+fi
+
+set -x
+qemu-system-x86_64 \
+    -m "$memory" \
+    "${args[@]}" \
+    "$@"
