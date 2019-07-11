@@ -76,6 +76,7 @@ done
 ## Special cases
 mkdir -p ~/.vim/spell
 ln -sf /dev/null ~/.bash_history
+chmod 700 ~/.gnupg
 chmod -w _config/vlc/vlcrc  # Disables annoying VLC clobbering
 
 get_dpi() {

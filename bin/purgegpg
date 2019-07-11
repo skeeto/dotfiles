@@ -1,0 +1,6 @@
+#!/bin/sh
+# Destroys the entire GnuPG keyring irrevocably and without prompt.
+set -e
+gpg --list-keys --with-colons | \
+    awk -F: '/^fpr/ {print $10}' | \
+    xargs gpg --batch --yes --delete-secret-and-public-key
