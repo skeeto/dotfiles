@@ -110,6 +110,27 @@ export PKG_CONFIG_PATH
 ## libvirt
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
+## Go
+_golatest() {
+    local r
+    for dir in "$@"; do
+        if [ -d "$dir" ]; then
+            r="$(find "$dir" -maxdepth 1 -name 'go-*' | sort -rV | head -n1)"
+            if [ -n "$r" ]; then
+                printf '%s' "$r"
+                break
+            fi
+        fi
+    done
+}
+PATH=$(add "${GOPATH:-$HOME/go}/bin" "$PATH")
+if ! command -v go > /dev/null 2>&1; then
+    golatest="$(_golatest "${GOPATH:-$HOME/go}" /usr/lib)"
+    if [ -n "$golatest" ]; then
+        PATH=$(add "$golatest/bin" "$PATH")
+    fi
+fi
+
 ## Agents
 if $(command -v keychain > /dev/null 2>&1); then
     eval $(keychain --eval --quiet)
