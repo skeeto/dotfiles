@@ -88,6 +88,7 @@ autocmd BufNewFile,BufRead .bash_local set filetype=sh
 " C style
 set cinoptions+=t0  " don't indent function type
 set cinoptions+=l1  " align with case label
+set cinoptions+=:0  " align case with switch
 
 " Go
 autocmd Filetype go setlocal makeprg=go\ build
