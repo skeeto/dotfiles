@@ -1,5 +1,5 @@
 # Identity
-set realname="Christopher Wellons"
+set realname="$REALNAME"
 
 # Mail format
 set mbox_type="Maildir"

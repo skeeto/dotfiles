@@ -1,8 +1,5 @@
 ## -*- default-directory: "~/.dotfiles/"; -*-
 
-[user]
-    name = Christopher Wellons
-
 [core]
     autoclrf = false
     whitespace = cr-at-eol
