@@ -41,3 +41,6 @@
 
 [mergetool]
     prompt = false
+
+[gpg]
+    program = passphrase2pgp
