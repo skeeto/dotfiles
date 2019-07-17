@@ -44,6 +44,7 @@ export REALNAME="Christopher Wellons"
 export EMAIL="wellons@nullprogram.com"
 export GIT_COMMITTER_NAME="$REALNAME"
 export GIT_AUTHOR_NAME="$REALNAME"
+export KEYID="5EEB8C8D5069C4E9B94AA852AFD1503A8C8FF42A"
 
 ## PATH variables
 add() {
