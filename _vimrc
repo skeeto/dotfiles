@@ -14,6 +14,7 @@ set showcmd
 set nobackup
 set noswapfile
 set listchars=eol:$,tab:>-
+autocmd BufNewFile,BufRead * setlocal formatoptions-=t
 
 " Wildmenu
 set wildmenu
