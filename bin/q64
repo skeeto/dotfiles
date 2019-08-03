@@ -39,7 +39,9 @@ args=(--enable-kvm -vga qxl)
 hostfwd=
 
 usage() {
-    printf 'usage [-c CDROM] [-d IMAGE] [-h] [-p SRC_PORT:DST_PORT]\n'
+    cat <<EOF
+usage: q64 [-c ISO] [-d IMG [-h] [-p SRC:DST] -- [qemu options...]
+EOF
 }
 
 while getopts c:d:hm:p: opt
