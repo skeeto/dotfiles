@@ -39,9 +39,14 @@ alias v='gvim --remote-silent'
 alias p2='passphrase2pgp'
 
 # Tweak standard commands
-if ls --color=auto > /dev/null 2>&1; then
+if ls --color=auto --literal > /dev/null 2>&1; then
+    # newer GNU coreutils
     alias ls='ls --literal --color=auto'
+elif ls --color=auto > /dev/null 2>&1; then
+    # older GNU coreutils and some BSD
+    alias ls='ls --color=auto'
 elif ls -G > /dev/null 2>&1; then
+    # other BSD
     alias ls='ls -G'
 fi
 if echo x | grep --color=auto x > /dev/null 2>&1; then
