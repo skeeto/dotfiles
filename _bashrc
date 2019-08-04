@@ -115,6 +115,10 @@ export LIBVIRT_DEFAULT_URI=qemu:///system
 ## Go
 _golatest() {
     local r
+    if ! sort -rV </dev/null >/dev/null 2>&1; then
+        # Abort for crappy versions of sort
+        return
+    fi
     for dir in "$@"; do
         if [ -d "$dir" ]; then
             r="$(find "$dir" -maxdepth 1 -name 'go-*' | sort -rV | head -n1)"
