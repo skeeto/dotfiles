@@ -40,7 +40,7 @@ hostfwd=
 
 usage() {
     cat <<EOF
-usage: q64 [-c ISO] [-d IMG [-h] [-p SRC:DST] -- [qemu options...]
+usage: q64 [-c ISO] [-d IMG] [-h] [-p SRC:DST] -- [qemu options...]
 EOF
 }
 
