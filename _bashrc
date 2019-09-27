@@ -130,11 +130,9 @@ _golatest() {
     done
 }
 PATH=$(add "${GOPATH:-$HOME/go}/bin" "$PATH")
-if ! command -v go > /dev/null 2>&1; then
-    golatest="$(_golatest "${GOPATH:-$HOME/go}" /usr/lib)"
-    if [ -n "$golatest" ]; then
-        PATH=$(add "$golatest/bin" "$PATH")
-    fi
+golatest="$(_golatest "${GOPATH:-$HOME/go}")"
+if [ -n "$golatest" ]; then
+    PATH=$(add "$golatest/bin" "$PATH")
 fi
 
 ## Agents
