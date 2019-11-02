@@ -26,8 +26,8 @@ _PS1() {
     ((${#NAME}>$LENGTH)) && NAME="/...${NAME:$[${#NAME}-LENGTH+4]}";
     echo "$PRE$NAME"
 }
-PS1='\[\e[1;32m\]\h\[\e[m\]\
-\[\e[1;35m\]$(_PS1 "$PWD" 30)\[\e[m\] '
+PS1='\[\e[1;92m\]\h\[\e[m\]\
+\[\e[1;95m\]$(_PS1 "$PWD" 30)\[\e[m\] '
 export EDITOR="vim"
 export BROWSER="firefox"
 if [ "$TERM" = "dumb" ]; then
