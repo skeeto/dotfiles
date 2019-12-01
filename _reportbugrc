@@ -3,6 +3,5 @@ ui text
 cc
 compress
 paranoid
-keyid none
 
 smtphost localhost:2525
