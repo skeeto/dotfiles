@@ -1,21 +1,117 @@
-# Display Options
-OPTIONS=color, IBMgraphics, lit_corridor, time, showexp, showrace
+NAME = Skeeto
 
-# Interface
-OPTIONS=boulder:0, autodig, !cmdassist, !autopickup, number_pad:1
-OPTIONS=mail, !prayconfirm, pushweapon, suppress_alert:3.4.3
+OPTIONS = color, statushilites, lit_corridor, time, showexp, showrace
+OPTIONS = autodig, !cmdassist, number_pad:1
+OPTIONS = mail, pushweapon, suppress_alert:3.4.3
+OPTIONS = disclose:+i +a +v +g +c, !legacy, !splash_screen
+OPTIONS = msg_window:reversed, msghistory:60
+SYMBOLS = S_ghost:8, S_boulder:0, S_golem:7
 
-# Messages
-OPTIONS=disclose:+i +a +v +g +c, !legacy, !splash_screen
-OPTIONS=msg_window:reversed, msghistory:60
+## GUI ##
 
-# Customize
-OPTIONS=pettype:cat
-NAME=Skeeto
+OPTIONS = symset:curses, windowtype:curses
+OPTIONS = guicolor, perm_invent
 
-# Colors
-OPTIONS=menucolors
-MENUCOLOR="cursed"=orange
-MENUCOLOR="uncursed"=green
-MENUCOLOR="blessed"=cyan
-MENUCOLOR="loadstone\|wand \(of\|called\) cancellation"=underline
+OPTIONS = hitpointbar
+OPTIONS = hilite_status:hitpoints-max/green&normal
+OPTIONS = hilite_status:hitpoints/100%/green&normal
+OPTIONS = hilite_status:hitpoints/<100%/lightgreen&normal
+OPTIONS = hilite_status:hitpoints/<76%/yellow&normal
+OPTIONS = hilite_status:hitpoints/<51%/orange&normal
+OPTIONS = hilite_status:hitpoints/<26%/red&normal
+OPTIONS = hilite_status:hitpoints/<11%/black&normal
+
+## Autpickup ##
+
+AUTOPICKUP_EXCEPTION="<.* named ammo"
+AUTOPICKUP_EXCEPTION="<.* named autopickup"
+
+# Empty wands
+AUTOPICKUP_EXCEPTION=">.*:0).*"
+AUTOPICKUP_EXCEPTION=">.* named empty"
+
+AUTOPICKUP_EXCEPTION=">scroll of scare monster"
+AUTOPICKUP_EXCEPTION=">scroll called scare monster"
+
+AUTOPICKUP_EXCEPTION=">.*glob.*"
+
+## Menucolors ##
+
+OPTIONS = menucolors
+
+MENUCOLOR = "blessed"=green
+MENUCOLOR = "blessed clear potion"=lightcyan
+MENUCOLOR = "blessed clear potions"=lightcyan
+MENUCOLOR = "blessed potion called water"=lightcyan
+MENUCOLOR = "blessed potions called water"=lightcyan
+MENUCOLOR = "holy"=lightcyan
+MENUCOLOR = "cursed"=red
+MENUCOLOR = "cursed clear potion"=magenta
+MENUCOLOR = "cursed clear potions"=magenta
+MENUCOLOR = "cursed potion called water"=magenta
+MENUCOLOR = "cursed potions called water"=magenta
+MENUCOLOR = "unholy"=magenta
+MENUCOLOR = "uncursed"=white
+
+# Cursed items in use
+MENUCOLOR = "cursed .* \(weapon in .*\)"=orange&underline
+MENUCOLOR = "cursed .* \(wielded.*\)"=orange&underline
+MENUCOLOR = "cursed .* \(alternate weapon\)"=orange&underline
+MENUCOLOR = "cursed .* \(in quiver\)"=orange&underline
+MENUCOLOR = "cursed .* \(at the ready\)"=orange&underline
+MENUCOLOR = "cursed .* \(being worn\)"=orange&underline
+MENUCOLOR = "cursed .* \(embedded in your skin\)"=orange&underline
+MENUCOLOR = "cursed .* \(on left .*\)"=orange&underline
+MENUCOLOR = "cursed .* \(on right .*\)"=orange&underline
+MENUCOLOR = "cursed .* \(in use\)"=orange&underline
+MENUCOLOR = "cursed .* tethered"=orange&underline
+
+# Items in use.
+MENUCOLOR = "\(weapon in .*\)"=white&underline
+MENUCOLOR = "\(wielded.*\)"=white&underline
+MENUCOLOR = "\(alternate weapon\)"=white&underline
+MENUCOLOR = "\(in quiver\)"=white&underline
+MENUCOLOR = "\(at the ready\)"=white&underline
+MENUCOLOR = "\(being worn\)"=white&underline
+MENUCOLOR = "\(embedded in your skin\)"=white&underline
+MENUCOLOR = "\(on left .*\)"=white&underline
+MENUCOLOR = "\(on right .*\)"=white&underline
+MENUCOLOR = "\(in use\)"=white&underline
+MENUCOLOR = "tethered"=white&underline
+
+# Blessed items in use
+MENUCOLOR = "blessed .* \(weapon in .*\)"=lightgreen&underline
+MENUCOLOR = "blessed .* \(wielded.*\)"=lightgreen&underline
+MENUCOLOR = "blessed .* \(alternate weapon\)"=lightgreen&underline
+MENUCOLOR = "blessed .* \(in quiver\)"=lightgreen&underline
+MENUCOLOR = "blessed .* \(at the ready\)"=lightgreen&underline
+MENUCOLOR = "blessed .* \(being worn\)"=lightgreen&underline
+MENUCOLOR = "blessed .* \(embedded in your skin\)"=lightgreen&underline
+MENUCOLOR = "blessed .* \(on left .*\)"=lightgreen&underline
+MENUCOLOR = "blessed .* \(on right .*\)"=lightgreen&underline
+MENUCOLOR = "blessed .* \(in use\)"=lightgreen&underline
+MENUCOLOR = "blessed .* tethered"=lightgreen&underline
+
+# Potentially dangerous things
+MENUCOLOR = " holding"=lightmagenta
+MENUCOLOR = "tricks"=lightmagenta
+MENUCOLOR = "cancel"=lightmagenta
+MENUCOLOR = "vanish"=lightmagenta
+
+# Lamps
+MENUCOLOR = "magic lamp"=blue&bold
+MENUCOLOR = " \(lit\)"=white&underline
+MENUCOLOR = "magic lamp \(lit\)"=lightblue&underline
+MENUCOLOR = "lamp called magic \(lit\)"=lightblue&underline
+
+# Items of interest
+MENUCOLOR = "blessed unicorn horn"=blue&bold
+MENUCOLOR = "blessed .* unicorn horn"=blue&bold
+MENUCOLOR = "blessed stone called luck.*"=blue&bold
+MENUCOLOR = "blessed luckstone"=blue&bold
+MENUCOLOR = "wand .* wishing"=blue&bold
+
+# Invocation items
+MENUCOLOR = " (Bell of Opening\|silver bell\|Candelabrum of Invocation\|candelabrum\|Book of the Dead\|papyrus spellbook)"=magenta
+
+MENUCOLOR = " gold piece"=yellow
