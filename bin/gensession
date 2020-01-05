@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# Generates a temporary, 3-month "session" subkey signed by the user's
+# passphrase2pgp key. The exported secret encryption subkey does not
+# contain a copy of the secret signing key, so it's safe to export to
+# less trusted systems.
+#
+# Goals: 1) protect the long-term signing key and 2) perfect forward
+# secrecy. The user of this script should only ever publish a signing
+# key. Then, for each conversation thread, generate and share a short
+# term thread-specific encryption key. When the thread has run to
+# completion, or when the key expires, destroy the secret encryption
+# key. Any man-in-the-middle who had captured encrypted payloads will
+# never be able to decrypt them because the secret key no longer exists.
+
+set -e
+
+homedir="$(mktemp -d "${TMPDIR:-/tmp}/gensession-XXXXXX")"
+cleanup() {
+    rm -rf -- "$homedir"
+}
+trap cleanup INT TERM EXIT
+chmod 700 "$homedir"
+
+passphrase2pgp | gpg --quiet --homedir "$homedir" --import
+fingerprint="$(gpg --quiet --homedir "$homedir" \
+                   --list-keys --with-colons | \
+                   awk -F: '/^fpr/{print $10; exit}')"
+gpg --quiet --homedir "$homedir" \
+    --passphrase '' --batch \
+    --quick-add-key "$fingerprint" cv25519 encr 3m
+gpg --quiet --homedir "$homedir" \
+    --armor --export-secret-subkeys $fingerprint
+gpg --quiet --homedir "$homedir" \
+    --armor --export
