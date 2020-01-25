@@ -134,6 +134,7 @@ golatest="$(_golatest "${GOPATH:-$HOME/go}")"
 if [ -n "$golatest" ]; then
     PATH=$(add "$golatest/bin" "$PATH")
 fi
+export GO111MODULE=on
 
 ## Agents
 if command -v keychain > /dev/null 2>&1; then
