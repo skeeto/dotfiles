@@ -3,10 +3,16 @@
 # Create an archive file from the repository containing the current
 # directory. This is just a friendly front-end for "git archive" that
 # automatically determines a version string.
+#
+# The -i option is useful for making temporary, last-minute tweaks to
+# the archived tree before archiving, such as adding a Go vendor/
+# directory (i.e. go mod vendor). These changes are not reflected by
+# "git describe".
 
 mode=tar
 quiet=false
 commit=HEAD
+index=false
 dest=.
 
 usage() {
@@ -17,19 +23,21 @@ OPTIONS:
     -T       Create a .tar.xz archive (default)
     -Z       Create a .zip archive
     -d DIR   Destination directory (.)
-    -q       Don't print archive name
     -h       Show this message
+    -i       Quietly archive the index
+    -q       Don't print archive name
 EOF
     exit $1
 }
 
-while getopts "TZd:hq" option; do
+while getopts "TZd:hiq" option; do
     case "$option" in
         T) mode=tar ;;
         Z) mode=zip ;;
         d) dest="$OPTARG" ;;
-        q) quiet=true ;;
         h) usage 0 ;;
+        i) index=true ;;
+        q) quiet=true ;;
         ?) usage 1 ;;
     esac
 done
@@ -46,17 +54,22 @@ version=$(git describe --tags "$commit" 2>/dev/null || \
           git log -1 --date=format:%Y%m%d --format=%cd "$commit")
 file=${package%%.git}-$version
 
+archive_commit="$commit"
+if [ $index = true ]; then
+    archive_commit="$(git write-tree)"
+fi
+
 # Announce and create archive
 if [ $mode = tar ]; then
     if [ $quiet = false ]; then
         echo $file.tar.xz;
     fi
-    git archive --format=tar --prefix=$file/ "$commit" | xz -9e > \
+    git archive --format=tar --prefix=$file/ "$archive_commit" | xz -9e > \
         "$dest/$file.tar.xz"
 else
     if [ $quiet = false ]; then
         echo $file.zip
     fi
-    git archive --format=zip --prefix=$file/ "$commit" > \
+    git archive --format=zip --prefix=$file/ "$archive_commit" > \
         "$dest/$file.zip"
 fi
