@@ -9,11 +9,14 @@
 # directory (i.e. go mod vendor). These changes are not reflected by
 # "git describe".
 
+set -e
+
+commit=HEAD
+dest=.
+index=false
 mode=tar
 quiet=false
-commit=HEAD
-index=false
-dest=.
+strip=false
 
 usage() {
     cat << EOF
@@ -26,11 +29,12 @@ OPTIONS:
     -h       Show this message
     -i       Quietly archive the index
     -q       Don't print archive name
+    -s       Strip leaving "v" from tag
 EOF
     exit $1
 }
 
-while getopts "TZd:hiq" option; do
+while getopts "TZd:hiqs" option; do
     case "$option" in
         T) mode=tar ;;
         Z) mode=zip ;;
@@ -38,6 +42,7 @@ while getopts "TZd:hiq" option; do
         h) usage 0 ;;
         i) index=true ;;
         q) quiet=true ;;
+        s) strip=true ;;
         ?) usage 1 ;;
     esac
 done
@@ -52,6 +57,9 @@ fi
 package=$(basename "$PWD")
 version=$(git describe --tags "$commit" 2>/dev/null || \
           git log -1 --date=format:%Y%m%d --format=%cd "$commit")
+if [ $strip = true ]; then
+    version=${version#v}
+fi
 file=${package%%.git}-$version
 
 archive_commit="$commit"
