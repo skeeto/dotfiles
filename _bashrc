@@ -61,6 +61,13 @@ add() {
 }
 restore() {
     # Restore pre-configuration paths
+    while getopts H opt
+    do
+        case "$opt" in
+        H) exec env -i HOME=$HOME TERM=$TERM bash -l ;;
+        ?) return 1 ;;
+        esac
+    done
     if [ "$ORIG_SAVED" = yes ]; then
         PATH="$ORIG_PATH"
         C_INCLUDE_PATH="$ORIG_C_INCLUDE_PATH"
