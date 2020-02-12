@@ -197,6 +197,10 @@ hh() {
     fi
 }
 
+loadssh() {
+    passphrase2pgp -fssh -c5106E713 -uwellons@p2 | ssh-add -
+}
+
 ## Aliases
 
 source ~/.bash_aliases
