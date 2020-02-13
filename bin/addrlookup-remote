@@ -1,2 +1,0 @@
-#!/bin/sh
-exec ssh mail.nullprogram.com addrlookup "$@" 2> /dev/null
