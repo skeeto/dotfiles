@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# This script downloads the source tarball for latest release of Go,
+# bootstraps it, and installs it at "$GOPATH/go-$MAJOR.$MINOR" after
+# clearing out any existing installation.
+
+set -e
+
+list_url='https://golang.org/dl/'
+download_re='https://dl.google.com/go/go(1.[0-9]+.[0-9]+).src.tar.gz'
+
+tmpdir="$(mktemp -d "${TMPDIR:-/tmp}/upgo-XXXXXX")"
+cleanup() {
+    rm -rf -- "$tmpdir"
+}
+trap cleanup INT TERM EXIT
+cd -- "$tmpdir"
+
+url="$(curl -s "$list_url" | grep -Eom1 "$download_re")"
+version="$(printf %s "$url" | grep -Eo '(1.[0-9]+)')"
+install_path="${GOPATH:-$HOME/go}/go-$version"
+curl "$url" | tar xz
+(
+    cd go/src
+    CGO_ENABLED=0 GOROOT_FINAL="$install_path" ./make.bash
+)
+rm -rf -- "$install_path"
+mkdir -p -- "${GOPATH:-$HOME/go}"
+mv go "$install_path"
