@@ -19,7 +19,7 @@ cd -- "$tmpdir"
 url="$(curl -s "$list_url" | grep -Eom1 "$download_re")"
 version="$(printf %s "$url" | grep -Eo '(1.[0-9]+)')"
 install_path="${GOPATH:-$HOME/go}/go-$version"
-curl "$url" | tar xz
+curl -s "$url" | tar xz
 (
     cd go/src
     CGO_ENABLED=0 GOROOT_FINAL="$install_path" ./make.bash
