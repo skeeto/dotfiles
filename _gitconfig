@@ -37,6 +37,9 @@
     smtpserver = localhost
     smtpserverport = 2525
 
+[rebase]
+    autoStash = true
+
 [merge]
     tool = vimdiff
     conflictstyle = diff3
