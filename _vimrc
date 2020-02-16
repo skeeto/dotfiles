@@ -34,6 +34,7 @@ set smartcase
 " Colors and themes
 syntax on
 if has('gui_running') || &t_Co == 256
+    set guicursor+=a:blinkon0
     colorscheme wombat256dave
 else
     colorscheme elflord
