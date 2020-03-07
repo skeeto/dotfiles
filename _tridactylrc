@@ -1,5 +1,7 @@
 bind w tabprev
 bind e tabnext_gt
+bind --mode=visual w tabprev
+bind --mode=visual e tabnext_gt
 bind x back
 bind c forward
 bind j scrollline +3
