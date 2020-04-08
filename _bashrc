@@ -116,6 +116,16 @@ export LD_LIBRARY_PATH
 export LD_RUN_PATH
 export PKG_CONFIG_PATH
 
+## XDG
+XDG_DESKTOP_DIR="$HOME/trash/"
+XDG_DOCUMENTS_DIR="$HOME/trash/"
+XDG_DOWNLOAD_DIR="$HOME/Downloads"
+XDG_MUSIC_DIR="$HOME/trash/"
+XDG_PICTURES_DIR="$HOME/trash/"
+XDG_PUBLICSHARE_DIR="$HOME/trash/"
+XDG_TEMPLATES_DIR="$HOME/trash/"
+XDG_VIDEOS_DIR="$HOME/trash/"
+
 ## libvirt
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
