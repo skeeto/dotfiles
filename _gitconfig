@@ -4,6 +4,9 @@
     autoclrf = false
     whitespace = cr-at-eol
 
+[protocol]
+	version = 2
+
 [color]
     branch = auto
     diff = auto
