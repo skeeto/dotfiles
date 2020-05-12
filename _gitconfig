@@ -33,8 +33,6 @@
     host = daemon --base-path=. --reuseaddr --export-all
     whost = daemon --base-path=. --reuseaddr --export-all --enable=receive-pack
     addw = -c interactive.diffFilter='git diff --color=always --word-diff' add -p
-    vt = -c gpg.program=gpg verify-tag
-    vc = -c gpg.program=gpg verify-commit
     stag = tag -l --sort=v:refname
 
 [sendemail]
