@@ -19,6 +19,7 @@ autocmd BufNewFile,BufRead * setlocal formatoptions-=t
 " Wildmenu
 set wildmenu
 set wildmode=longest,list
+set path=**
 
 " One space between sentences please.
 set nojoinspaces
