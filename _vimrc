@@ -48,11 +48,7 @@ if &term =~ "256color" || &term =~ "xterm"
     end
 end
 if has("x11")
-    if system("xdpyinfo|grep 'dimensions:'|tr x ' '|awk '{print $2}'") > 1440
-        let &guifont="Noto Mono 11"
-    else
-        let &guifont="Noto Mono 10"
-    end
+    let &guifont="Noto Mono 11"
 elseif has("gui_win32")
     let &guifont="Lucida Console:h11"
 end
