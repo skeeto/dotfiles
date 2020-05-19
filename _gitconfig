@@ -1,7 +1,7 @@
 ## -*- default-directory: "~/.dotfiles/"; -*-
 
 [core]
-    autoclrf = false
+    autoclrf = input
     whitespace = cr-at-eol
 
 [protocol]
