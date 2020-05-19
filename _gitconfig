@@ -41,6 +41,7 @@
 
 [rebase]
     autoStash = true
+    autoSquash = true
 
 [merge]
     tool = vimdiff
