@@ -1,29 +1,59 @@
 #!/bin/sh
 
 # This script downloads the source tarball for latest release of Go,
-# bootstraps it, and installs it at "$GOPATH/go-$MAJOR.$MINOR" after
-# clearing out any existing installation.
+# bootstraps it, installs it to "$GOPATH/go$VERSION" after clearing out
+# any existing installation, and places symlinks in "$GOPATH/bin". It
+# will bootstrap from the first "go" in your $PATH.
 
 set -e
 
+usage() {
+    printf 'usage: upgo [-hk]\n'
+    printf '  -h        print this message\n'
+    printf '  -k        keep the source tarball\n'
+}
+
+keep=no
+GOPATH="$(go env GOPATH)"
 list_url='https://golang.org/dl/'
-download_re='https://dl.google.com/go/go(1.[0-9]+(.[0-9]+)?).src.tar.gz'
+download_re='https://dl\.google\.com/go/go(1\.[0-9]+(\.[0-9]+)?)\.src\.tar\.gz'
+
+while getopts hk name
+do
+    case $name in
+    h) usage; exit 0;;
+    k) keep=yes;;
+    ?) usage 1>&2; exit 2;;
+    esac
+done
+shift $(($OPTIND - 1))
+if [ $# -gt 0 ]; then
+    printf 'upgo: too many arguments\n' 1>&2
+    exit 2
+fi
 
 tmpdir="$(mktemp -d "${TMPDIR:-/tmp}/upgo-XXXXXX")"
 cleanup() {
     rm -rf -- "$tmpdir"
 }
 trap cleanup INT TERM EXIT
-cd -- "$tmpdir"
 
 url="$(curl -s "$list_url" | grep -Eom1 "$download_re")"
-version="$(printf %s "$url" | grep -Eo '(1.[0-9]+)')"
-install_path="${GOPATH:-$HOME/go}/go-$version"
-curl -s "$url" | tar xzf -
+version="$(printf %s "$url" | grep -Eo '(1\.[0-9]+(\.[0-9]+)?)')"
+install_path="$GOPATH/go$version"
+if [ $keep = yes ]; then
+    set - "$PWD/go$version.src.tar.gz"
+fi
+
+cd -- "$tmpdir"
+curl -s "$url" | tee "$@" | tar xzf -
 (
     cd go/src
     CGO_ENABLED=0 GOROOT_FINAL="$install_path" ./make.bash
 )
+
 rm -rf -- "$install_path"
-mkdir -p -- "${GOPATH:-$HOME/go}"
+mkdir -p -- "$GOPATH"
 mv go "$install_path"
+ln -sf "$install_path/bin/go" "$GOPATH/bin/go"
+ln -sf "$install_path/bin/gofmt" "$GOPATH/bin/gofmt"
