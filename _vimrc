@@ -88,6 +88,7 @@ autocmd BufNewFile,BufRead .bash_local set filetype=sh
 set cinoptions+=t0  " don't indent function type
 set cinoptions+=l1  " align with case label
 set cinoptions+=:0  " align case with switch
+let c_no_curly_error=1  " Vim still lacks C99 support
 
 " Go
 autocmd Filetype go setlocal makeprg=go\ build
