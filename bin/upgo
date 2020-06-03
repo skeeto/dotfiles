@@ -53,7 +53,7 @@ curl -s "$url" | tee "$@" | tar xzf -
 )
 
 rm -rf -- "$install_path"
-mkdir -p -- "$GOPATH"
+mkdir -p -- "$GOPATH/bin"
 mv go "$install_path"
 ln -sf "$install_path/bin/go" "$GOPATH/bin/go"
 ln -sf "$install_path/bin/gofmt" "$GOPATH/bin/gofmt"
