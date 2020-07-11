@@ -16,7 +16,7 @@ usage() {
 keep=no
 GOPATH="$(go env GOPATH)"
 list_url='https://golang.org/dl/'
-download_re='https://dl\.google\.com/go/go(1\.[0-9]+(\.[0-9]+)?)\.src\.tar\.gz'
+download_re='go(1\.[0-9]+(\.[0-9]+)?)\.src\.tar\.gz'
 
 while getopts hk name
 do
@@ -38,7 +38,8 @@ cleanup() {
 }
 trap cleanup INT TERM EXIT
 
-url="$(curl -s "$list_url" | grep -Eom1 "$download_re")"
+tarfile="$(curl -s "$list_url" | grep -Eom1 "$download_re")"
+url="$list_url$tarfile"
 version="$(printf %s "$url" | grep -Eo '(1\.[0-9]+(\.[0-9]+)?)')"
 install_path="$GOPATH/go$version"
 if [ $keep = yes ]; then
@@ -46,7 +47,7 @@ if [ $keep = yes ]; then
 fi
 
 cd -- "$tmpdir"
-curl -s "$url" | tee "$@" | tar xzf -
+curl -Ls "$url" | tee "$@" | tar xzf -
 (
     cd go/src
     CGO_ENABLED=0 GOROOT_FINAL="$install_path" ./make.bash
