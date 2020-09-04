@@ -14,7 +14,6 @@ set showcmd
 set nobackup
 set noswapfile
 set listchars=eol:$,tab:>-
-autocmd BufNewFile,BufRead * setlocal formatoptions-=t
 
 " Wildmenu
 set wildmenu
@@ -23,9 +22,6 @@ set path=**
 
 " One space between sentences please.
 set nojoinspaces
-
-" Wrap to 72 columns by default
-set textwidth=72
 
 " Search
 set incsearch
@@ -83,6 +79,9 @@ filetype indent on
 
 " Set filetype for special cases
 autocmd BufNewFile,BufRead .bash_local set filetype=sh
+
+" Non-programming language files
+autocmd Filetype markdown,mail,text setlocal textwidth=72
 
 " C style
 set cinoptions+=t0  " don't indent function type
