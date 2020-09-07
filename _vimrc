@@ -19,6 +19,7 @@ set listchars=eol:$,tab:>-
 set wildmenu
 set wildmode=longest,list
 set path=**
+set complete=.,w,b,u,t
 
 " One space between sentences please.
 set nojoinspaces
