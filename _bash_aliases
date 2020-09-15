@@ -1,7 +1,6 @@
 ## -*- default-directory: "~/.dotfiles/"; -*-
 
 # Misc
-alias httpd='python3 -m http.server 8001' # --bind 127.0.0.1
 alias oct='octave-cli -q'
 alias sr='screen -dr'
 alias t='tar -axvf'

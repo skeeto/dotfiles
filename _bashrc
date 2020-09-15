@@ -191,6 +191,10 @@ loadssh() {
     passphrase2pgp -fssh -c5106E713 -uwellons@p2 | ssh-add -
 }
 
+httpd() {
+    python3 -m http.server "${1:-8001}"
+}
+
 ## Aliases
 
 source ~/.bash_aliases
