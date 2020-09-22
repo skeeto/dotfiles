@@ -28,6 +28,7 @@ set searchurls.w       https://en.wikipedia.org/w/index.php?search=%s
 set searchurls.g       https://www.google.com/search?q=%s
 set searchurls.s       https://duckduckgo.com/lite/?q=%s
 set searchurls.wd      https://en.wiktionary.org/wiki/?search=%s
+set searchurls.d       https://www.websters1913.com/words/%s
 set searchurls.caniuse https://caniuse.com/#search=%s
 
 set searchengine g
