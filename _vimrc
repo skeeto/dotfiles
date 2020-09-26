@@ -26,8 +26,6 @@ set nojoinspaces
 
 " Search
 set incsearch
-set ignorecase
-set smartcase
 
 " Colors and themes
 syntax on
