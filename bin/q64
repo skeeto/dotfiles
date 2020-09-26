@@ -35,16 +35,18 @@ set -euo pipefail
 IFS=$'\n\t'
 
 memory=2048
+ncpu=$(nproc)
 args=(--enable-kvm -vga qxl)
 hostfwd=
 
 usage() {
     cat <<EOF
-usage: q64 [-c ISO] [-d IMG] [-h] [-p SRC:DST] -- [qemu options...]
+usage: q64 [-c ISO] [-d IMG] [-h] [-m MB] [-n #CPU] [-p SRC:DST]
+       -- [qemu-system options...]
 EOF
 }
 
-while getopts c:d:hm:p: opt
+while getopts c:d:hm:n:p: opt
 do
     case $opt in
         c)  args+=(-cdrom)
@@ -57,6 +59,8 @@ do
             exit 0
             ;;
         m)  memory="$OPTARG"
+            ;;
+        n)  ncpu="$OPTARG"
             ;;
         p)  hostfwd="$hostfwd,hostfwd=tcp::${OPTARG#*:}-:${OPTARG%:*}"
             ;;
@@ -76,5 +80,6 @@ fi
 set -x
 qemu-system-x86_64 \
     -m "$memory" \
+    -smp "$ncpu" \
     "${args[@]}" \
     "$@"
