@@ -16,6 +16,7 @@ alias m='mpv --really-quiet'
 alias ms='mpv --really-quiet --shuffle'
 alias npr='mpv http://wamu-1.streamguys.com'
 alias y='youtube-dl --no-mtime --restrict-filenames'
+alias yp='youtube-dl -o "%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
 
 # Emacs
 alias e='emacsclient -q -ca ""'
