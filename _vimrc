@@ -14,6 +14,7 @@ set showcmd
 set nobackup
 set noswapfile
 set listchars=eol:$,tab:>-
+set ttimeoutlen=0
 
 " Wildmenu
 set wildmenu
