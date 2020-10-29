@@ -81,7 +81,7 @@ filetype indent on
 autocmd BufNewFile,BufRead .bash_local set filetype=sh
 
 " Non-programming language files
-autocmd Filetype markdown,mail,text setlocal textwidth=72
+autocmd Filetype markdown,mail,text setlocal textwidth=78
 
 " C style
 set cinoptions+=t0  " don't indent function type
