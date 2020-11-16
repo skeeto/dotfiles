@@ -15,6 +15,8 @@ set nobackup
 set noswapfile
 set listchars=eol:$,tab:>-
 set ttimeoutlen=0
+set formatoptions+=j
+set autoread
 
 " Wildmenu
 set wildmenu
