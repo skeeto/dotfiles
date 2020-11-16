@@ -32,7 +32,7 @@ set searchurls.caniuse https://caniuse.com/#search=%s
 
 set searchengine g
 
-set editorcmd gvim -f "+set ft=markdown tw=72 spell"
+set editorcmd gvim -f "+set ft=markdown spell"
 
 " Use selection keyboard (requires native messenger)
 set yankto both
