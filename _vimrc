@@ -34,7 +34,7 @@ set incsearch
 syntax on
 if has('gui_running') || &t_Co == 256
     set guicursor+=a:blinkon0
-    colorscheme wombat256dave
+    colorscheme darkblue
 else
     colorscheme elflord
 end
