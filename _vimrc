@@ -35,8 +35,10 @@ syntax on
 if has('gui_running')
     set guicursor+=a:blinkon0
     colorscheme darkblue
+elseif has('win32')
+    colorscheme slate
 else
-    colorscheme elflord
+    colorscheme ron
 end
 if &term =~ "256color" || &term =~ "xterm"
     let &t_SI = "\<Esc>[6 q"
