@@ -32,7 +32,7 @@ set incsearch
 
 " Colors and themes
 syntax on
-if has('gui_running') || &t_Co == 256
+if has('gui_running')
     set guicursor+=a:blinkon0
     colorscheme darkblue
 else
