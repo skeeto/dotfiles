@@ -15,9 +15,9 @@ strip="${dst##s3://}"
 bucket="${strip%%/*}"
 if [ "$dst" = "${dst%/}" ]; then
     # Destination is a file
-    echo "http://$bucket.s3.amazonaws.com/$path"
+    echo "https://$bucket.s3.amazonaws.com/$path"
 else
     # Destination is a directory
     path="${dst#s3://*/}"
-    echo "http://$bucket.s3.amazonaws.com/$path$(basename "$src")"
+    echo "https://$bucket.s3.amazonaws.com/$path$(basename "$src")"
 fi
