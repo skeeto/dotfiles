@@ -101,6 +101,9 @@ autocmd Filetype go map <buffer> <leader>i m`:%!goimports<cr>``
 autocmd Filetype go map <buffer> [[ ?^\(func\\|var\\|type\\|import\\|package\)\><cr>
 autocmd Filetype go map <buffer> ]] /^\(func\\|var\\|type\\|import\\|package\)\><cr>
 
+" Fortran
+autocmd filetype fortran let [fortran_do_enddo, fortran_free_source] = [1, 1]
+
 " Assembly style
 autocmd FileType asm setlocal noexpandtab shiftwidth=8
 
