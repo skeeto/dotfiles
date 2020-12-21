@@ -85,7 +85,7 @@ filetype indent on
 autocmd BufNewFile,BufRead .bash_local set filetype=sh
 
 " Non-programming language files
-autocmd Filetype markdown,mail,text setlocal textwidth=74
+autocmd filetype markdown,mail,text setlocal textwidth=74
 
 " C style
 set cinoptions+=t0  " don't indent function type
@@ -94,21 +94,21 @@ set cinoptions+=:0  " align case with switch
 let c_no_curly_error=1  " Vim still lacks C99 support
 
 " Go
-autocmd Filetype go setlocal makeprg=go\ build
-autocmd Filetype go setlocal noexpandtab shiftwidth=4 tabstop=4 textwidth=72
-autocmd Filetype go map <buffer> <leader>f m`:%!gofmt<cr>``
-autocmd Filetype go map <buffer> <leader>i m`:%!goimports<cr>``
-autocmd Filetype go map <buffer> [[ ?^\(func\\|var\\|type\\|import\\|package\)\><cr>
-autocmd Filetype go map <buffer> ]] /^\(func\\|var\\|type\\|import\\|package\)\><cr>
+autocmd filetype go setlocal makeprg=go\ build
+autocmd filetype go setlocal noexpandtab shiftwidth=4 tabstop=4 textwidth=72
+autocmd filetype go map <buffer> <leader>f m`:%!gofmt<cr>``
+autocmd filetype go map <buffer> <leader>i m`:%!goimports<cr>``
+autocmd filetype go map <buffer> [[ ?^\(func\\|var\\|type\\|import\\|package\)\><cr>
+autocmd filetype go map <buffer> ]] /^\(func\\|var\\|type\\|import\\|package\)\><cr>
 
 " Fortran
 autocmd filetype fortran let [fortran_do_enddo, fortran_free_source] = [1, 1]
 
 " Assembly style
-autocmd FileType asm setlocal noexpandtab shiftwidth=8
+autocmd filetype asm setlocal noexpandtab shiftwidth=8
 
 " Makefile style
-autocmd FileType make setlocal shiftwidth=8
+autocmd filetype make setlocal shiftwidth=8
 
 " Build
 set autowrite
