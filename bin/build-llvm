@@ -1,9 +1,24 @@
 #!/bin/sh
 set -e
 
+jobs="$(nproc)"
+
+usage() {
+    printf "Usage: build-llvm [-j jobs] <llvm-project-VERSION.tar.xz\n"
+}
+
+while getopts hj: name
+do
+    case $name in
+    h) usage; exit 0;;
+    j) jobs="$OPTARG";;
+    ?) usage; exit 2;;
+    esac
+done
+shift $(($OPTIND - 1))
 if [ $# -gt 0 -o -t 0 ]; then
-    printf 'usage %s <llvm-project-VERSION.tar.xz\n' "$0" >&2
-    exit 1
+    usage
+    exit 2
 fi
 
 set -x
@@ -12,6 +27,6 @@ cmake \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX="$HOME/.local" \
     -DLLVM_USE_LINKER=gold \
-    -DLLVM_ENABLE_PROJECTS="clang;compiler-rt;openmp;polly;flang;mlir" \
+    -DLLVM_ENABLE_PROJECTS="clang;compiler-rt;openmp;polly" \
     llvm-project*/llvm/
-make -kj$(nproc)
+make -kj"$jobs"
