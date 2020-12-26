@@ -30,6 +30,9 @@ set nojoinspaces
 " Search
 set incsearch
 
+" Fortran
+let [fortran_do_enddo, fortran_free_source] = [1, 1]
+
 " Colors and themes
 syntax on
 if has('gui_running')
@@ -100,9 +103,6 @@ autocmd filetype go map <buffer> <leader>f m`:%!gofmt<cr>``
 autocmd filetype go map <buffer> <leader>i m`:%!goimports<cr>``
 autocmd filetype go map <buffer> [[ ?^\(func\\|var\\|type\\|import\\|package\)\><cr>
 autocmd filetype go map <buffer> ]] /^\(func\\|var\\|type\\|import\\|package\)\><cr>
-
-" Fortran
-autocmd filetype fortran let [fortran_do_enddo, fortran_free_source] = [1, 1]
 
 " Assembly style
 autocmd filetype asm setlocal noexpandtab shiftwidth=8
