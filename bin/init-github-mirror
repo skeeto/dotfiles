@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# This script initializes a GitHub repository mirror that excludes pull
+# requests refs. These refs mostly contain garbage not worth keeping.
+#
+# See also: https://christoph.ruegg.name/blog/git-howto-mirror-a-github-repository-without-pull-refs.html
+
+set -e
+
+if [ $# -ne 1 ]; then
+    printf 'usage: init-github-mirror URL\n'
+    exit 1
+fi
+
+dir="$(basename "$1").git"
+git init --bare -- "$dir"
+cat >"$dir/config" <<EOF
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[remote "origin"]
+	url = $1
+	fetch = +refs/heads/*:refs/heads/*
+	fetch = +refs/tags/*:refs/tags/*
+	mirror = true
+EOF
+
+git -C "$dir" remote update --prune
