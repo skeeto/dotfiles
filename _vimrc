@@ -17,6 +17,7 @@ set listchars=eol:$,tab:>-
 set ttimeoutlen=0
 set formatoptions+=j
 set autoread
+set nrformats=hex
 
 " Wildmenu
 set wildmenu
