@@ -43,7 +43,7 @@ fi
 ## Installs an individual dotfile
 install() {
     dotfile="$1"
-    dest="$HOME/.${dotfile#./_*}"
+    dest="$HOME/.${dotfile#_}"
     if [ "$dotfile" = "${dotfile##*.enchive}" ]; then
         echo Installing "$dotfile"
         mkdir -p -m 700 "$(dirname "$dest")"
@@ -63,14 +63,10 @@ install() {
 }
 
 ## Install each _-prefixed file
-for source in $(find . -name '_*' | sort); do
-    if [ -d "$source" ]; then
-        for dotfile in $(find "$source" -type f | sort); do
-            install "$dotfile"
-        done
-    else
-        install "$source"
-    fi
+for source in _*; do  # Globbing expansion is sorted
+    for dotfile in $(find "$source" -type f | sort); do
+        install "$dotfile"
+    done
 done
 
 ## Special cases
