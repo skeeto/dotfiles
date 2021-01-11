@@ -8,7 +8,8 @@ URxvt*background: #1D1F21
 URxvt.letterSpace: 0
 
 XTerm.termName: xterm-256color
-XTerm.vt100.locale: true
+XTerm.vt100.locale: false
+XTerm.vt100.utf8: true
 XTerm.vt100.faceName: Noto Mono:size=FONT_SIZE
 XTerm.vt100.backarrowKey: false
 XTerm.ttyModes: erase ^?
@@ -18,3 +19,5 @@ XTerm*highlightColorMode: true
 XTerm*jumpScroll: true
 XTerm*multiScroll: true
 XTerm*scrollBar: false
+XTerm*highlightColor: white
+XTerm*highlightTextColor: white
