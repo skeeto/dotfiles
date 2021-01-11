@@ -16,7 +16,7 @@ quickmark R https://old.reddit.com/r/mod/about/modqueue/
 quickmark w https://forecast.weather.gov/MapClick.php?lat=39.2&lon=-76.8
 quickmark j http://192.168.1.19:9091/transmission/web/
 quickmark a https://www.myanonamouse.net/
-quickmark l http://libgen.is/
+quickmark l http://libgen.rs/
 quickmark o https://www.tujavortaro.net/
 
 set searchurls.t       https://www.thepiratebay.org/search/%s/0/99/0
