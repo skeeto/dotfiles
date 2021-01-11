@@ -163,6 +163,11 @@ colorscheme() {
 }
 colorscheme
 
+## Fix GNU ls colors for kitty
+if [ -z "$LS_COLORS" ] && command -v dircolors >/dev/null 2>&1; then
+    eval "$(dircolors | sed 's/\<3\([0-7]\)\>/9\1/g')"
+fi
+
 ## Functions
 
 title() {
