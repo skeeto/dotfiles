@@ -114,8 +114,10 @@ autocmd filetype make setlocal shiftwidth=8
 
 " Build
 set autowrite
-if executable('make')
+if executable('make') && executable('nproc')
     set makeprg=make\ -kj$(nproc)
+elseif executable('make')
+    set makeprg=make\ -k
 elseif executable('nmake')
     set makeprg=nmake\ -nologo
 end
