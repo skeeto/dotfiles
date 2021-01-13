@@ -164,9 +164,8 @@ colorscheme() {
 colorscheme
 
 ## Fix GNU ls colors for kitty
-if [ -z "$LS_COLORS" ] && command -v dircolors >/dev/null 2>&1; then
-    eval "$(dircolors | sed 's/\<3\([0-7]\)\>/9\1/g')"
-fi
+export LS_COLORS="di=01;94:ln=01;96:pi=40;93:so=01;95:bd=40;93;01:\
+cd=40;93;01:or=40;91;01:ca=90;41:ex=01;92"
 
 ## Functions
 
