@@ -36,7 +36,7 @@ IFS=$'\n\t'
 
 memory=2048
 ncpu=$(nproc)
-args=(--enable-kvm -cpu host -vga qxl)
+args=(--enable-kvm -cpu host -vga vmware)
 hostfwd=
 
 usage() {
