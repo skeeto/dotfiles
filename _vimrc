@@ -146,3 +146,8 @@ map <Leader>{ %%%r{r}%
 " Crypto (via Enchive)
 map <Leader>pe :'<,'>!enchive archive \| base64<CR>
 map <Leader>pd :'<,'>!base64 -d \| enchive --agent --pinentry extract<CR>
+
+" Custom config for this machine
+if filereadable(expand('~/.vimrc_local'))
+    source ~/.vimrc_local
+endif
