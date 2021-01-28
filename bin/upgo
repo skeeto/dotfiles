@@ -8,7 +8,7 @@
 set -e
 
 usage() {
-    printf 'usage: upgo [-hk]\n'
+    printf 'usage: upgo [-hk] [URL]\n'
     printf '  -h        print this message\n'
     printf '  -k        keep the source tarball\n'
 }
@@ -16,6 +16,7 @@ usage() {
 keep=no
 GOPATH="$(go env GOPATH)"
 list_url='https://golang.org/dl/'
+src_url=
 download_re='go(1\.[0-9]+(\.[0-9]+)?)\.src\.tar\.gz'
 
 while getopts hk name
@@ -26,8 +27,11 @@ do
     ?) usage 1>&2; exit 2;;
     esac
 done
-shift $(($OPTIND - 1))
-if [ $# -gt 0 ]; then
+shift $((OPTIND - 1))
+if [ $# -eq 1 ]; then
+    src_url="$1"
+    shift
+elif [ $# -gt 1 ]; then
     printf 'upgo: too many arguments\n' 1>&2
     exit 2
 fi
@@ -38,16 +42,18 @@ cleanup() {
 }
 trap cleanup INT TERM EXIT
 
-tarfile="$(curl -s "$list_url" | grep -Eom1 "$download_re")"
-url="$list_url$tarfile"
-version="$(printf %s "$url" | grep -Eo '(1\.[0-9]+(\.[0-9]+)?)')"
+if [ -z "$src_url" ]; then
+    tarfile="$(curl -s "$list_url" | grep -Eom1 "$download_re")"
+    src_url="$list_url$tarfile"
+fi
+version="$(printf %s "$src_url" | grep -Eo '(1\.[0-9]+(\.[0-9]+)?)')"
 install_path="$GOPATH/go$version"
 if [ $keep = yes ]; then
     set - "$PWD/go$version.src.tar.gz"
 fi
 
 cd -- "$tmpdir"
-curl -Ls "$url" | tee "$@" | tar xzf -
+curl -Ls "$src_url" | tee "$@" | tar xzf -
 (
     cd go/src
     CGO_ENABLED=0 GOROOT_FINAL="$install_path" ./make.bash
