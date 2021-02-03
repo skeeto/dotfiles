@@ -60,7 +60,6 @@ end
 " Tab configuration
 set expandtab
 set shiftwidth=4
-set shiftround
 set smarttab
 set autoindent
 
