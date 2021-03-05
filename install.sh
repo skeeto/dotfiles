@@ -15,6 +15,7 @@ usage: install.sh [options]
 
 OPTIONS:
   -d    Assume high DPI (larger fonts)
+  -D    Assume low DPI (smaller fonts)
   -h    Show this message
   -l    Install config files as hard links
   -p    Install private dotfiles
@@ -23,9 +24,10 @@ EOF
 }
 
 ## Parse command line switches
-while getopts "dhlp" option; do
+while getopts "dDhlp" option; do
     case "$option" in
         d) high_dpi=yes ;;
+        D) high_dpi=no ;;
         h) usage 0 ;;
         l) lnflags= ;;
         p) install_private=yes ;;
