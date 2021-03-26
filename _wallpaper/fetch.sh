@@ -5,7 +5,9 @@ set -e -- \
     Kelsey-Wellons-Wallpaper-Collection-1.tar \
     Kelsey-Wellons-Wallpaper-Collection-2.tar \
     Kelsey-Wellons-Wallpaper-Collection-3.tar \
-    Kelsey-Wellons-Wallpaper-Collection-4.tar
+    Kelsey-Wellons-Wallpaper-Collection-4.tar \
+    Kelsey-Wellons-Wallpaper-Collection-5.tar \
+
 base=http://skeeto.s3.amazonaws.com/wallpapers
 for tar; do
     curl -s "$base/$tar" | tar -xvf -
