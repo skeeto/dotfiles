@@ -8,5 +8,5 @@ set -e -- \
     Kelsey-Wellons-Wallpaper-Collection-4.tar
 base=http://skeeto.s3.amazonaws.com/wallpapers
 for tar; do
-    curl "$base/$tar" | tar -xvf -
+    curl -s "$base/$tar" | tar -xvf -
 done
