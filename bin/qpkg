@@ -106,13 +106,11 @@ do
     U) command=U;;
     V) command=V;;
     d) directory="$OPTARG";;
-    h) usage
-        exit 0;;
+    h) usage; exit 0;;
     k) keep=true;;
     l) ldflags=true;;
     m) make="$OPTARG";;
-    ?) usage
-        exit 2;;
+    ?) usage; exit 2;;
     esac
 done
 shift $(($OPTIND - 1))
