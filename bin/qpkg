@@ -9,7 +9,7 @@
 # =============
 #
 # The build helper (-B) will run the configure script and fire off make
-# with the appropriate number of jobs. It automatically handles the
+# with the appropriate number of jobs (-j). It automatically handles the
 # --prefix=... configure argument. You may still need to manually
 # override LDFLAGS with the compiler's -L for $LIBRARY_PATH since that
 # environment variable does *not* override system libraries. The -l
@@ -83,6 +83,7 @@ make=make
 prefix=${QPKG_PREFIX:-$HOME/.local}
 keep=false
 ldflags=false
+njobs=
 
 usage() {
     printf "Usage: qpkg -B [-d DIR] [-l] [-m MAKE] SRC/ [configure args...]\n"
@@ -92,12 +93,13 @@ usage() {
     printf "            -V PKG.tgz\n"
     printf "Options:\n"
     printf "  -d DIR    path of the build directory\n"
+    printf "  -j N      number of jobs to run concurrently\n"
     printf "  -k        keep the DESTDIR install directory (_destdir/)\n"
     printf "  -l        set and export LDFLAGS to use LIBRARY_PATH\n"
     printf "  -m MAKE   name of the make program (make)\n"
 }
 
-while getopts BCIUVd:hklm: name
+while getopts BCIUVd:hj:klm: name
 do
     case $name in
     B) command=B;;
@@ -107,6 +109,7 @@ do
     V) command=V;;
     d) directory="$OPTARG";;
     h) usage; exit 0;;
+    j) njobs="$OPTARG";;
     k) keep=true;;
     l) ldflags=true;;
     m) make="$OPTARG";;
@@ -125,7 +128,9 @@ if [ $ldflags = true ]; then
 fi
 
 nproc() {
-    if $(which nproc >/dev/null 2>&1); then
+    if [ -n "$njobs" ]; then
+        printf '%s' "$njobs"
+    elif $(which nproc >/dev/null 2>&1); then
         command nproc
     elif [ -e /proc/cpuinfo ]; then
         grep ^processor < /proc/cpuinfo | wc -l
