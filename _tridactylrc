@@ -24,7 +24,7 @@ set searchurls.v       https://torrents-csv.ml/#/search/torrent/%s/1
 set searchurls.r       https://old.reddit.com/r/%s
 set searchurls.u       https://old.reddit.com/u/%s
 set searchurls.w       https://en.wikipedia.org/w/index.php?search=%s
-set searchurls.g       https://www.google.com/search?q=%s
+set searchurls.g       https://www.google.com/search?tbs=li:1&q=%s
 set searchurls.s       https://duckduckgo.com/lite/?q=%s
 set searchurls.wd      https://en.wiktionary.org/wiki/?search=%s
 set searchurls.d       https://www.websters1913.com/words/%s
