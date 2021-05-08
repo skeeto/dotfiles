@@ -4,6 +4,9 @@
     autoclrf = input
     whitespace = cr-at-eol
 
+[init]
+    defaultBranch = master
+
 [protocol]
     version = 2
 
