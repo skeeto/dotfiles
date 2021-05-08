@@ -5,7 +5,7 @@
     whitespace = cr-at-eol
 
 [protocol]
-	version = 2
+    version = 2
 
 [color]
     branch = auto
