@@ -41,6 +41,7 @@ fi
 
 ## Identity
 export REALNAME="Christopher Wellons"
+export NAME="$REALNAME"
 export EMAIL="wellons@nullprogram.com"
 export GIT_COMMITTER_NAME="$REALNAME"
 export GIT_AUTHOR_NAME="$REALNAME"
