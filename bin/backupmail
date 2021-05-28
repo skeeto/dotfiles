@@ -1,8 +1,6 @@
 #!/bin/sh
 set -e
-outfile="Maildir-$(date -u +%Y%m%dT%H%M%SZ).tar.xz.enchive"
+outfile="Maildir-$(date -u +%Y%m%dT%H%M%SZ).tar.zst.enchive"
 printf "%s\n" "$outfile"
 ssh mail tar -Izstd -c --sort=name Maildir | \
-    zstd -d | \
-    xz -9e | \
     enchive archive > "$outfile"
