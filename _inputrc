@@ -1,2 +1,3 @@
 set bind-tty-special-chars off
 set bell-style none
+set enable-bracketed-paste off
