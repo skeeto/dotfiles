@@ -1,0 +1,54 @@
+#!/bin/sh
+# Produce a Go source release tarball from the Git repository.
+set -e
+
+cmd="gzip -9"
+directory=""
+ext="gz"
+quiet="no"
+
+usage() {
+    printf "Usage: relgo [-hq] [-c CMD] [-d DIR] [-e EXT] [TAG]\n"
+    printf "Example:\n"
+    printf "  relgo go1.17beta1\n"
+    printf "  relgo -d /tmp -c 'zstd -T0 -19' -e zst go1.16.5\n"
+    printf "Options:\n"
+    printf "  -c CMD    custom compression command [gzip -9]\n"
+    printf "  -d DIR    output directory [.]\n"
+    printf "  -e EXT    custom file extension [gz]\n"
+    printf "  -q        do not print archive name (quiet)\n"
+}
+
+while getopts c:d:e:hq option
+do
+    case "$option" in
+    c) cmd="$OPTARG";;
+    d) directory="$OPTARG";;
+    e) ext="$OPTARG";;
+    h) usage; exit 0;;
+    q) quiet=yes;;
+    ?) usage; exit 2;;
+    esac
+done
+shift $(($OPTIND - 1))
+
+if [ $# -gt 0 ]; then
+    tag="$1"
+else
+    tag="$(git describe --tags)"
+fi
+tar="$tag.src.tar.$ext"
+
+if [ "$quiet" = no ]; then
+    printf '%s\n' "$tar"
+fi
+
+# Put VERSION file in a temporary directory so that this script doesn't race
+# with other instances (i.e. the script can be run in parallel).
+dir="$(mktemp -d)"
+trap 'rm -rf -- "$dir"' EXIT
+    printf '%s' "$tag" >"$dir/VERSION"
+
+git="$(readlink -f "$(git rev-parse --git-dir)")"
+git -C "$dir" --git-dir="$git" archive --prefix=go/ --add-file=VERSION "$tag" |
+    $cmd >"${directory:-.}/$tar"
