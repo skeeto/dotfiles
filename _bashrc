@@ -127,6 +127,10 @@ XDG_PUBLICSHARE_DIR="$HOME/trash/"
 XDG_TEMPLATES_DIR="$HOME/trash/"
 XDG_VIDEOS_DIR="$HOME/trash/"
 
+XDG_CACHE_HOME="$HOME/trash/"
+XDG_STATE_HOME="$HOME/trash/"
+XDG_DATA_HOME="$HOME/trash/"
+
 ## libvirt
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
