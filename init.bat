@@ -19,6 +19,8 @@ set key="HKCU\Software\Microsoft\Windows\CurrentVersion\Feeds"
 reg add "%key%" /f /v ShellFeedsTaskbarViewMode /t REG_DWORD /d 2
 set key="HKCU\Software\Microsoft\Windows\CurrentVersion\Search"
 reg add "%key%" /f /v SearchboxTaskbarMode      /t REG_DWORD /d 0
+set key="HKCU\Control Panel\Desktop"
+reg add "%key%" /f /v CursorBlinkRate           /t REG_SZ    /d -1
 set key="HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband"
 reg delete "%key%" /f /v Favorites
 
