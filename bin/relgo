@@ -1,5 +1,5 @@
 #!/bin/sh
-# Produce a Go source release tarball from the Git repository.
+# Produce perfect-match Go source release tarballs from the Git repository.
 set -e
 
 cmd="gzip -9"
@@ -48,7 +48,9 @@ fi
 dir="$(mktemp -d)"
 trap 'rm -rf -- "$dir"' EXIT
 printf '%s' "$tag" >"$dir/VERSION"
+printf '/.* export-ignore\n' >"$dir/.gitattributes"
 
 git="$(readlink -f "$(git rev-parse --git-dir)")"
-git -C "$dir" --git-dir="$git" archive --prefix=go/ --add-file=VERSION "$tag" |
-    $cmd >"${directory:-.}/$tar"
+git -C "$dir" --git-dir="$git" --work-tree="$dir" \
+    archive --prefix=go/ --add-file=VERSION --worktree-attributes "$tag" |
+        $cmd >"${directory:-.}/$tar"
