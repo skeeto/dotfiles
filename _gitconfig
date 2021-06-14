@@ -30,7 +30,7 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     trim = reflog expire --expire-unreachable=now --all
     chop = gc --prune=now
-    optimize = repack -a -d -f --depth=250 --window=250
+    optimize = repack -a -d -f --depth=4096 --window=4096 --window-memory=0
     pf = pull --ff-only
     pr = "!f() { git fetch --force origin pull/$1/head:pr-$1; }; f"
     host = daemon --base-path=. --reuseaddr --export-all
