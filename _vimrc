@@ -102,7 +102,7 @@ autocmd filetype go setlocal makeprg=go\ build
 autocmd filetype go setlocal noexpandtab shiftwidth=4 tabstop=4 textwidth=72
 autocmd filetype go map <silent> <buffer> <leader>i
     \ :update \|
-    \ :cexpr system("goimports -w " . shellescape(expand('%'))) \|
+    \ :cexpr system("goimports -w " . expand('%')) \|
     \ :silent edit<cr>
 autocmd filetype go map <buffer> [[ ?^\(func\\|var\\|type\\|import\\|package\)\><cr>
 autocmd filetype go map <buffer> ]] /^\(func\\|var\\|type\\|import\\|package\)\><cr>
