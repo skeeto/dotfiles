@@ -100,8 +100,10 @@ let c_no_curly_error=1  " Vim still lacks C99 support
 " Go
 autocmd filetype go setlocal makeprg=go\ build
 autocmd filetype go setlocal noexpandtab shiftwidth=4 tabstop=4 textwidth=72
-autocmd filetype go map <buffer> <leader>f m`:%!gofmt<cr>``
-autocmd filetype go map <buffer> <leader>i m`:%!goimports<cr>``
+autocmd filetype go map <silent> <buffer> <leader>i
+    \ :update \|
+    \ :cexpr system("goimports -w " . shellescape(expand('%'))) \|
+    \ :silent edit<cr>
 autocmd filetype go map <buffer> [[ ?^\(func\\|var\\|type\\|import\\|package\)\><cr>
 autocmd filetype go map <buffer> ]] /^\(func\\|var\\|type\\|import\\|package\)\><cr>
 
