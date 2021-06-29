@@ -137,7 +137,7 @@ map <Leader>w :nn j gj<CR>:nn k gk<CR>:se fo-=t<CR>:se lbr<CR>
 
 " Extras
 map <Leader>q :hi Error NONE<CR>
-map <Leader>t :silent !ctags -R<CR>
+map <Leader>t :silent !ctags -R<CR>
 map <Leader>c :%s/\s\+$//e<CR>
 map <Leader>r :syntax sync fromstart<CR>
 map <Leader>( %%%r(r)%
