@@ -140,9 +140,6 @@ map <Leader>q :hi Error NONE<CR>
 map <Leader>t :silent !ctags -R<CR>
 map <Leader>c :%s/\s\+$//e<CR>
 map <Leader>r :syntax sync fromstart<CR>
-map <Leader>( %%%r(r)%
-map <Leader>[ %%%r[r]%
-map <Leader>{ %%%r{r}%
 
 " Crypto (via Enchive)
 map <Leader>pe :'<,'>!enchive archive \| base64<CR>
