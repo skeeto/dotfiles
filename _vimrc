@@ -123,6 +123,9 @@ elseif executable('nmake')
     set makeprg=nmake\ -nologo
 end
 
+" Expand last search to all files with matching extension
+map <Leader>/ :execute "vimgrep // **/*." . expand("%:e")<CR>
+
 " Spelling
 set spelllang=en_us
 set spellfile=~/.vim/spell/en.utf-8.add
