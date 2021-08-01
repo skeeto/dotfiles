@@ -3,7 +3,7 @@ map <Leader>ev :edit $MYVIMRC<CR>
 map <Leader>es :source $MYVIMRC<CR>
 
 " Miscellaneous
-set encoding=utf-8
+set encoding=utf-8 fileformat=unix
 set shellslash
 set backspace=indent,eol,start
 set guioptions=ac
