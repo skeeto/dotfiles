@@ -80,6 +80,6 @@ fi
 set -x
 qemu-system-x86_64 \
     -m "$memory" \
-    -smp "$ncpu" \
+    -smp "$ncpu,cores=$ncpu" \
     "${args[@]}" \
     "$@"
