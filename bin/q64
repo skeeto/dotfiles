@@ -41,12 +41,12 @@ hostfwd=
 
 usage() {
     cat <<EOF
-usage: q64 [-c ISO] [-d IMG] [-h] [-m MB] [-n #CPU] [-p SRC:DST]
+usage: q64 [-hs] [-c ISO] [-d IMG] [-m MB] [-n #CPU] [-p SRC:DST]
        -- [qemu-system options...]
 EOF
 }
 
-while getopts c:d:hm:n:p: opt
+while getopts c:d:hm:n:p:s opt
 do
     case $opt in
         c)  args+=(-cdrom)
@@ -63,6 +63,8 @@ do
         n)  ncpu="$OPTARG"
             ;;
         p)  hostfwd="$hostfwd,hostfwd=tcp::${OPTARG#*:}-:${OPTARG%:*}"
+            ;;
+        s)  args+=(-monitor stdio)
             ;;
         ?)  usage
             exit 1
