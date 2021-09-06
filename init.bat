@@ -5,6 +5,8 @@
 :: toy operating system with most configuration inaccessible to scripts.
 
 :: Annoyances
+set key="HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer"
+reg add "%key%" /f /v AltTabSettings            /t REG_DWORD /d 1
 set key="HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
 reg add "%key%" /f /v TaskbarGlomLevel          /t REG_DWORD /d 2
 reg add "%key%" /f /v HideFileExt               /t REG_DWORD /d 0
