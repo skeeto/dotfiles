@@ -1,3 +1,5 @@
+PS1='\[\x1b[92m\]w64\[\x1b[38;2;255;0;255m\]\w\[\x1b[0m\] '
+
 export EXE=".exe"
 
 export PYTHONHOME="$HOME/python"
