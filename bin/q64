@@ -34,26 +34,42 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+args=(--enable-kvm -cpu host -vga vmware)
+dryrun=
+format=
+hostfwd=
 memory=2048
 ncpu=$(nproc)
-args=(--enable-kvm -cpu host -vga vmware)
-hostfwd=
+verbose=false
 
 usage() {
     cat <<EOF
-usage: q64 [-hs] [-c ISO] [-d IMG] [-m MB] [-n #CPU] [-p SRC:DST]
+usage: q64 [-Dhrsv] [-c ISO] [-d IMG] [-m MB] [-n #CPU] [-p SRC:DST]
        -- [qemu-system options...]
+  -D          dry run, print command but do nothing
+  -c ISO      attach an ISO image (cdrom)
+  -d IMG      attach a drive image
+  -h          print this help message
+  -m MB       guest RAM size in MiB (default $memory)
+  -n N        number of guest CPUs (default: $ncpu)
+  -p SRC:DST  port forward guest TCP connections
+  -r          following -d refers to a raw image
+  -s          attach QEMU console to standard input/output
+  -v          print exact qemu-system command
 EOF
 }
 
-while getopts c:d:hm:n:p:s opt
+while getopts Dc:d:hm:n:p:rsv opt
 do
     case $opt in
+        D)  dryrun=echo
+            ;;
         c)  args+=(-cdrom)
             args+=("$OPTARG")
             ;;
         d)  args+=(-drive)
-            args+=("file=$OPTARG,format=raw")
+            args+=("file=$OPTARG$format")
+            format=
             ;;
         h)  usage
             exit 0
@@ -64,7 +80,10 @@ do
             ;;
         p)  hostfwd="$hostfwd,hostfwd=tcp::${OPTARG#*:}-:${OPTARG%:*}"
             ;;
-        s)  args+=(-monitor stdio)
+        r)  format=",format=raw"
+            ;;
+        s)  args+=(-monitor stdio) ;;
+        v)  verbose=true
             ;;
         ?)  usage
             exit 1
@@ -79,8 +98,11 @@ if [[ -n "$hostfwd" ]]; then
     args+=(-device rtl8139,netdev=eth0)
 fi
 
-set -x
-qemu-system-x86_64 \
+if [[ $verbose = true ]]; then
+    set -x
+fi
+
+$dryrun qemu-system-x86_64 \
     -m "$memory" \
     -smp "$ncpu,cores=$ncpu" \
     "${args[@]}" \
