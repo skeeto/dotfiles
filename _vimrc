@@ -3,33 +3,31 @@ map <Leader>ev :edit $MYVIMRC<CR>
 map <Leader>es :source $MYVIMRC<CR>
 
 " Miscellaneous
-set encoding=utf-8 fileformat=unix
-set shellslash
+filetype plugin indent on
+set autoread
 set backspace=indent,eol,start
+set cpoptions+=$
+set encoding=utf-8
+set fileformat=unix
+set formatoptions+=j
 set guioptions=ac
 set hidden
-set cpoptions+=$
+set incsearch
 set lazyredraw
-set showcmd
-set nobackup
-set noswapfile
 set listchars=eol:$,tab:>-
-set ttimeoutlen=0
-set formatoptions+=j
-set autoread
+set nobackup
+set nojoinspaces
+set noswapfile
 set nrformats=hex
+set shellslash
+set showcmd
+set ttimeoutlen=0
 
 " Wildmenu
 set wildmenu
 set wildmode=longest,list
 set path=**
 set complete=.,w,b,u,t
-
-" One space between sentences please.
-set nojoinspaces
-
-" Search
-set incsearch
 
 " Fortran
 let [fortran_do_enddo, fortran_free_source] = [1, 1]
@@ -78,11 +76,6 @@ hi StatusLine guibg=Gray16 guifg=White
 " netrw
 let g:netrw_banner=0
 let g:netrw_silent=1
-
-" Filetypes
-filetype on
-filetype plugin on
-filetype indent on
 
 " Set filetype for special cases
 autocmd BufNewFile,BufRead .bash_local set filetype=sh
