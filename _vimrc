@@ -17,6 +17,7 @@ set lazyredraw
 set listchars=eol:$,tab:>-
 set nobackup
 set nojoinspaces
+set nostartofline
 set noswapfile
 set nrformats=hex
 set shellslash
