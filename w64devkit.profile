@@ -8,6 +8,8 @@ PATH="$PATH;$PYTHONHOME"
 export JAVA_HOME="$HOME/jdk"
 PATH="$PATH;$JAVA_HOME/bin"
 
+PATH="$PATH;$HOME/git/cmd"
+
 alias g="git"
 alias s="less -SR"
 alias b="make -kj$NUMBER_OF_PROCESSORS"
