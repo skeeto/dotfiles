@@ -23,3 +23,14 @@ hh() {
 mini() {
     mode 80,24
 }
+
+genalias() {
+    exe="$1"
+    base="$(basename "$exe")"
+    shift
+    if [[ $# -eq 0 ]]; then
+        set "$base"
+    fi
+    cc -DEXE="$exe" -DCMD="$*" -s -Os -nostdlib -ffreestanding \
+        -o "$HOME/bin/$base" "$HOME/w64devkit/src/alias.c" -lkernel32
+}
