@@ -204,6 +204,16 @@ httpd() {
     python3 -m http.server "${1:-8001}"
 }
 
+st() {
+    if [ $# -lt 1 ]; then
+        printf 'usage: st HOST [...]\n' >&2
+        return 1
+    fi
+    host="$1"
+    shift
+    ssh -t "$host" tmux attach "$@"
+}
+
 ## Aliases
 
 source ~/.bash_aliases
