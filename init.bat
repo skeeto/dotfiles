@@ -17,12 +17,17 @@ reg add "%key%" /f /v MultiTaskingAltTabFilter  /t REG_DWORD /d 3
 reg add "%key%" /f /v JointResize               /t REG_DWORD /d 0
 reg add "%key%" /f /v SnapFill                  /t REG_DWORD /d 0
 reg add "%key%" /f /v SnapAssist                /t REG_DWORD /d 0
+reg add "%key%" /f /v TaskbarAnimations         /t REG_DWORD /d 0
 set key=HKCU\Software\Microsoft\Windows\CurrentVersion\Feeds
 reg add "%key%" /f /v ShellFeedsTaskbarViewMode /t REG_DWORD /d 2
 set key=HKCU\Software\Microsoft\Windows\CurrentVersion\Search
 reg add "%key%" /f /v SearchboxTaskbarMode      /t REG_DWORD /d 0
 set key=HKCU\Control Panel\Desktop
 reg add "%key%" /f /v CursorBlinkRate           /t REG_SZ    /d -1
+reg add "%key%" /f /v MenuShowDelay             /t REG_SZ    /d 0
+reg add "%key%" /f /v UserPreferencesMask       /t REG_BINARY /d 9012078010000000
+set key=HKCU\Control Panel\Desktop\WindowMetrics
+reg add "%key%" /f /v MinAnimate                /t REG_SZ    /d 0
 set key=HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband
 reg delete "%key%" /f /v Favorites
 
