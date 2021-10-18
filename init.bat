@@ -28,6 +28,8 @@ reg add "%key%" /f /v MenuShowDelay             /t REG_SZ    /d 0
 reg add "%key%" /f /v UserPreferencesMask       /t REG_BINARY /d 9012078010000000
 set key=HKCU\Control Panel\Desktop\WindowMetrics
 reg add "%key%" /f /v MinAnimate                /t REG_SZ    /d 0
+set key=HKCU\Control Panel\Accessibility
+reg add "%key%" /f /v DynamicScrollbars         /t REG_DWORD /d 0
 set key=HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband
 reg delete "%key%" /f /v Favorites
 
