@@ -15,11 +15,12 @@ PATH="$PATH;$HOME/go/bin"
 
 PATH="$PATH;$HOME/git/cmd"
 
-alias g="git"
-alias s="less -SR"
 alias b="make -kj$NUMBER_OF_PROCESSORS"
 alias cl="cl /nologo"
+alias g="git"
+alias m="mpv --really-quiet"
 alias nmake="nmake /nologo"
+alias s="less -SR"
 
 hh() {
     hastyhex -p "$@" | less -FR
