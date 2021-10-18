@@ -34,7 +34,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-args=(--enable-kvm -cpu host -vga vmware)
+args=(--enable-kvm -cpu host -vga std)
 dryrun=
 format=
 hostfwd=
