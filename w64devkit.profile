@@ -1,12 +1,17 @@
 PS1='\[\e[92m\]w64\[\e[38;2;255;0;255m\]\w\[\e[0m\e[2 q\] '
 
 export EXE=".exe"
+PATH="$PATH;$HOME/bin"
 
 export PYTHONHOME="$HOME/python"
 PATH="$PATH;$PYTHONHOME"
 
 export JAVA_HOME="$HOME/jdk"
 PATH="$PATH;$JAVA_HOME/bin"
+
+export GOBIN="$HOME/bin"
+export GOPATH="$TEMP/go"
+PATH="$PATH;$HOME/go/bin"
 
 PATH="$PATH;$HOME/git/cmd"
 

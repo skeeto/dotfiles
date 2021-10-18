@@ -33,11 +33,6 @@ reg add "%key%" /f /v DynamicScrollbars         /t REG_DWORD /d 0
 set key=HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband
 reg delete "%key%" /f /v Favorites
 
-:: Paths
-setx GOBIN "%USERPROFILE%\bin"
-setx GOPATH "%TEMP%\go"
-setx PATH "%PATH%;%USERPROFILE%\bin;%USERPROFILE%\go\bin"
-
 :: Reload
 taskkill /f /im explorer.exe
 start explorer.exe
