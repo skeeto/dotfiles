@@ -47,6 +47,7 @@ usage() {
 usage: q64 [-Dhrsv] [-c ISO] [-d IMG] [-m MB] [-n #CPU] [-p SRC:DST]
        -- [qemu-system options...]
   -D          dry run, print command but do nothing
+  -a          attach a sound card
   -c ISO      attach an ISO image (cdrom)
   -d IMG      attach a drive image
   -h          print this help message
@@ -59,9 +60,11 @@ usage: q64 [-Dhrsv] [-c ISO] [-d IMG] [-m MB] [-n #CPU] [-p SRC:DST]
 EOF
 }
 
-while getopts Dc:d:hm:n:p:rsv opt
+while getopts Dac:d:hm:n:p:rsv opt
 do
     case $opt in
+        a)  args+=(-device intel-hda -device hda-duplex)
+            ;;
         D)  dryrun=echo
             ;;
         c)  args+=(-cdrom)
