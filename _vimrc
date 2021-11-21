@@ -82,7 +82,7 @@ let g:netrw_silent=1
 autocmd BufNewFile,BufRead .bash_local set filetype=sh
 
 " Non-programming language files
-autocmd filetype markdown,mail,text setlocal textwidth=74
+autocmd FileType markdown,mail,text setlocal textwidth=74
 
 " C style
 set cinoptions+=t0  " don't indent function type
@@ -92,20 +92,22 @@ set cinkeys-=0#     " directives aren't special
 let c_no_curly_error=1  " Vim still lacks C99 support
 
 " Go
-autocmd filetype go setlocal makeprg=go\ build
-autocmd filetype go setlocal noexpandtab shiftwidth=4 tabstop=4 textwidth=72
-autocmd filetype go map <silent> <buffer> <leader>i
+autocmd FileType go setlocal makeprg=go\ build
+autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4 textwidth=72
+autocmd FileType go map <silent> <buffer> <leader>i
     \ :update \|
     \ :cexpr system("goimports -w " . expand('%')) \|
     \ :silent edit<cr>
-autocmd filetype go map <buffer> [[ ?^\(func\\|var\\|type\\|import\\|package\)\><cr>
-autocmd filetype go map <buffer> ]] /^\(func\\|var\\|type\\|import\\|package\)\><cr>
+autocmd FileType go
+    \ map <buffer> [[ ?^\(func\\|var\\|type\\|import\\|package\)\><cr>
+autocmd FileType go
+    \ map <buffer> ]] /^\(func\\|var\\|type\\|import\\|package\)\><cr>
 
 " Assembly style
-autocmd filetype asm setlocal noexpandtab shiftwidth=8
+autocmd FileType asm setlocal noexpandtab shiftwidth=8
 
 " Makefile style
-autocmd filetype make setlocal shiftwidth=8
+autocmd FileType make setlocal shiftwidth=8
 
 " Build
 set autowrite
