@@ -15,7 +15,7 @@ usage() {
 
 keep=no
 GOPATH="$(go env GOPATH)"
-list_url='https://golang.org/dl/'
+list_url='https://go.dev/dl/'
 src_url=
 download_re='go(1\.[0-9]+(\.[0-9]+)?)\.src\.tar\.gz'
 
