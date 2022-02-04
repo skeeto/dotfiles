@@ -28,6 +28,7 @@
 [alias]
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    review = "!f() { git log -p --reverse \"$@\" origin/master...HEAD; }; f"
     trim = reflog expire --expire-unreachable=now --all
     chop = gc --prune=now
     optimize = repack -a -d -f --depth=4096 --window=4096 --window-memory=0
