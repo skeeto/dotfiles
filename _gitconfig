@@ -56,3 +56,6 @@
 
 [gpg]
     program = passphrase2pgp
+
+[credential]
+    helper =

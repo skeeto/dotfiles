@@ -15,6 +15,7 @@ export GOBIN="$HOME/bin"
 export GOPATH="$TEMP/go"
 PATH="$PATH;$HOME/go/bin"
 
+export GIT_TERMINAL_PROMPT=0
 PATH="$PATH;$HOME/git/cmd"
 
 alias b="make -kj$NUMBER_OF_PROCESSORS"
