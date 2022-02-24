@@ -23,7 +23,7 @@
     default = simple
 
 [pull]
-    rebase = true
+    ff = only
 
 [alias]
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
@@ -48,6 +48,7 @@
     autoSquash = true
 
 [merge]
+    ff = only
     tool = vimdiff
     conflictstyle = diff3
 
