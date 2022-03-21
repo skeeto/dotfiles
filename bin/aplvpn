@@ -1,4 +1,4 @@
 #!/bin/sh
 
-exec sudo openconnect \
+exec sudo openconnect --no-http-keepalive \
     --authgroup HID_Token -u wellocc1 asavpn.jhuapl.edu
