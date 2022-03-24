@@ -25,6 +25,16 @@ alias m="mpv --really-quiet"
 alias nmake="nmake /nologo"
 alias s="less -SR"
 
+doc() {
+    case "$1" in
+    c*) cmd /c start "" "$HOME/cppreference/en/index.html" ;;
+    p*) cmd /c start "" "$HOME/python/Doc/index.html"      ;;
+    j*) cmd /c start "" "$HOME/jdk/docs/index.html"        ;;
+    w*) cmd /c start "" "$HOME/win32.chm"                  ;;
+     *) echo doc: what is $1?; return 1                    ;;
+    esac
+}
+
 hh() {
     hastyhex -p "$@" | less -FR
 }
