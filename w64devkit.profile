@@ -35,6 +35,12 @@ doc() {
     esac
 }
 
+man() {
+    doc="$HOME/cppreference/en/c/"
+    html="$(awk -F'"' '/\<'"$1"'\>/{print $2; exit(0)}' "$doc/index.html")"
+    cmd /c start "" "$doc/$html"
+}
+
 hh() {
     hastyhex -p "$@" | less -FR
 }
