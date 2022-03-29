@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+
+# Builds an index of the "Intel 64 and IA-32 Architectures Software
+# Developer's Manual Instruct Set Reference". The PDF is located at
+# $X86_PDF, auto-discovered under in ~/doc/ by default. The index is used
+# later by the "x86-lookup" shell script.
+
+import re
+import os.path
+from glob import glob
+from subprocess import Popen, PIPE
+
+if os.getenv("X86_PDF"):
+    PDF = os.getenv("X86_PDF")
+else:
+    PDF = glob(os.path.expanduser("~/doc/*sdm-vol-2abcd.pdf"))[0]
+
+BEGIN    = re.compile("^INSTRUCTIONS \\(A-.\\)$")
+EMPTY    = re.compile("^$")
+MNEMONIC = re.compile("^[A-Z][ A-Z/]*—")
+PAGE     = re.compile("^\f")
+
+def main():
+    mnemonics = {}
+    pagenum = 1
+    in_reference = False
+    heading = False
+
+    def add(mnemonic):
+        if not mnemonics.get(mnemonic):
+            mnemonics[mnemonic] = pagenum
+
+    with Popen(["pdftotext", PDF, "-"], stdout=PIPE, text=True) as proc:
+        for line in proc.stdout:
+            if not in_reference and BEGIN.match(line):
+                in_reference = True
+            elif in_reference and heading and MNEMONIC.match(line):
+                keys = [k.strip() for k in line.split("—")[0].split("/")]
+                if len(keys) == 1:
+                    add(keys[0])
+                elif all(len(k) == 1 for k in keys[1:]):
+                    for suffix in keys[1:]:
+                        add(keys[0][:-1] + suffix)
+                else:
+                    for k in keys:
+                        add(k)
+                heading = False
+            elif PAGE.match(line):
+                pagenum += 1
+                heading = True
+            elif EMPTY.match(line):
+                pass
+            else:
+                heading = False
+
+    with open(PDF+".idx", "w") as index:
+        for mnemonic, pagenum in sorted(mnemonics.items()):
+            print(mnemonic.lower(), pagenum, file=index, sep=":")
+
+if __name__ == "__main__":
+    main()

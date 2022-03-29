@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Opens the "Intel 64 and IA-32 Architectures Software Developer's Manual
+# Instruct Set Reference" to the selected mnemonic. The PDF is located at
+# $X86_PDF, auto-discovered under in ~/doc/ by default. The index must be
+# built first using the "x86-index" Python script.
+#
+# Requires a command installed in $PATH named "pdf" that accepts -p.
+#
+# Being a plain shell script means that Python is not needed just for
+# lookups, only for building the index.
+
+set -e
+pdf="${X86_PDF:-$(echo "$HOME"/doc/*sdm-vol-2abcd.pdf)}"
+
+if [ $# -lt 1 ]; then
+    echo usage: x86-lookup MNEMONIC >&2
+    exit 1
+fi
+
+if r="$(grep "^$1:" "$pdf.idx")"; then
+    page="$(echo $r | cut -d: -f2)"
+    pdf -p "$page" -- "$pdf"
+else
+    echo x86-lookup: no mnemonic found, "$1" >&2
+    exit 1
+fi
