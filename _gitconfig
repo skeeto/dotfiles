@@ -59,4 +59,5 @@
     program = passphrase2pgp
 
 [credential]
+    guiPrompt = false
     helper =
