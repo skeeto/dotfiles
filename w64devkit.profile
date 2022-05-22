@@ -24,6 +24,7 @@ alias g="git"
 alias m="mpv --really-quiet"
 alias nmake="nmake /nologo"
 alias s="less -SR"
+alias v="gvim --remote-silent"
 
 doc() {
     case "$1" in
