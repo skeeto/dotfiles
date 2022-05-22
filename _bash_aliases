@@ -18,6 +18,7 @@ alias ms='mpv --really-quiet --shuffle'
 alias npr='mpv http://wamu-1.streamguys.com'
 alias y='youtube-dl --no-mtime --restrict-filenames -f "bestvideo[height<=1080]+bestaudio/best[height<=1080]"'
 alias yp='youtube-dl -o "%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
+alias yc='youtube-dl -f 136+139 --restrict-filenames'
 
 # Emacs
 alias e='emacsclient -q -ca ""'
