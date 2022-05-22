@@ -20,9 +20,10 @@ strip=false
 
 usage() {
     cat << EOF
-usage: $(basename "$0") [-T|-Z] [-hiqs] [-a STR] [-d DIR] <commit-ish>
+usage: $(basename "$0") [-S|-T|-Z] [-hiqs] [-a STR] [-d DIR] <commit-ish>
 
 OPTIONS:
+    -S       Create a .tar.zst archive
     -T       Create a .tar.xz archive (default)
     -Z       Create a .zip archive
     -a STR   Append string to the archive filename
@@ -35,9 +36,10 @@ EOF
     exit $1
 }
 
-while getopts "TZa:d:hiqs" option; do
+while getopts "STZa:d:hiqs" option; do
     case "$option" in
-        T) mode=tar ;;
+        S) mode=zst ;;
+        T) mode=xz ;;
         Z) mode=zip ;;
         a) append="$OPTARG" ;;
         d) dest="$OPTARG" ;;
@@ -70,12 +72,18 @@ if [ $index = true ]; then
 fi
 
 # Announce and create archive
-if [ $mode = tar ]; then
+if [ $mode = xz ]; then
     if [ $quiet = false ]; then
         echo $file$append.tar.xz;
     fi
     git archive --format=tar --prefix=$file/ "$archive_commit" | xz -9e > \
         "$dest/$file$append.tar.xz"
+elif [ $mode = zst ]; then
+    if [ $quiet = false ]; then
+        echo $file$append.tar.zst;
+    fi
+    git archive --format=tar --prefix=$file/ "$archive_commit" | zstd > \
+        "$dest/$file$append.tar.zst"
 else
     if [ $quiet = false ]; then
         echo $file$append.zip
