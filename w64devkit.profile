@@ -49,3 +49,13 @@ hh() {
 mini() {
     mode 80,24
 }
+
+vcvarsbat() {
+    vcvars=vcvars32.bat
+    if [ "$(gcc -dumpmachine)" = "x86_64-w64-mingw32" ]; then
+        vcvars=vcvars64.bat
+    fi
+    vcvars="$(find C:/Program*/'Microsoft Visual Studio' -iname $vcvars)"
+    printf '@call "%s"\n' "${vcvars//\//\\}"
+    printf '@start "vcvars" "%s\\w64devkit.exe"\n' "${W64DEVKIT_HOME//\//\\}"
+}
