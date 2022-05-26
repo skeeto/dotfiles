@@ -32,6 +32,8 @@ set key=HKCU\Control Panel\Accessibility
 reg add "%key%" /f /v DynamicScrollbars         /t REG_DWORD /d 0
 set key=HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband
 reg delete "%key%" /f /v Favorites
+set key=HKCU\SOFTWARE\Policies\Microsoft\Windows\Explorer
+reg add "%key%" /f /v DisableSearchBoxSuggestions /t REG_DWORD /d 1
 
 :: Reload
 taskkill /f /im explorer.exe
