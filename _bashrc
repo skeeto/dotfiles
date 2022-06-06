@@ -34,6 +34,7 @@ if [ "$TERM" = "dumb" ]; then
     PS1="> "
 fi
 export WINEDEBUG=-all
+export ASAN_OPTIONS=abort_on_error=1:print_legend=0
 
 if [ -e ~/.dpi ]; then
     source ~/.dpi
