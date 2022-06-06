@@ -23,6 +23,7 @@ set nrformats=hex
 set shellslash
 set showcmd
 set ttimeoutlen=0
+set tabstop=4
 
 " Wildmenu
 set wildmenu
