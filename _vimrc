@@ -2,8 +2,10 @@
 map <Leader>ev :edit $MYVIMRC<CR>
 map <Leader>es :source $MYVIMRC<CR>
 
-" Miscellaneous
 filetype plugin indent on
+syntax on
+
+" Miscellaneous
 set autoread
 set backspace=indent,eol,start
 set cpoptions+=$
@@ -35,14 +37,8 @@ set complete=.,w,b,u,t
 let [fortran_do_enddo, fortran_free_source] = [1, 1]
 
 " Colors and themes
-syntax on
-if has('gui_running')
+if exists('&guicursor')
     set guicursor+=a:blinkon0
-    colorscheme darkblue
-elseif has('win32')
-    colorscheme slate
-else
-    colorscheme ron
 end
 if &term =~ "256color" || &term =~ "xterm"
     let &t_SI = "\<Esc>[6 q"
