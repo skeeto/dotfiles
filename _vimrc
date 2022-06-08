@@ -16,6 +16,13 @@ if &term =~ "256color" || &term =~ "xterm"
     end
 end
 
+if $W64DEVKIT != ""
+    set sh=sh shcf=-c sxq=\"
+end
+if &sh !~ "cmd.exe"
+    set mp=make\ -kj$(nproc)
+end
+
 if has("x11")
     let &guifont="Monospace 11"
 elseif has("gui_win32")
@@ -25,7 +32,7 @@ end
 autocmd BufNewFile,BufRead .bash_local setlocal ft=sh
 autocmd FileType markdown,mail,text setlocal tw=74
 
-set cino=t0,l1,:0 cink-=0# mp=make\ -kj$(nproc)
+set cino=t0,l1,:0 cink-=0#
 
 autocmd FileType asm setlocal noet ts=8 sw=8
 
