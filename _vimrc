@@ -51,6 +51,7 @@ map <Leader>t :silent !ctags -R<CR><C-L>
 map <Leader>c :%s/\s\+$//e<CR>
 map <Leader>r :syntax sync fromstart<CR>
 map <Leader>ev :edit $MYVIMRC<CR>
+map <Leader>d :call system("debugbreak")<CR>
 
 " Expand last search to all files with matching extension
 map <Leader>/ :execute "vimgrep // **/*." . expand("%:e")<CR>
