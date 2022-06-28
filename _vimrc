@@ -29,6 +29,10 @@ elseif has("gui_win32")
     let &guifont="Lucida Console:h11"
 end
 
+if !has("gui_running")
+    colorscheme ron
+end
+
 autocmd BufNewFile,BufRead .bash_local setlocal ft=sh
 autocmd FileType markdown,mail,text setlocal tw=74
 
