@@ -1,4 +1,8 @@
-PS1='\[\e[92m\]w64\[\e[38;2;255;0;255m\]\w\[\e[0m\e[2 q\] '
+PS1=
+if [ "$(cmd /c ver | grep -o '[0-9]\+' | head -n1)" -ge 10 ]; then
+    PS1='\e[2 q'
+fi
+PS1='\[\e[38;2;0;255;0m\]w64\[\e[38;2;255;0;255m\]\w\[\e[0m'$PS1'\] '
 
 export EXE=".exe"
 PATH="$PATH;$HOME/bin"
