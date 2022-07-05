@@ -61,3 +61,13 @@ vcvarsbat() {
     printf '@call "%s"\n' "${vcvars//\//\\}"
     printf '@start "vcvars" "%s\\w64devkit.exe"\n' "${W64DEVKIT_HOME//\//\\}"
 }
+
+title() {
+    printf '\e]2;%s\a' "$@"
+}
+
+if [ "$(gcc -dumpmachine)" = i686-w64-mingw32 ]; then
+    title w32devkit
+elif [ -n "$DEVENVDIR" ]; then
+    title msvc
+fi
