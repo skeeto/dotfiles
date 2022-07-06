@@ -137,7 +137,6 @@ export LIBVIRT_DEFAULT_URI=qemu:///system
 
 ## Go
 PATH=$(add "${GOPATH:-$HOME/go}/bin" "$PATH")
-export GO111MODULE=on
 
 ## Agents
 if command -v keychain > /dev/null 2>&1; then
