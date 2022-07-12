@@ -2,7 +2,7 @@
 # Produce perfect-match Go source release tarballs from the Git repository.
 set -e
 
-cmd="gzip -9"
+cmd="gzip"
 directory=""
 ext=".gz"
 quiet="no"
@@ -13,7 +13,7 @@ usage() {
     printf "  relgo go1.17beta1\n"
     printf "  relgo -d /tmp -c 'zstd -T0 -19' -e .zst go1.16.5\n"
     printf "Options:\n"
-    printf "  -c CMD    custom compression command [gzip -9]\n"
+    printf "  -c CMD    custom compression command [gzip]\n"
     printf "  -d DIR    output directory [.]\n"
     printf "  -e EXT    custom file extension [.gz]\n"
     printf "  -q        do not print archive name (quiet)\n"
