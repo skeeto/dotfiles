@@ -37,6 +37,7 @@ export WINEDEBUG=-all
 export ASAN_OPTIONS=print_legend=0
 ASAN_OPTIONS=$ASAN_OPTIONS:abort_on_error=1
 ASAN_OPTIONS=$ASAN_OPTIONS:detect_leaks=0
+ASAN_OPTIONS=$ASAN_OPTIONS:allocator_may_return_null=1
 
 if [ -e ~/.dpi ]; then
     source ~/.dpi
