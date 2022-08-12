@@ -8,6 +8,7 @@ export EXE=".exe"
 PATH="$PATH;$HOME/bin"
 
 PATH="$PATH;$HOME/gnupg/bin"
+export GNUPGHOME="$HOME/.gnupg"
 
 export PYTHONHOME="$HOME/python"
 PATH="$PATH;$PYTHONHOME"
