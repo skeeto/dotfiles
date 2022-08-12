@@ -7,6 +7,10 @@ PS1='\[\e[38;2;0;255;0m\]w64\[\e[38;2;255;0;255m\]\w\[\e[0m'$PS1'\] '
 export EXE=".exe"
 PATH="$PATH;$HOME/bin"
 
+export C_INCLUDE_PATH="$HOME/$(gcc -dumpmachine)/include"
+export CPLUS_INCLUDE_PATH="$C_INCLUDE_PATH"
+export LIBRARY_PATH="$HOME/$(gcc -dumpmachine)/lib"
+
 PATH="$PATH;$HOME/gnupg/bin"
 export GNUPGHOME="$HOME/.gnupg"
 
