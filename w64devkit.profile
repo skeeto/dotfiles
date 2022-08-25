@@ -28,6 +28,9 @@ export GIT_TERMINAL_PROMPT=0
 export EDITOR="vim.bat"
 PATH="$PATH;$HOME/git/cmd"
 
+PATH="$PATH;$HOME/ffmpeg/bin"
+PATH="$PATH;$HOME/mpv"
+
 alias b="make -kj$NUMBER_OF_PROCESSORS"
 alias cl="cl /nologo"
 alias g="git"
