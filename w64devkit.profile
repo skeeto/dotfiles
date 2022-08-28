@@ -29,7 +29,7 @@ export EDITOR="vim.bat"
 PATH="$PATH;$HOME/git/cmd"
 
 PATH="$PATH;$HOME/ffmpeg/bin"
-PATH="$PATH;$HOME/mpv"
+PATH="$PATH;$HOME/emacs/bin"
 
 alias b="make -kj$NUMBER_OF_PROCESSORS"
 alias cl="cl /nologo"
