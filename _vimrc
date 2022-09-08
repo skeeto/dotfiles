@@ -29,7 +29,7 @@ elseif has("gui_win32")
     let &guifont="Consolas:h11"
 end
 
-if !has("gui_running")
+if !has("gui_running") && !has("win32")
     colorscheme ron
 end
 
