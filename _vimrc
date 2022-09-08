@@ -18,10 +18,12 @@ end
 
 if $W64DEVKIT != ""
     set sh=sh shcf=-c sxq=\"
+    let $CFLAGS="-g3 -Wall -Wextra -Wdouble-promotion
+                \ -Wno-unused-function -Wno-unknown-pragmas
+                \ -fsanitize=undefined -fsanitize-undefined-trap-on-error"
+    let $LDFLAGS=" "
 end
-if &sh !~ "cmd.exe"
-    set mp=make\ -kj$(nproc)
-end
+set mp=make\ -e\ 
 
 if has("x11")
     let &guifont="Monospace 11"
