@@ -2,6 +2,7 @@
 set -e
 
 jobs="$(nproc)"
+ulimit -n $((1<<16))  # linking LLVM requires >1024 file descriptors
 
 usage() {
     printf "Usage: build-llvm [-j jobs] <llvm-project-VERSION.tar.xz\n"
