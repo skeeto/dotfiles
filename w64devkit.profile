@@ -31,6 +31,8 @@ export GIT_TERMINAL_PROMPT=0
 export EDITOR="vim.bat"
 PATH="$PATH;$HOME/git/cmd"
 
+export DOCKER_BUILDKIT=0
+
 PATH="$PATH;$HOME/ffmpeg/bin"
 PATH="$PATH;$HOME/emacs/bin"
 
