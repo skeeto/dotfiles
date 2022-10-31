@@ -4,12 +4,15 @@ if [ "$(cmd /c ver | grep -o '[0-9]\+' | head -n1)" -ge 10 ]; then
 fi
 PS1='\[\e[38;2;0;255;0m\]w64\[\e[38;2;255;0;255m\]\w\[\e[0m'$PS1'\] '
 
+export ARCH="$(gcc -dumpmachine)"
+
 export EXE=".exe"
 PATH="$PATH;$HOME/bin"
+PATH="$PATH;$HOME/$ARCH/bin"
 
-export C_INCLUDE_PATH="$HOME/$(gcc -dumpmachine)/include"
-export CPLUS_INCLUDE_PATH="$C_INCLUDE_PATH"
-export LIBRARY_PATH="$HOME/$(gcc -dumpmachine)/lib"
+export C_INCLUDE_PATH="$HOME/$ARCH/include"
+export CPLUS_INCLUDE_PATH="$HOME/$ARCH/include"
+export LIBRARY_PATH="$HOME/$ARCH/lib"
 
 PATH="$PATH;$HOME/gnupg/bin"
 export GNUPGHOME="$HOME/.gnupg"
@@ -66,7 +69,7 @@ mini() {
 
 vcvarsbat() {
     vcvars=vcvars32.bat
-    if [ "$(gcc -dumpmachine)" = "x86_64-w64-mingw32" ]; then
+    if [ "$ARCH" = "x86_64-w64-mingw32" ]; then
         vcvars=vcvars64.bat
     fi
     vcvars="$(find C:/Program*/'Microsoft Visual Studio' -iname $vcvars)"
@@ -78,7 +81,7 @@ title() {
     printf '\e]2;%s\a' "$@"
 }
 
-if [ "$(gcc -dumpmachine)" = i686-w64-mingw32 ]; then
+if [ "$ARCH" = i686-w64-mingw32 ]; then
     title w32devkit
 elif [ -n "$DEVENVDIR" ]; then
     title msvc
