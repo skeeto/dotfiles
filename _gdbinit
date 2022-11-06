@@ -19,15 +19,28 @@ if !$_isvoid($_caller_matches)
 end
 
 define crt
+    define _upone
+        if $once
+            up
+            set $once = 0
+        end
+    end
     define hook-run
+        set $once = 1
         tbreak abort
         commands
-            up
+            silent
+            _upone
         end
         tbreak _assert
         commands
-            up
+            silent
+            _upone
         end
+    end
+    define g
+        tbreak main
+        run
     end
 end
 document crt
