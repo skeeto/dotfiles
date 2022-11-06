@@ -7,3 +7,13 @@ set prompt \001\033[1;93m\002gdb> \001\033[0m\002
 set disassembly-flavor intel
 set auto-load safe-path /
 alias g = start
+
+## Skip over the implementation's stack frames on abort/etc.
+if !$_isvoid($_caller_matches)
+    define hook-stop
+        while $_caller_matches("^__")
+            up-silently
+        end
+        up-silently
+    end
+end
