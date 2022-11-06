@@ -17,3 +17,31 @@ if !$_isvoid($_caller_matches)
         up-silently
     end
 end
+
+define crt
+    define hook-run
+        tbreak abort
+        commands
+            up
+        end
+        tbreak _assert
+        commands
+            up
+        end
+    end
+end
+document crt
+Configure for an EXE linked against msvcrt.dll
+Does not handle -municode (wmain, wWinMain, _wassert)
+end
+
+define nocrt
+    define g
+        tbreak mainCRTStartup
+        tbreak WinMainCRTStartup
+        run
+    end
+end
+document nocrt
+Configure for an EXE not linked against a CRT
+end
