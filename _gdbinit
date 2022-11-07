@@ -11,10 +11,12 @@ alias g = start
 ## Skip over the implementation's stack frames on abort/etc.
 if !$_isvoid($_caller_matches)
     define hook-stop
-        while $_caller_matches("^__")
+        if $_caller_matches("^__")
+            while $_caller_matches("^__")
+                up-silently
+            end
             up-silently
         end
-        up-silently
     end
 end
 
