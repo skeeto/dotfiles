@@ -33,6 +33,7 @@ PATH="$PATH;$HOME/git/cmd"
 
 export DOCKER_BUILDKIT=0
 
+PATH="$PATH;$HOME/sdl/$ARCH/bin"
 PATH="$PATH;$HOME/ffmpeg/bin"
 PATH="$PATH;$HOME/emacs/bin"
 
