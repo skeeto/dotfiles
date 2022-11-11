@@ -62,10 +62,6 @@ man() {
     cmd /c start "" "$doc/$html"
 }
 
-hh() {
-    hastyhex -p "$@" | less -FR
-}
-
 mini() {
     mode 80,24
 }
@@ -84,7 +80,9 @@ title() {
     printf '\e]2;%s\a' "$@"
 }
 
-if [ "$ARCH" = i686-w64-mingw32 ]; then
+if [ "$ARCH" = x86_64-w64-mingw32 ]; then
+    title w64devkit
+elif [ "$ARCH" = i686-w64-mingw32 ]; then
     title w32devkit
 elif [ -n "$DEVENVDIR" ]; then
     title msvc
