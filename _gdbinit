@@ -9,12 +9,9 @@ set auto-load safe-path /
 alias g = start
 
 ## Skip over the implementation's stack frames on abort/etc.
-if !$_isvoid($_caller_matches)
+if !$_isvoid($_any_caller_matches)
     define hook-stop
-        if $_caller_matches("^__")
-            while $_caller_matches("^__")
-                up-silently
-            end
+        while $_thread && $_any_caller_matches("^__")
             up-silently
         end
     end
