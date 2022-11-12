@@ -80,10 +80,10 @@ title() {
     printf '\e]2;%s\a' "$@"
 }
 
-if [ "$ARCH" = x86_64-w64-mingw32 ]; then
+if [ -n "$DEVENVDIR" ]; then
+    title msvc
+elif [ "$ARCH" = x86_64-w64-mingw32 ]; then
     title w64devkit
 elif [ "$ARCH" = i686-w64-mingw32 ]; then
     title w32devkit
-elif [ -n "$DEVENVDIR" ]; then
-    title msvc
 fi
