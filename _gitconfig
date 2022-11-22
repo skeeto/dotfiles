@@ -4,6 +4,9 @@
     autocrlf = false
     whitespace = cr-at-eol
 
+[user]
+    name = Christopher Wellons
+
 [init]
     defaultBranch = master
 
