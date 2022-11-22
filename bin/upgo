@@ -62,5 +62,5 @@ curl -Ls "$src_url" | tee "$@" | tar xzf -
 rm -rf -- "$install_path"
 mkdir -p -- "$GOPATH/bin"
 mv go "$install_path"
-ln -sf "$install_path/bin/go" "$GOPATH/bin/go"
-ln -sf "$install_path/bin/gofmt" "$GOPATH/bin/gofmt"
+ln -sf "$install_path/bin/go" "${GOBIN:-$GOPATH/bin}/go"
+ln -sf "$install_path/bin/gofmt" "${GOBIN:-$GOPATH/bin}/gofmt"

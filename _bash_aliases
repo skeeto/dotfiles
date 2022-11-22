@@ -1,62 +1,38 @@
-## -*- default-directory: "~/.dotfiles/"; -*-
-
-# Misc
 alias oct='octave-cli -q'
-alias sr='screen -dr'
 alias t='tar -axvf'
 alias tmp='mkdir /tmp/$$ ; cd /tmp/$$'
 alias untmp='rm -rf /tmp/$$'
 alias hr='printf $(printf "\e[$(shuf -i 91-97 -n 1);1m%%%ds\e[0m\n" $(tput cols)) | tr " " ='
-alias writeback='watch -n0.5 grep Writeback: /proc/meminfo'
 alias keepalive='xset s off -dpms'
 alias usage='(shopt -s nullglob; du -sh .[^.]* * | sort -h)'
 
-# Media
-alias adump='mpv --untimed --vd=dummy -vo null -ao pcm'
 alias m='mpv --really-quiet'
-alias ms='mpv --really-quiet --shuffle'
-alias npr='mpv http://wamu-1.streamguys.com'
 alias y='youtube-dl --no-mtime --restrict-filenames -f "bestvideo[height<=1080]+bestaudio/best[height<=1080]"'
 alias yp='youtube-dl -o "%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
 alias yc='youtube-dl -f 136+139 --restrict-filenames'
 
-# Emacs
 alias e='emacsclient -q -ca ""'
 alias et='emacsclient -ta ""'
 alias ebc='emacs -Q -batch -L . -f batch-byte-compile'
 
-# Debian
 alias ins='sudo apt install'
 alias sapt='apt-cache search'
 alias a='sudo apt'
 alias d='sudo systemctl'
 
-# Dev
 alias g='git'
 alias q='quilt'
 alias gdb='gdb -q'
-alias b="make -k -j $(nproc)"
+alias b="make -kj$(nproc)"
 alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
 alias v='gvim --remote-silent'
 alias p2='passphrase2pgp'
 
-# Tweak standard commands
-if ls --color=auto --literal > /dev/null 2>&1; then
-    # newer GNU coreutils
-    alias ls='ls --literal --color=auto'
-elif ls --color=auto > /dev/null 2>&1; then
-    # older GNU coreutils and some BSD
-    alias ls='ls --color=auto'
-elif ls -G > /dev/null 2>&1; then
-    # other BSD
-    alias ls='ls -G'
-fi
-if echo x | grep --color=auto x > /dev/null 2>&1; then
-    alias grep='grep --color=auto'
-fi
+alias ls='ls --literal --color=auto'
+alias grep='grep --color=auto'
+
 alias p='pushd'
 alias po='popd'
 alias s='less -cSR'
-alias bat="acpitool -b"
 alias pu='pumount'
 alias pm='pmount'

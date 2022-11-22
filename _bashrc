@@ -1,153 +1,72 @@
-## -*- default-directory: "~/.dotfiles/"; -*-
-
-## Options
-shopt -s globstar 2>/dev/null || true  # quietly set if available
-shopt -s checkwinsize
+shopt -s globstar
 set +o histexpand
+bind '\C-w:backward-kill-word'
+stty -ixon >/dev/null 2>&1 || true  # disable flow control
 
-## Key bindings
-bind '\C-w:backward-kill-word' 2>/dev/null
-stty -ixon >/dev/null 2>&1 || true # disable flow control (XON/XOFF)
-
-## Completions
-_systemctl() {
-    _completion_loader systemctl
-    _systemctl "${@}"
-}
-complete -F _systemctl d
-complete -d cd
-
-## Environment
-unset PS1
 _PS1() {
-    local PRE= NAME="$1" LENGTH="$2";
-    [[ "$NAME" != "${NAME#$HOME/}" || -z "${NAME#$HOME}" ]] &&
-        PRE=$PRE'~' NAME="${NAME#$HOME}" LENGTH=$[LENGTH-1];
-    ((${#NAME}>$LENGTH)) && NAME="/...${NAME:$[${#NAME}-LENGTH+4]}";
-    echo "$PRE$NAME"
+    local pre= name="$1" len="$2";
+    [[ "$name" != "${name#$HOME/}" || -z "${name#$HOME}" ]] &&
+        pre=$pre'~' name="${name#$HOME}" len=$[len-1];
+    ((${#name}>$len)) && name="/...${name:$[${#name}-len+4]}";
+    echo "$pre$name"
 }
-PS1='\[\e[1;92m\]\h\[\e[m\]\
-\[\e[1;95m\]$(_PS1 "$PWD" 30)\[\e[m\] '
-export EDITOR="vim"
-export BROWSER="firefox"
-if [ "$TERM" = "dumb" ]; then
-    PS1="> "
-fi
-export WINEDEBUG=-all
-export ASAN_OPTIONS=print_legend=0
-ASAN_OPTIONS=$ASAN_OPTIONS:abort_on_error=1
-ASAN_OPTIONS=$ASAN_OPTIONS:detect_leaks=0
-ASAN_OPTIONS=$ASAN_OPTIONS:allocator_may_return_null=1
-export MSAN_OPTIONS=abort_on_error=1
+PS1='\[\e[1;92m\]\h\[\e[m\]\[\e[1;95m\]$(_PS1 "$PWD" 30)\[\e[m\] '
 
-if [ -e ~/.dpi ]; then
-    source ~/.dpi
-fi
-
-## Identity
-export REALNAME="Christopher Wellons"
-export NAME="$REALNAME"
-export EMAIL="wellons@nullprogram.com"
-export GIT_COMMITTER_NAME="$REALNAME"
-export GIT_AUTHOR_NAME="$REALNAME"
-export KEYID="5EEB8C8D5069C4E9B94AA852AFD1503A8C8FF42A"
-
-## PATH variables
-add() {
-    # Prepend $1 to $2 if not in $2
-    if [[ ":$2:" != *":$1:"* ]]; then
-        if [ -z "$2" ]; then
-            printf '%s' "$1"
-        else
-            printf '%s' "$1:$2"
-        fi
-    else
-        printf '%s' "$2"
-    fi
-}
-restore() {
-    # Restore pre-configuration paths
-    while getopts H opt
-    do
-        case "$opt" in
-        H) exec env -i HOME=$HOME TERM=$TERM bash -l ;;
-        ?) return 1 ;;
-        esac
+clearenv() {
+    local env var
+    mapfile -t env < <(env)
+    for var in "${env[@]}"; do
+        export -n ${var%%=*}
     done
-    if [ "$ORIG_SAVED" = yes ]; then
-        PATH="$ORIG_PATH"
-        C_INCLUDE_PATH="$ORIG_C_INCLUDE_PATH"
-        CPLUS_INCLUDE_PATH="$ORIG_CPLUS_INCLUDE_PATH"
-        LIBRARY_PATH="$ORIG_LIBRARY_PATH"
-        LD_LIBRARY_PATH="$ORIG_LD_LIBRARY_PATH"
-        LD_RUN_PATH="$ORIG_LD_RUN_PATH"
-        PKG_CONFIG_PATH="$ORIG_PKG_CONFIG_PATH"
-    fi
-    hash -r
+    export PATH="/bin:/usr/bin:/sbin:/usr/sbin:/usr/games"
+    export BROWSER="firefox"
+    export EDITOR="vim"
+    export KEYID="5EEB8C8D5069C4E9B94AA852AFD1503A8C8FF42A"
+    export WINEDEBUG="-all"
+    export DISPLAY EMAIL HOME LANG SHELL TERM
+    export XDG_RUNTIME_DIR SSH_AGENT_PID SSH_AUTH_SOCK
 }
-if [ "$ORIG_SAVED" != yes ]; then
-    # Save pre-configuration paths
-    export ORIG_SAVED=yes
-    export ORIG_PATH="$PATH"
-    export ORIG_C_INCLUDE_PATH="$C_INCLUDE_PATH"
-    export ORIG_CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH"
-    export ORIG_LIBRARY_PATH="$LIBRARY_PATH"
-    export ORIG_LD_LIBRARY_PATH="$LD_LIBRARY_PATH"
-    export ORIG_LD_RUN_PATH="$LD_LD_RUN_PATH"
-    export ORIG_PKG_CONFIG_PATH="$PKG_CONFIG_PATH"
-fi
-PATH=$(add /usr/sbin "$PATH")
-PATH=$(add /sbin "$PATH")
-PATH=$(add ~/.local/games "$PATH")
-PATH=$(add ~/.local/bin "$PATH")
-C_INCLUDE_PATH=$(add ~/.local/include "$C_INCLUDE_PATH")
-CPLUS_INCLUDE_PATH=$(add ~/.local/include "$CPLUS_INCLUDE_PATH")
-LIBRARY_PATH=$(add ~/.local/lib "$LIBRARY_PATH")
-LD_LIBRARY_PATH=$(add ~/.local/lib "$LD_LIBRARY_PATH")
-LD_RUN_PATH=$(add ~/.local/lib "$LD_RUN_PATH")
-if [[ "$(uname -m)" == *64* ]]; then
-    LIBRARY_PATH=$(add ~/.local/lib64 "$LIBRARY_PATH")
-    LD_LIBRARY_PATH=$(add ~/.local/lib64 "$LD_LIBRARY_PATH")
-    LD_RUN_PATH=$(add ~/.local/lib64 "$LD_RUN_PATH")
-else
-    LIBRARY_PATH=$(add ~/.local/lib32 "$LIBRARY_PATH")
-    LD_LIBRARY_PATH=$(add ~/.local/lib32 "$LD_LIBRARY_PATH")
-    LD_RUN_PATH=$(add ~/.local/lib32 "$LD_RUN_PATH")
-fi
-PKG_CONFIG_PATH=$(add ~/.local/lib/pkgconfig "$PKG_CONFIG_PATH")
-export C_INCLUDE_PATH
-export CPLUS_INCLUDE_PATH
-export LIBRARY_PATH
-export LD_LIBRARY_PATH
-export LD_RUN_PATH
-export PKG_CONFIG_PATH
 
-## XDG
-XDG_DESKTOP_DIR="$HOME/trash/"
-XDG_DOCUMENTS_DIR="$HOME/trash/"
-XDG_DOWNLOAD_DIR="$HOME/Downloads"
-XDG_MUSIC_DIR="$HOME/trash/"
-XDG_PICTURES_DIR="$HOME/trash/"
-XDG_PUBLICSHARE_DIR="$HOME/trash/"
-XDG_TEMPLATES_DIR="$HOME/trash/"
-XDG_VIDEOS_DIR="$HOME/trash/"
+localenv() {
+    PATH="$HOME/.local/bin:$PATH"
+    export C_INCLUDE_PATH="$HOME/.local/include"
+    export CPLUS_INCLUDE_PATH="$HOME/.local/include"
+    export LIBRARY_PATH="$HOME/.local/lib"
+    export LD_RUN_PATH="$HOME/.local/lib"
+    export PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig"
+    export MANPATH="$HOME/.local/share/man:/usr/share/man"
+    export GOBIN="$HOME/.local/bin"
+}
 
-XDG_CACHE_HOME="$HOME/trash/"
-XDG_STATE_HOME="$HOME/trash/"
-XDG_DATA_HOME="$HOME/trash/"
+sanenv() {
+    export ASAN_OPTIONS=print_legend=0:abort_on_error=1:allocator_may_return_null=1:detect_leaks=0
+    export MSAN_OPTIONS=abort_on_error=1
+    export TSAN_OPTIONS=allocator_may_return_null=1
+}
 
-## libvirt
-export LIBVIRT_DEFAULT_URI=qemu:///system
-
-## Go
-PATH=$(add "${GOPATH:-$HOME/go}/bin" "$PATH")
-
-## Agents
-if command -v keychain > /dev/null 2>&1; then
+if command -v keychain >/dev/null 2>&1; then
     eval $(keychain --eval --quiet)
 fi
 
-## Custom Colors
+clearenv
+
+export XDG_DESKTOP_DIR="$HOME/trash/"
+export XDG_DOCUMENTS_DIR="$HOME/trash/"
+export XDG_DOWNLOAD_DIR="$HOME/Downloads"
+export XDG_MUSIC_DIR="$HOME/trash/"
+export XDG_PICTURES_DIR="$HOME/trash/"
+export XDG_PUBLICSHARE_DIR="$HOME/trash/"
+export XDG_TEMPLATES_DIR="$HOME/trash/"
+export XDG_VIDEOS_DIR="$HOME/trash/"
+export XDG_CACHE_HOME="$HOME/trash/"
+export XDG_STATE_HOME="$HOME/trash/"
+export XDG_DATA_HOME="$HOME/trash/"
+
+export LIBVIRT_DEFAULT_URI=qemu:///system
+
+localenv
+sanenv
+
 colorscheme() {
     if [[ "$-" == *"i"* ]] && [[ "$TERM" != "dumb" ]]; then
         echo -ne '\e]4;0;#2E3436\a'   # black
@@ -172,24 +91,8 @@ colorscheme() {
 }
 colorscheme
 
-## Fix GNU ls colors for kitty
-export LS_COLORS="di=01;94:ln=01;96:pi=40;93:so=01;95:bd=40;93;01:\
-cd=40;93;01:or=40;91;01:ca=90;41:ex=01;92"
-
-## Functions
-
 title() {
     printf "\e]2;%s\a" $1
-}
-
-nproc() {
-    if $(which nproc >/dev/null 2>&1); then
-        command nproc
-    elif [ -e /proc/cpuinfo ]; then
-        grep ^processor < /proc/cpuinfo | wc -l
-    else
-        sysctl -n hw.ncpu
-    fi
 }
 
 hh() {
@@ -205,28 +108,13 @@ loadssh() {
 }
 
 httpd() {
-    python3 -m http.server "${1:-8001}"
+    python3 -m http.server "${1:-8080}"
 }
-
-st() {
-    if [ $# -lt 1 ]; then
-        printf 'usage: st HOST [...]\n' >&2
-        return 1
-    fi
-    host="$1"
-    shift
-    ssh -t "$host" tmux attach "$@"
-}
-
-## Aliases
 
 source ~/.bash_aliases
 if [ -e /etc/bash_completion ]; then
     source /etc/bash_completion
 fi
-
-## Local configuration (loaded last for overrides)
-
 if [ -f ~/.bash_local ]; then
    . ~/.bash_local
 fi
