@@ -29,6 +29,7 @@ alias v='gvim --remote-silent'
 alias p2='passphrase2pgp'
 
 alias ls='ls --literal --color=auto'
+alias rm='rm --interactive=never'
 alias grep='grep --color=auto'
 
 alias p='pushd'
