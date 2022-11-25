@@ -1,6 +1,6 @@
 shopt -s globstar
 set +o histexpand
-bind '\C-w:backward-kill-word'
+bind '\C-w:backward-kill-word' 2>/dev/null
 stty -ixon >/dev/null 2>&1 || true  # disable flow control
 
 _PS1() {
