@@ -36,6 +36,15 @@ localenv() {
     export PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig"
     export MANPATH="$HOME/.local/share/man:/usr/share/man"
     export GOBIN="$HOME/.local/bin"
+    if [[ "$(uname -m)" == *64* ]]; then
+        LIBRARY_PATH+=":$HOME/.local/lib64"
+        LD_LIBRARY_PATH+=":$HOME/.local/lib64"
+        LD_RUN_PATH+=":$HOME/.local/lib64"
+    else
+        LIBRARY_PATH+=":$HOME/.local/lib32"
+        LD_LIBRARY_PATH+=":$HOME/.local/lib32"
+        LD_RUN_PATH+=":$HOME/.local/lib32"
+    fi
 }
 
 sanenv() {
