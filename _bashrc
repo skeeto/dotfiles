@@ -16,7 +16,7 @@ clearenv() {
     local env var
     mapfile -t env < <(env)
     for var in "${env[@]}"; do
-        export -n ${var%%=*}
+        export -n ${var%%=*} 2>/dev/null || true
     done
     export PATH="/bin:/usr/bin:/sbin:/usr/sbin:/usr/games"
     export BROWSER="firefox"
