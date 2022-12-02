@@ -22,7 +22,9 @@ clearenv() {
     export EDITOR="vim"
     export KEYID="5EEB8C8D5069C4E9B94AA852AFD1503A8C8FF42A"
     export WINEDEBUG="-all"
-    export DISPLAY EMAIL HOME LANG SHELL TERM XAUTHORITY
+    export EMAIL="wellons@nullprogram.com"
+    export REALNAME="Christopher Wellons"
+    export DISPLAY HOME LANG SHELL TERM XAUTHORITY
     export SSH_AGENT_PID SSH_AUTH_SOCK XDG_RUNTIME_DIR XDG_SESSION_TYPE
 }
 

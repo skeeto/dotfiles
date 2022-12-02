@@ -5,6 +5,7 @@ fi
 PS1='\[\e[38;2;0;255;0m\]w64\[\e[38;2;255;0;255m\]\w\[\e[0m'$PS1'\] '
 
 export ARCH="$(gcc -dumpmachine)"
+export EMAIL="wellons@nullprogram.com"
 
 export EXE=".exe"
 PATH="$PATH;$HOME/bin"
