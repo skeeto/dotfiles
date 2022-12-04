@@ -12,7 +12,7 @@ alias g = start
 ## Skip over the implementation's stack frames on abort/etc.
 if !$_isvoid($_any_caller_matches)
     define hook-stop
-        while $_thread && $_any_caller_matches("^__")
+        while $_thread && $_any_caller_matches("^__|abort|raise")
             up-silently
         end
     end
