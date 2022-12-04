@@ -24,10 +24,13 @@ fi
 
 set -x
 tar xJ
+vars="CMAKE_INSTALL_PREFIX;LLVM_USE_LINKER;LLVM_ENABLE_PROJECTS"
 cmake \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX="$HOME/.local" \
     -DLLVM_USE_LINKER=gold \
     -DLLVM_ENABLE_PROJECTS="clang;compiler-rt;openmp;polly" \
+    -DCLANG_ENABLE_BOOTSTRAP=On \
+    -DCLANG_BOOTSTRAP_PASSTHROUGH="$vars" \
     llvm-project*/llvm/
 make -kj"$jobs"
