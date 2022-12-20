@@ -58,8 +58,11 @@ doc() {
 }
 
 man() {
-    doc="$HOME/cppreference/en/c/"
-    html="$(awk -F'"' '/\<'"$1"'\>/{print $2; exit(0)}' "$doc/index.html")"
+    doc="$HOME/cppreference/en"
+    html="$( (
+      awk -F\" '/<tt>'$1'\>/{print "c/"$2}' "$doc/c/index.html"
+      awk -F\" '/<tt>'$1'\>/{print "cpp/"$2}' "$doc/cpp/symbol_index.html"
+    ) | head -n1)"
     cmd /c start "" "$doc/$html"
 }
 
