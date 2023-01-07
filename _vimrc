@@ -1,8 +1,8 @@
 filetype plugin indent on
 syntax on
 
-set hid ar aw bs=2 go=ac is hls lz nosol nf=hex lcs=eol:$,tab:>- ttm=0 noswf
-set enc=utf-8 ff=unix fo+=j nojs ai ts=4 et sw=4 pa=** cpt-=i ssl
+set hid noswf ar aw bs=2 nosol lcs=eol:$,tab:>- pa=** cpt-=i ssl go=ac lz ttm=0
+set enc=utf-8 ff=unix fo+=j nojs ai ts=4 et sw=4 nf=hex,unsigned is hls
 set spl=en_us spf=~/.vim/spell/en.utf-8.add wmnu wim=longest,list
 set stl=%m%F%=%y\ %l/%L\ %3v\ U+%04B ls=2 bo=all gcr=a:blinkon0
 let g:netrw_banner = 0
