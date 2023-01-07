@@ -122,6 +122,16 @@ httpd() {
     python3 -m http.server "${1:-8080}"
 }
 
+st() {
+    if [ $# -lt 1 ]; then
+        printf 'usage: st HOST [...]\n' >&2
+        return 1
+    fi
+    host="$1"
+    shift
+    ssh -t "$host" tmux attach "$@"
+}
+
 source ~/.bash_aliases
 if [ -e /etc/bash_completion ]; then
     source /etc/bash_completion
