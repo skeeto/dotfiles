@@ -34,7 +34,9 @@ PATH="$PATH;$HOME/git/cmd"
 
 export DOCKER_BUILDKIT=0
 
+export PKG_CONFIG_PATH="$HOME/sdl/$ARCH/lib/pkgconfig"
 PATH="$PATH;$HOME/sdl/$ARCH/bin"
+
 PATH="$PATH;$HOME/ffmpeg/bin"
 PATH="$PATH;$HOME/emacs/bin"
 
