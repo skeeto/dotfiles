@@ -8,7 +8,8 @@ set prompt \001\033[1;93m\002gdb> \001\033[0m\002
 set disassembly-flavor intel
 set auto-load safe-path /
 set tui tab-width 4
-alias g = start
+alias g = !git
+alias y = start
 
 ## Skip over the implementation's stack frames on abort/etc.
 if !$_isvoid($_any_caller_matches)
@@ -39,7 +40,7 @@ define crt
             _upone
         end
     end
-    define g
+    define y
         tbreak main
         run
     end
