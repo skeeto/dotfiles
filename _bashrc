@@ -33,9 +33,10 @@ localenv() {
     export CPATH="$HOME/.local/include"
     export LIBRARY_PATH="$HOME/.local/lib"
     export LD_RUN_PATH="$HOME/.local/lib"
-    export PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig"
     export MANPATH="$HOME/.local/share/man:/usr/share/man"
     export GOBIN="$HOME/.local/bin"
+    export PKG_CONFIG_PATH
+    PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$HOME/.local/share/pkgconfig"
     if [[ "$(uname -m)" == *64* ]]; then
         LIBRARY_PATH+=":$HOME/.local/lib64"
         LD_LIBRARY_PATH+=":$HOME/.local/lib64"

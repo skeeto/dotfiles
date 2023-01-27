@@ -13,6 +13,7 @@ PATH="$PATH;$HOME/$ARCH/bin"
 
 export CPATH="$HOME/$ARCH/include"
 export LIBRARY_PATH="$HOME/$ARCH/lib"
+export PKG_CONFIG_PATH="$HOME/$ARCH/lib/pkgconfig;$HOME/$ARCH/share/pkgconfig"
 
 PATH="$PATH;$HOME/gnupg/bin"
 export GNUPGHOME="$HOME/.gnupg"
@@ -33,7 +34,7 @@ PATH="$PATH;$HOME/git/cmd"
 
 export DOCKER_BUILDKIT=0
 
-export PKG_CONFIG_PATH="$HOME/sdl/$ARCH/lib/pkgconfig"
+PKG_CONFIG_PATH="$HOME/sdl/$ARCH/lib/pkgconfig;$PKG_CONFIG_PATH"
 PATH="$PATH;$HOME/sdl/$ARCH/bin"
 
 PATH="$PATH;$HOME/ffmpeg/bin"
