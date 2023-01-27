@@ -40,8 +40,7 @@
 # To make proper use of the packages you install, you very likely want
 # to set and export the following environment variables:
 #
-# export C_INCLUDE_PATH=$QPKG_PREFIX/include
-# export CPLUS_INCLUDE_PATH=$QPKG_PREFIX/include
+# export CPATH=$QPKG_PREFIX/include
 # export LIBRARY_PATH=$QPKG_PREFIX/lib
 # export LD_LIBRARY_PATH=$QPKG_PREFIX/lib
 # export LD_RUN_PATH=$QPKG_PREFIX/lib

@@ -11,8 +11,7 @@ export EXE=".exe"
 PATH="$PATH;$HOME/bin"
 PATH="$PATH;$HOME/$ARCH/bin"
 
-export C_INCLUDE_PATH="$HOME/$ARCH/include"
-export CPLUS_INCLUDE_PATH="$HOME/$ARCH/include"
+export CPATH="$HOME/$ARCH/include"
 export LIBRARY_PATH="$HOME/$ARCH/lib"
 
 PATH="$PATH;$HOME/gnupg/bin"
