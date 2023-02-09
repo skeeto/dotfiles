@@ -1,11 +1,12 @@
 filetype plugin indent on
 syntax on
 
-set hid noswf ar aw bs=2 nosol lcs=eol:$,tab:>- pa=** cpt-=i ssl go=ac lz ttm=0
-set enc=utf-8 ff=unix fo+=j nojs ai ts=4 et sw=4 nf=hex,unsigned is hls
-set spl=en_us spf=~/.vim/spell/en.utf-8.add wmnu wim=longest,list
-set stl=%m%F%=%y\ %l/%L\ %3v\ U+%04B ls=2 bo=all gcr=a:blinkon0
-let g:netrw_banner = 0
+set hid ar aw bs=2 nosol lcs=eol:$,tab:>- is hls go=ac lz ttm=0 ls=2
+set bo=all gcr=a:blinkon0 wmnu wim=longest,list
+set stl=%m%F%=%y\ %l/%L\ %3v\ U+%04B
+set noswf pa=** cpt-=i ssl spl=en_us spf=~/.vim/spell/en.utf-8.add
+set enc=utf-8 nofixeol ffs=unix,dos fo+=j nojs ai ts=4 et sw=4 nf=hex,unsigned
+let g:netrw_banner=0
 
 " Cursor shape in terminals like GUI
 if &term =~ "256color" || &term =~ "xterm"
