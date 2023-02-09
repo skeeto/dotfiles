@@ -18,7 +18,7 @@ end
 
 if $W64DEVKIT != ""
     set sh=sh shcf=-c sxq=\"
-    let $CFLAGS="-g3 -Wall -Wextra -Wdouble-promotion
+    let $CFLAGS="-g3 -Wall -Wextra -Wdouble-promotion -Wno-unused-parameter
                 \ -Wno-unused-function -Wno-unknown-pragmas
                 \ -fsanitize=undefined -fsanitize-undefined-trap-on-error"
     let $LDFLAGS=" "
