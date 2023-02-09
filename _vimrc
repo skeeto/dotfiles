@@ -24,6 +24,7 @@ if $W64DEVKIT != ""
     let $LDFLAGS=" "
 end
 set mp=make\ -e\ 
+set efm^=%-G%f%l:\ note:%m
 
 if has("x11")
     let &guifont="Monospace 11"
