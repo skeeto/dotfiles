@@ -1,5 +1,8 @@
 #!/bin/sh
-exec find "${1:-.}" \
-    -type f \
-    -exec mediainfo --Inform='General;%Duration%\n' {} \; | \
-              awk '{x += $0} END{printf "%0.2f hours\n", x / 1000 / 60 / 60}'
+set -e
+for dir in "$@"; do
+    find "$dir" \
+        -type f \
+        -exec mediainfo --Inform='General;%Duration%\n' {} \; | \
+            awk '{x += $0} END{printf "%0.2f hours\n", x / 1000 / 60 / 60}'
+done
