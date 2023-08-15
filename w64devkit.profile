@@ -26,6 +26,7 @@ PATH="$PATH;$JAVA_HOME/bin"
 
 export GOBIN="$HOME/bin"
 export GOPATH="$TEMP/go"
+export GOTOOLCHAIN="local"
 PATH="$PATH;$HOME/go/bin"
 
 export GIT_TERMINAL_PROMPT=0

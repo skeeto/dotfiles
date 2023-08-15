@@ -35,6 +35,7 @@ localenv() {
     export LD_RUN_PATH="$HOME/.local/lib"
     export MANPATH="$HOME/.local/share/man:/usr/share/man"
     export GOBIN="$HOME/.local/bin"
+    export GOTOOLCHAIN="local"
     export PKG_CONFIG_PATH
     PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$HOME/.local/share/pkgconfig"
     if [[ "$(uname -m)" == *64* ]]; then
