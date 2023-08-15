@@ -50,6 +50,15 @@ alias s="less -SR"
 alias v="gvim --remote-silent"
 alias start="cmd /c start"
 
+check() {
+    cppcheck -j$(nproc) --quiet --enable=portability,performance \
+        --suppress=nullPointer --suppress=uninitvar "$@"
+}
+
+wcheck() {
+    check --library=windows "$@"
+}
+
 doc() {
     case "$1" in
     c*) cmd /c start "" "$HOME/cppreference/en/index.html" ;;
