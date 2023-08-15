@@ -2,6 +2,7 @@
 
 [core]
     autocrlf = false
+    pager = less -x1,5
     whitespace = cr-at-eol
 
 [user]
