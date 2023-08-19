@@ -54,6 +54,11 @@ autocmd FileType go map <buffer> [[
 autocmd FileType go map <buffer> ]]
     \ /^\(func\\|var\\|type\\|import\\|package\)\><cr>
 
+let fortran_do_enddo=1
+let fortran_indent_less=1
+let fortran_more_precise=1
+autocmd FileType fortran setlocal sw=2 ts=2
+
 map <Leader>q :hi Error NONE<CR>
 map <Leader>t :silent !ctags -R<CR><C-L>
 map <Leader>c :%s/\s\+$//e<CR>
