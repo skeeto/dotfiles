@@ -1,0 +1,8 @@
+#!/bin/sh
+# Print assembly and pare printed it down into something human-friendly.
+#   $ asm cc -Os example.c
+#   $ asm c++ -O2 -fno-exceptions example.cpp
+set -e
+"$@" -S -fno-ident -o - |
+  grep -Ev '\.(file|text|type|def|size|addrsig|weak|hidden|section|cfi|seh|byte|uleb|LC|LE|LF|LH|LL|L[a-z])' |
+  grep -Ev '^\s*#' | sed 's/\s*#.*//' | c++filt
