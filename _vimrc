@@ -5,7 +5,7 @@ set hid ar aw bs=2 nosol lcs=eol:$,tab:>- is hls go=ac lz ttm=0 ls=2 cpo-=a
 set bo=all gcr=a:blinkon0 wmnu wim=longest,list
 set stl=%m%F%=%y\ %l/%L\ %3v\ U+%04B
 set noswf pa=** cpt-=i ssl spl=en_us spf=~/.vim/spell/en.utf-8.add
-set enc=utf-8 nofixeol ffs=unix,dos fo+=j nojs ai ts=4 et sw=4 nf=hex,unsigned
+set enc=utf-8 nofixeol ffs=unix,dos fo+=j/ nojs ai ts=4 et sw=4 nf=hex,unsigned
 let g:netrw_banner=0
 
 " Cursor shape in terminals like GUI
