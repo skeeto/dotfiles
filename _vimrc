@@ -45,7 +45,7 @@ set cino=t0,l1,:0,L0 cink-=0#
 
 autocmd FileType asm setlocal noet ts=8 sw=8
 
-autocmd FileType go setlocal mp=go\ build noet tw=72
+autocmd BufNewFile,BufRead go setlocal mp=go\ build noet tw=72
 autocmd FileType go map <silent> <buffer> <leader>i
     \ :update \|
     \ :cexpr system("goimports -w " . expand('%')) \|
