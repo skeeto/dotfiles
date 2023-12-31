@@ -22,8 +22,8 @@ if $W64DEVKIT != ""
     let $CFLAGS="-g3 -DDEBUG -Wall -Wextra -Wdouble-promotion -Wconversion
                 \ -Wno-sign-conversion -Wno-unused-parameter
                 \ -Wno-unused-function -Wno-unknown-pragmas
-                \ -fsanitize=undefined -fsanitize-undefined-trap-on-error"
-    let $LDFLAGS=" "
+                \ -fsanitize=undefined -fsanitize-trap"
+    let $LDFLAGS="-nostartfiles"
 end
 set mp=make\ -e\ 
 set efm^=%-G%f%l:\ note:%m
