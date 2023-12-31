@@ -24,6 +24,13 @@ if $W64DEVKIT != ""
                 \ -Wno-unused-function -Wno-unknown-pragmas
                 \ -fsanitize=undefined -fsanitize-trap"
     let $LDFLAGS="-nostartfiles"
+else
+    let $CFLAGS="-g3 -DDEBUG -Wall -Wextra -Wdouble-promotion -Wconversion
+                \ -Wno-sign-conversion -Wno-unused-parameter
+                \ -Wno-unused-function -Wno-unknown-pragmas
+                \ -fsanitize=undefined,address
+                \ -fsanitize-undefined-trap-on-error"
+    let $LDFLAGS=" "
 end
 set mp=make\ -e\ 
 set efm^=%-G%f%l:\ note:%m
