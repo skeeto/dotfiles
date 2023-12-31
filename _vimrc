@@ -32,7 +32,7 @@ else
                 \ -fsanitize-undefined-trap-on-error"
     let $LDFLAGS=" "
 end
-set mp=make\ -e\ 
+set mp=make\ -e\ %:r
 set efm^=%-G%f%l:\ note:%m
 
 if has("x11")
