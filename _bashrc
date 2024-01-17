@@ -51,9 +51,13 @@ localenv() {
 
 sanenv() {
     local common=abort_on_error=1:halt_on_error=1:allocator_may_return_null=1
-    export ASAN_OPTIONS=$common:print_legend=0:detect_leaks=0
-    export UBSAN_OPTIONS=$common
-    export TSAN_OPTIONS=$common
+    ASAN_OPTIONS=$common
+    ASAN_OPTIONS+=:print_legend=0
+    ASAN_OPTIONS+=:detect_leaks=0
+    ASAN_OPTIONS+=:detect_stack_use_after_return=1
+    UBSAN_OPTIONS=$common
+    TSAN_OPTIONS=$common
+    export ASAN_OPTIONS UBSAN_OPTIONS TSAN_OPTIONS
 }
 
 if command -v keychain >/dev/null 2>&1; then
