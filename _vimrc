@@ -49,6 +49,7 @@ autocmd BufNewFile,BufRead .bash_local setlocal ft=sh
 autocmd FileType markdown,mail,text setlocal tw=74
 
 set cino=t0,l1,:0,L0 cink-=0#
+let g:c_no_curly_error = 1
 
 autocmd FileType asm setlocal noet ts=8 sw=8
 
