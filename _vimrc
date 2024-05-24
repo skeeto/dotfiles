@@ -38,7 +38,7 @@ set efm^=%-G%f%l:\ note:%m
 if has("x11")
     let &guifont="Monospace 11"
 elseif has("gui_win32")
-    let &guifont="Consolas:h11"
+    let &guifont="Cascadia\ Code:h10,Consolas:h11"
 end
 
 if !has("gui_running") && !has("win32")
