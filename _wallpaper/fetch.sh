@@ -14,6 +14,7 @@ set -e -- \
     Kelsey-Wellons-Wallpaper-Collection-10.tar \
     Kelsey-Wellons-Wallpaper-Collection-11.tar \
     Kelsey-Wellons-Wallpaper-Collection-12.tar \
+    Kelsey-Wellons-Wallpaper-Collection-13.tar \
 
 base=http://skeeto.s3.amazonaws.com/wallpapers
 for tar; do
