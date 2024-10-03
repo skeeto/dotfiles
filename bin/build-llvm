@@ -2,17 +2,19 @@
 set -e
 
 jobs="$(nproc)"
+prefix="$HOME/.local"
 ulimit -n $((1<<16))  # linking LLVM requires >1024 file descriptors
 
 usage() {
-    printf "Usage: build-llvm [-j jobs] <llvm-project-VERSION.tar.xz\n"
+    printf "Usage: build-llvm [-j N] [-p DIR] <llvm-project-VERSION.tar.xz\n"
 }
 
-while getopts hj: name
+while getopts hj:p: name
 do
     case $name in
     h) usage; exit 0;;
     j) jobs="$OPTARG";;
+    p) prefix="$OPTARG";;
     ?) usage; exit 2;;
     esac
 done
@@ -27,7 +29,7 @@ tar xJ
 vars="CMAKE_INSTALL_PREFIX;LLVM_USE_LINKER;LLVM_ENABLE_PROJECTS"
 cmake \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX="$HOME/.local" \
+    -DCMAKE_INSTALL_PREFIX="$prefix" \
     -DLLVM_USE_LINKER=gold \
     -DLLVM_ENABLE_PROJECTS="clang;compiler-rt;openmp;polly" \
     -DCLANG_ENABLE_BOOTSTRAP=On \
