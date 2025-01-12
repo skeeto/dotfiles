@@ -61,6 +61,10 @@ sanenv() {
     export ASAN_OPTIONS UBSAN_OPTIONS TSAN_OPTIONS
 }
 
+afl-fuzz() {
+    ASAN_OPTIONS="$ASAN_OPTIONS:symbolize=0" command afl-fuzz "$@"
+}
+
 if command -v keychain >/dev/null 2>&1; then
     eval $(keychain --eval --quiet)
 fi
