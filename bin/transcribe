@@ -1,0 +1,30 @@
+#!/bin/sh
+set -e
+
+autoname=false
+
+usage() {
+    printf "Usage: transcribe [-a] [files...]\n"
+    printf "  -a        automatically write matching .srt\n"
+}
+
+while getopts a name
+do
+    case $name in
+    a) autoname=true;;
+    ?) usage; exit 2;;
+    esac
+done
+shift $(($OPTIND - 1))
+
+for file in "$@"; do (
+    wav="$(mktemp -t transcribe-XXXXXX)"
+    trap 'rm -f -- "$wav"' EXIT
+    ffmpeg -nostdin -loglevel error \
+        -y -i "$file" -ar 16000 -ac 1 -c:a pcm_s16le -f wav "$wav"
+    set -- -s falstaff:8000/inference -F response_format=srt -F file=@"$wav"
+    if [ $autoname = true ]; then
+        set -- -o "${file%.*}.srt" "$@"
+    fi
+    curl "$@"
+) done
