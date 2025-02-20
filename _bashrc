@@ -64,6 +64,9 @@ sanenv() {
 afl-fuzz() {
     ASAN_OPTIONS="$ASAN_OPTIONS:symbolize=0" command afl-fuzz "$@"
 }
+afl-tmin() {
+    ASAN_OPTIONS="$ASAN_OPTIONS:symbolize=0" command afl-tmin "$@"
+}
 
 if command -v keychain >/dev/null 2>&1; then
     eval $(keychain --eval --quiet)
