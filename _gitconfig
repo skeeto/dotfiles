@@ -1,5 +1,3 @@
-## -*- default-directory: "~/.dotfiles/"; -*-
-
 [core]
     autocrlf = false
     pager = less -x1,5
@@ -11,23 +9,37 @@
 [init]
     defaultBranch = master
 
-[protocol]
-    version = 2
-
 [color]
-    branch = auto
-    diff = auto
-    interactive = auto
-    status = auto
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
+
+[commit]
+    verbose = true
+
+[rerere]
+    enabled = true
+    autoupdate = true
 
 [fetch]
     prune = true
 
 [push]
     default = simple
+    autoSetupRemote = true
 
 [pull]
     ff = only
+
+[branch]
+    sort = -committerdate
+
+[tag]
+    sort = version:refname
+
+[column]
+    ui = auto
 
 [alias]
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
@@ -36,12 +48,10 @@
     trim = reflog expire --expire-unreachable=now --all
     chop = gc --prune=now
     optimize = repack -a -d -f --depth=4096 --window=4096 --window-memory=0
-    pf = pull --ff-only
     pr = "!f() { git fetch --force origin pull/$1/head:pr-$1; }; f"
     host = daemon --base-path=. --reuseaddr --export-all
     whost = daemon --base-path=. --reuseaddr --export-all --enable=receive-pack
     addw = -c interactive.diffFilter='git diff --color=always --word-diff' add -p
-    stag = tag -l --sort=v:refname
 
 [sendemail]
     smtpserver = localhost
