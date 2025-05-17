@@ -2,16 +2,19 @@
 set -e
 
 autoname=false
+url=falstaff:8000
 
 usage() {
     printf "Usage: transcribe [-a] [files...]\n"
     printf "  -a        automatically write matching .srt\n"
+    printf "  -u URL    select a custom host:port\n"
 }
 
-while getopts a name
+while getopts au: name
 do
     case $name in
     a) autoname=true;;
+    u) url=$OPTARG;;
     ?) usage; exit 2;;
     esac
 done
@@ -22,7 +25,7 @@ for file in "$@"; do (
     trap 'rm -f -- "$wav"' EXIT
     ffmpeg -nostdin -loglevel error \
         -y -i "$file" -ar 16000 -ac 1 -c:a pcm_s16le -f wav "$wav"
-    set -- -s falstaff:8000/inference -F response_format=srt -F file=@"$wav"
+    set -- -s $url/inference -F response_format=srt -F file=@"$wav"
     if [ $autoname = true ]; then
         set -- -o "${file%.*}.srt" "$@"
     fi
