@@ -7,8 +7,8 @@ alias keepalive='xset s off -dpms'
 alias usage='(shopt -s nullglob; du -sh -- .[^.]* * | sort -h)'
 
 alias m='mpv --really-quiet'
-alias y='youtube-dl --no-mtime --restrict-filenames -f "bestvideo[height<=1080]+bestaudio/best[height<=1080]"'
-alias yp='youtube-dl -o "%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
+alias y='youtube-dl --no-mtime --restrict-filenames -f "bestvideo[height<=1080]+bestaudio/best[height<=1080]" --cookies-from-browser firefox'
+alias yp='youtube-dl -o "%(playlist_index)s-%(title)s-%(id)s.%(ext)s" --cookies-from-browser firefox'
 alias yc='youtube-dl -f 136+139 --restrict-filenames'
 
 alias e='emacsclient -q -ca ""'
