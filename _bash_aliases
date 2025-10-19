@@ -4,7 +4,7 @@ alias tmp='mkdir /tmp/$$ ; cd /tmp/$$'
 alias untmp='rm -rf /tmp/$$'
 alias hr='printf $(printf "\e[$(shuf -i 91-97 -n 1);1m%%%ds\e[0m\n" $(tput cols)) | tr " " ='
 alias keepalive='xset s off -dpms'
-alias usage='(shopt -s nullglob; du -sh .[^.]* * | sort -h)'
+alias usage='(shopt -s nullglob; du -sh -- .[^.]* * | sort -h)'
 
 alias m='mpv --really-quiet'
 alias y='youtube-dl --no-mtime --restrict-filenames -f "bestvideo[height<=1080]+bestaudio/best[height<=1080]"'
