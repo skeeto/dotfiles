@@ -14,7 +14,7 @@ set -e
 commit=HEAD
 dest=.
 index=false
-mode=xz
+mode=zst
 quiet=false
 strip=false
 
@@ -23,8 +23,8 @@ usage() {
 usage: $(basename "$0") [-S|-T|-Z] [-hiqs] [-a STR] [-d DIR] <commit-ish>
 
 OPTIONS:
-    -S       Create a .tar.zst archive
-    -T       Create a .tar.xz archive (default)
+    -S       Create a .tar.zst archive (default)
+    -T       Create a .tar.xz archive
     -Z       Create a .zip archive
     -a STR   Append string to the archive filename
     -d DIR   Destination directory (.)
