@@ -28,9 +28,8 @@ else
     let $CFLAGS="-g3 -Wall -Wextra -Wdouble-promotion -Wconversion
                 \ -Wno-sign-conversion -Wno-unused-parameter
                 \ -Wno-unused-function -Wno-unknown-pragmas
-                \ -fsanitize=undefined,address
-                \ -fsanitize-undefined-trap-on-error"
-    let $LDFLAGS=" "
+                \ -fsanitize=address,undefined -fsanitize-trap"
+    let $LDFLAGS="-fsanitize=address"
 end
 set mp=make\ -e\ %:r
 set efm^=%-G%f%l:\ note:%m
