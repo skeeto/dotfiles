@@ -1,0 +1,1 @@
+lzma -9e | base64 -w0 | xargs -0 printf "https://itty.bitty.site/#/%s\n"
