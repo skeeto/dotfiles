@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+if [ $# -ne 1 ]; then
+    printf 'usage: %s FILE\n' "$0" >&2
+    exit 1
+fi
+set -x
+curl -A bash/5 -F file=@$1 0x0.st/
