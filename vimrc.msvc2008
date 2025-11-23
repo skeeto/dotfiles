@@ -1,0 +1,6 @@
+filetype plugin indent on
+syntax on
+set nocp hid noswf bs=2 aw ar is nojs pa=** wmnu go=ac cpt-=i gcr=a:blinkon0
+set sw=4 ts=4 fo+=j cino=t0,l1,:0 cink-=0# enc=utf-8 ff=unix lines=99
+compiler! msvc
+set efm=%f(%l)%*[:\ ]%m

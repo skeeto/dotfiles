@@ -1,0 +1,15 @@
+set hidden nocompatible path=** complete-=i backspace+=indent,eol,start
+"set shiftwidth=4 tabstop=4
+filetype plugin indent on
+syntax on
+map <leader>t :silent !ctags -R<CR>
+
+" GUI
+set guioptions=ac ruler showcmd
+
+" C
+set cinoptions+=t0,l1,:0 cinkeys-=0#
+let c_no_curly_error=1
+
+" Windows
+set encoding=utf-8 shellslash
