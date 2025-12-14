@@ -18,9 +18,6 @@ export PKG_CONFIG_PATH="$HOME/$ARCH/lib/pkgconfig;$HOME/$ARCH/share/pkgconfig"
 PATH="$PATH;$HOME/gnupg/bin"
 export GNUPGHOME="$HOME/.gnupg"
 
-export PYTHONHOME="$HOME/python"
-PATH="$PATH;$PYTHONHOME"
-
 export JAVA_HOME="$HOME/jdk"
 PATH="$PATH;$JAVA_HOME/bin"
 
