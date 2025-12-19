@@ -124,30 +124,12 @@ title() {
     printf "\e]2;%s\a" $1
 }
 
-hh() {
-    if command -v hastyhex >/dev/null 2>&1; then
-        hastyhex "$@" | less -FRX
-    else
-        hexdump -C "$@" | less -FRX
-    fi
-}
-
 loadssh() {
     passphrase2pgp -fssh -c5106E713 -uwellons@p2 | ssh-add -
 }
 
 httpd() {
     python3 -m http.server "${1:-8080}"
-}
-
-st() {
-    if [ $# -lt 1 ]; then
-        printf 'usage: st HOST [...]\n' >&2
-        return 1
-    fi
-    host="$1"
-    shift
-    ssh -t "$host" tmux attach "$@"
 }
 
 source ~/.bash_aliases
