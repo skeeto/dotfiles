@@ -33,6 +33,7 @@ localenv() {
     export CPATH="$HOME/.local/include"
     export LIBRARY_PATH="$HOME/.local/lib"
     export LD_RUN_PATH="$HOME/.local/lib"
+    export CMAKE_BUILD_PARALLEL_LEVEL="$(nproc)"
     export MANPATH="$HOME/.local/share/man:/usr/share/man"
     export GOBIN="$HOME/.local/bin"
     export GOTOOLCHAIN="local"
