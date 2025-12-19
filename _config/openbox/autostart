@@ -1,8 +1,0 @@
-#!/bin/sh
-
-if $(command -v setxkbmap > /dev/null 2>&1); then
-    setxkbmap -option ctrl:nocaps
-    setxkbmap -option lv3:ralt_switch,esperanto:qwerty
-fi
-
-~/.wallpaper/random.sh &

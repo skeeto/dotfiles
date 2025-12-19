@@ -7,15 +7,12 @@ IFS='
 lnflags=-s
 install_scripts=yes
 install_private=no
-high_dpi=auto
 
 usage() {
     cat << EOF
 usage: install.sh [options]
 
 OPTIONS:
-  -d    Assume high DPI (larger fonts)
-  -D    Assume low DPI (smaller fonts)
   -h    Show this message
   -l    Install config files as hard links
   -p    Install private dotfiles
@@ -26,8 +23,6 @@ EOF
 ## Parse command line switches
 while getopts "dDhlp" option; do
     case "$option" in
-        d) high_dpi=yes ;;
-        D) high_dpi=no ;;
         h) usage 0 ;;
         l) lnflags= ;;
         p) install_private=yes ;;
@@ -76,42 +71,7 @@ done
 
 ## Special cases
 mkdir -p ~/.vim/spell
-ln -sf /dev/null ~/.bash_history
 chmod 700 ~/.gnupg
-chmod -w _config/vlc/vlcrc  # Disables annoying VLC clobbering
-
-if [ ! -e "$HOME/.vimrc_local" -a $high_dpi != auto ]; then
-    if [ $high_dpi = yes ]; then
-        cat >"$HOME/.vimrc_local" <<EOF
-if has("x11")
-    let &guifont="Noto Mono 13"
-endif
-EOF
-    else
-        rm -f "$HOME/.vimrc_local"
-    fi
-fi
-
-if [ ! -e "$HOME/.config/kitty/kitty_local.conf" -o $high_dpi != auto ]; then
-    if [ $high_dpi = yes ]; then
-        echo font_size 12 >"$HOME/.config/kitty/kitty_local.conf"
-    else
-        echo >"$HOME/.config/kitty/kitty_local.conf"
-    fi
-fi
-
-if [ ! -e ~/.Xresources.h -o $high_dpi != auto ]; then
-    if [ $high_dpi = yes ]; then
-        echo "#define FONT_SIZE 12" > ~/.Xresources.h
-    else
-        echo "#define FONT_SIZE 10" > ~/.Xresources.h
-    fi
-fi
-
-## Reload .Xresources
-if [ -n "$DISPLAY" ]; then
-    xrdb -I$HOME -merge ~/.Xresources 2> /dev/null
-fi
 
 ## Compile ssh config
 printf "## WARNING: do not edit directly\n" > ~/.ssh/config
