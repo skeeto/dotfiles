@@ -33,9 +33,6 @@ PATH="$PATH;$HOME/git/cmd"
 
 export DOCKER_BUILDKIT=0
 
-PKG_CONFIG_PATH="$HOME/sdl/$ARCH/lib/pkgconfig;$PKG_CONFIG_PATH"
-PATH="$PATH;$HOME/sdl/$ARCH/bin"
-
 PATH="$PATH;$HOME/ffmpeg/bin"
 PATH="$PATH;$HOME/emacs/bin"
 
@@ -51,7 +48,7 @@ alias start="cmd /c start"
 doc() {
     case "$1" in
     c*) cmd /c start "" "$HOME/cppreference/en/index.html" ;;
-    p*) cmd /c start "" "$HOME/python/Doc/index.html"      ;;
+    p*) cmd /c start "" "$HOME/pydoc/index.html"      ;;
     j*) cmd /c start "" "$HOME/jdk/docs/index.html"        ;;
     w*) cmd /c start "" "$HOME/win32.chm"                  ;;
      *) echo doc: what is $1?; return 1                    ;;
