@@ -13,7 +13,7 @@ alias d='sudo systemctl'
 
 alias g='git'
 alias q='quilt'
-alias gdb='gdb -q'
+alias gdb='gdb -q -ex "focus cmd"'
 alias b="make -kj$(nproc)"
 alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
 alias v='gvim --remote-silent'
