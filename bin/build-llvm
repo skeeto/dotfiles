@@ -6,7 +6,7 @@ prefix="$HOME/.local"
 ulimit -n $((1<<16))  # linking LLVM requires >1024 file descriptors
 
 usage() {
-    printf "Usage: build-llvm [-j N] [-p DIR] <llvm-project-VERSION.tar.xz\n"
+    printf "Usage: build-llvm [-j N] [-p DIR] <llvm-project-VERSION.tar\n"
 }
 
 while getopts hj:p: name
@@ -31,8 +31,10 @@ cmake \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX="$prefix" \
     -DLLVM_USE_LINKER=gold \
-    -DLLVM_ENABLE_PROJECTS="clang;compiler-rt;openmp;polly" \
+    -DLLVM_ENABLE_PROJECTS="clang;polly" \
     -DCLANG_ENABLE_BOOTSTRAP=On \
     -DCLANG_BOOTSTRAP_PASSTHROUGH="$vars" \
+    -DLLVM_ENABLE_LIBCXX=ON \
+    -DLLVM_ENABLE_RUNTIMES="libcxx;libcxxabi;libunwind;compiler-rt;openmp" \
     llvm-project*/llvm/
 make -kj"$jobs"
