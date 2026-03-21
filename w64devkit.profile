@@ -8,7 +8,7 @@ export ARCH="$(gcc -dumpmachine)"
 export EMAIL="wellons@nullprogram.com"
 
 export EXE=".exe"
-PATH="$PATH;$HOME/bin"
+PATH="$HOME/bin;$PATH"
 PATH="$PATH;$HOME/$ARCH/bin"
 
 export CPATH="$HOME/$ARCH/include"
