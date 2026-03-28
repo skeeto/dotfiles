@@ -14,7 +14,10 @@ PATH="$PATH;$HOME/$ARCH/bin"
 export CPATH="$HOME/$ARCH/include"
 export LIBRARY_PATH="$HOME/$ARCH/lib"
 export PKG_CONFIG_PATH="$HOME/$ARCH/lib/pkgconfig;$HOME/$ARCH/share/pkgconfig"
+
 export CMAKE_BUILD_PARALLEL_LEVEL="$(nproc)"
+export CTEST_PARALLEL_LEVEL=$CMAKE_BUILD_PARALLEL_LEVEL
+export CTEST_OUTPUT_ON_FAILURE=1
 
 PATH="$PATH;$HOME/gnupg/bin"
 export GNUPGHOME="$HOME/.gnupg"
