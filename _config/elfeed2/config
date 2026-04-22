@@ -1,0 +1,304 @@
+download-dir ~/netshare
+
+preset h @1-month +unread
+preset v @1-month +unread +youtube
+preset n @1-month +unread -youtube
+
+color youtube #44c
+yt-dlp-program /opt/homebrew/bin/yt-dlp
+yt-dlp-arg --no-mtime
+alias playlist https://www.youtube.com/feeds/videos.xml?playlist_id={}
+alias youtube  https://www.youtube.com/feeds/videos.xml?user={}
+alias channel  https://www.youtube.com/feeds/videos.xml?channel_id={}
+
+
+# Feeds
+
+https://acoup.blog/feed/
+tag blog
+
+https://blog.cryptographyengineering.com/feed/
+tag blog
+
+https://www.astralcodexten.com/feed
+tag blog philosophy
+
+https://www.betonit.ai/feed
+tag blog economics
+
+https://simblob.blogspot.com/feeds/posts/default
+tag blog dev
+
+https://utcc.utoronto.ca/~cks/space/blog/?atom
+tag blog dev
+
+https://lemire.me/blog/feed/
+tag dev blog
+
+https://danluu.com/atom.xml
+title Dan Luu
+tag dev blog
+
+https://www.debian.org/security/dsa
+tag debian list security important
+
+https://www.debian.org/News/news
+tag debian list
+
+https://www.filfre.net/feed/
+tag blog history essay
+
+https://danwang.co/feed/
+tag blog philosophy
+
+https://eli.thegreenplace.net/feeds/all.atom.xml
+tag blog dev
+
+https://floooh.github.io/feed.xml
+tag blog dev
+
+https://peter0x44.github.io/index.xml
+tag blog dev
+
+https://www.exocomics.com/feed
+tag comic
+
+https://fabiensanglard.net/rss.xml
+tag blog dev
+
+https://gcc.gnu.org/git/?p=gcc-wwwdocs.git;a=atom;f=htdocs/releases.html
+title GCC Releases
+tag dev release
+
+https://github.com/rmyorston/busybox-w32/releases.atom
+tag release product
+
+https://backend.deviantart.com/rss.xml?q=by%3AGydw1n
+tag image
+
+https://photo.nullprogram.com/feed/
+title Kelsey Wellons Photography
+tag photo myself
+
+https://loadingartist.com/feed/
+tag comic
+
+https://marc-b-reynolds.github.io/feed.xml
+tag dev blog math
+
+http://www.mazelog.com/rss
+tag math puzzle
+
+https://sourceforge.net/projects/mingw-w64/rss?path=/mingw-w64/mingw-w64-release
+title Mingw-w64 Releases
+tag dev release
+
+https://nrk.neocities.org/rss.xml
+tag blog dev
+
+https://nullprogram.com/feed/
+tag blog dev myself
+
+https://devblogs.microsoft.com/oldnewthing/feed
+tag blog dev
+
+https://www.overcomingbias.com/feed
+tag blog philosophy
+
+http://feeds.feedburner.com/PoorlyDrawnLines
+tag comic
+
+https://maskray.me/blog/atom.xml
+tag blog dev
+
+https://feeds.npr.org/510289/podcast.xml
+tag podcast audio economics
+
+https://possiblywrong.wordpress.com/feed/
+tag blog math puzzle
+
+http://feeds.wnyc.org/radiolab
+tag audio
+
+https://www.smbc-comics.com/comic/rss
+tag comic
+
+https://blog.plover.com/index.atom
+tag blog dev
+
+https://xkcd.com/atom.xml
+tag comic
+
+http://hnapp.com/rss?q=host:nullprogram.com
+tag hackernews myself
+
+https://old.reddit.com/domain/nullprogram.com.rss
+tag reddit myself
+
+https://old.reddit.com/r/C_Programming/.rss?limit=100
+title r/C_Programming
+tag subreddit
+
+playlist UULFHnyfMqiRRG1u-2MsSQLbXA
+title Veritasium
+tag youtube
+
+youtube adric22
+title The 8-Bit Guy
+tag youtube
+
+youtube craig1black
+title Adrian's Digital Basement
+tag youtube
+
+channel UCbtwi4wK1YXd9AyV_4UcE6g
+title Adrian's Digital Basement ][
+tag youtube
+
+channel UCd8v3SbzGP9_wuSOr_xk_eA
+title Antique Furniture Restoration
+tag youtube
+
+channel UCH_7doiCkWeq0v3ycWE5lDw
+title Any Austin
+tag youtube
+
+channel UCbGGg1xyVana3IY4WInzgyg
+title Blow Fan
+tag youtube
+
+youtube damo2986
+tag youtube
+
+youtube destinws2
+title Smarter Every Day
+tag youtube
+
+youtube EEVblog
+tag youtube
+
+youtube eevblog2
+tag youtube
+
+youtube foodwishes
+title Food Wishes
+tag youtube
+
+playlist UULFtWCNdtCS-SG2gKYaYhE7BA
+title Gaming Jay
+tag youtube
+
+playlist UULFN9UPjA8I-uwvAy0-N9maOA
+title The Generalist Papers
+tag youtube
+
+channel UCuCkxoKLYO_EQ2GeFtbM_bw
+title Half as Interesting
+tag youtube
+
+channel UCm9K6rby98W8JigLoZOh6FQ
+title LockPickingLawyer
+tag youtube
+
+youtube jastownsendandson
+tag youtube
+
+youtube MatthiasWandel
+tag youtube
+
+channel UC3_AWXcf2K3l9ILVuQe-XwQ
+title Matthias random stuff
+tag youtube
+
+youtube Nerdwriter1
+tag youtube
+
+youtube numberphile
+title Numberphile
+tag youtube
+
+channel UCNyGbxoEo6CQvaRVEvItxkA
+title Pask Makes
+tag youtube
+
+playlist UULFF1fG3gT44nGTPU2sVLoFWg
+title Patrick Willems
+tag youtube
+
+youtube Pixelmusement
+tag youtube
+
+youtube PlumpHelmetPunk
+tag youtube
+
+youtube ProZD
+tag youtube
+
+youtube XboxAhoy
+tag youtube
+
+youtube RedLetterMedia
+tag youtube
+
+youtube Cercopithecan
+title Sebastian Lague
+tag youtube
+
+channel UC1_uAIS3r8Vu6JjXWvastJg
+title Mathologer
+tag youtube
+
+youtube standupmaths
+tag youtube
+
+channel UCg-_lYeV8hBnDSay7nmphUA
+title Tally Ho
+tag youtube
+
+channel UCy0tKL1T7wFoYcxCe0xjN6Q
+title Technology Connections
+tag youtube
+
+channel UClRwC5Vc8HrB6vGx6Ti-lhA
+title Technology Connextras
+tag youtube
+
+channel UCqrrxZeeFSNCjGmD-33SKMw
+title u m a m i
+tag youtube
+
+youtube handmadeheroarchive
+title Handmade Hero
+tag youtube dev
+
+channel UCwRqWnW5ZkVaP_lZF7caZ-g
+title Retro Game Mechanics Explained
+tag youtube
+
+youtube phreakindee
+title LGR
+tag youtube
+
+channel UCCj_mkYyeGIb9MPSdb74ykA
+title GET OFF MY LAWN
+tag youtube
+
+youtube szyzyg
+title Scott Manley
+tag youtube
+
+channel UCsXVk37bltHxD1rDPwtNM8Q
+title Kurzgesagt – In a Nutshell
+tag youtube
+
+channel UCq8ZAAsI89IoJ-fn1gYpO3g
+title Kurzgesagt After Dark
+tag youtube
+
+playlist UULFtKUW8LJK2Ev8hUy9ZG_PPA
+title Welker Farms
+tag youtube
+
+youtube Wendoverproductions
+title Wendover
+tag youtube
