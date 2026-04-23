@@ -1,10 +1,12 @@
 download-dir ~/netshare
 
 preset h @1-month +unread
-preset v @1-month +unread +youtube
-preset n @1-month +unread -youtube
+preset t @1-month +unread +youtube
+preset T @1-month +unread -youtube
 
+color audio   #594
 color youtube #44c
+
 yt-dlp-program /opt/homebrew/bin/yt-dlp
 yt-dlp-arg --no-mtime
 alias playlist https://www.youtube.com/feeds/videos.xml?playlist_id={}
