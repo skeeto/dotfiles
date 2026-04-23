@@ -2,7 +2,7 @@
 set -e
 
 autoname=false
-url=falstaff:8000
+url=localhost:8000
 
 usage() {
     printf "Usage: transcribe [-a] [files...]\n"
