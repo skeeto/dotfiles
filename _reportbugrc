@@ -1,7 +1,0 @@
-mode advanced
-ui text
-cc
-compress
-paranoid
-
-smtphost localhost:2525
