@@ -11,13 +11,11 @@ export EXE=".exe"
 PATH="$HOME/bin;$PATH"
 PATH="$PATH;$HOME/$ARCH/bin"
 
-export CPATH="$HOME/$ARCH/include"
-export LIBRARY_PATH="$HOME/$ARCH/lib"
 export PKG_CONFIG_PATH="$HOME/$ARCH/lib/pkgconfig;$HOME/$ARCH/share/pkgconfig"
 
 export CMAKE_BUILD_PARALLEL_LEVEL="$(nproc)"
 export CTEST_PARALLEL_LEVEL=$CMAKE_BUILD_PARALLEL_LEVEL
-export CTEST_OUTPUT_ON_FAILURE=1
+export CTEST_OUTPUT_ON_FAILURE=on
 
 PATH="$PATH;$HOME/gnupg/bin"
 export GNUPGHOME="$HOME/.gnupg"
@@ -31,11 +29,11 @@ export GOTOOLCHAIN="local"
 PATH="$PATH;$HOME/go/bin"
 
 export GIT_TERMINAL_PROMPT=0
-export EDITOR="vim.bat"
+export EDITOR="$W64DEVKIT_HOME/share/vim/gvim.exe"
 PATH="$PATH;$HOME/git/cmd"
 
 PATH="$PATH;$HOME/ffmpeg/bin"
-PATH="$PATH;$HOME/emacs/bin"
+PATH="$PATH;$HOME/llvm/bin"
 
 alias b="make -kj$NUMBER_OF_PROCESSORS"
 alias cl="cl /nologo"
