@@ -81,18 +81,6 @@ fi
 
 clearenv
 
-export XDG_DESKTOP_DIR="$HOME/trash/"
-export XDG_DOCUMENTS_DIR="$HOME/trash/"
-export XDG_DOWNLOAD_DIR="$HOME/Downloads"
-export XDG_MUSIC_DIR="$HOME/trash/"
-export XDG_PICTURES_DIR="$HOME/trash/"
-export XDG_PUBLICSHARE_DIR="$HOME/trash/"
-export XDG_TEMPLATES_DIR="$HOME/trash/"
-export XDG_VIDEOS_DIR="$HOME/trash/"
-export XDG_CACHE_HOME="$HOME/trash/"
-export XDG_STATE_HOME="$HOME/trash/"
-export XDG_DATA_HOME="$HOME/trash/"
-
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
 localenv
