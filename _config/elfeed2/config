@@ -7,9 +7,6 @@ preset T @1-month +unread -youtube
 color audio   #594
 color youtube #44c
 
-yt-dlp-program /opt/homebrew/bin/yt-dlp
-yt-dlp-arg --js-runtimes=deno:/opt/homebrew/bin/deno
-yt-dlp-arg --ffmpeg-location=/opt/homebrew/bin/ffmpeg
 yt-dlp-arg --cookies-from-browser=firefox
 yt-dlp-arg --no-mtime
 yt-dlp-arg --format=bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best
