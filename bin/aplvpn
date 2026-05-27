@@ -1,4 +1,0 @@
-#!/bin/sh
-
-exec sudo openconnect --no-http-keepalive \
-    --authgroup HID_Token -u wellocc1 acvpn.jhuapl.edu
