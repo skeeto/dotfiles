@@ -135,13 +135,6 @@ tag comic
 http://hnapp.com/rss?q=host:nullprogram.com
 tag hackernews myself
 
-https://old.reddit.com/domain/nullprogram.com.rss
-tag reddit myself
-
-https://old.reddit.com/r/C_Programming/.rss?limit=100
-title r/C_Programming
-tag subreddit
-
 https://napcakes.nekoweb.org/atom.xml
 title gardenweb
 tag blog dev
