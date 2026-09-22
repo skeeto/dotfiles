@@ -69,10 +69,6 @@ tag comic
 https://fabiensanglard.net/rss.xml
 tag blog dev
 
-https://gcc.gnu.org/git/?p=gcc-wwwdocs.git;a=atom;f=htdocs/releases.html
-title GCC Releases
-tag dev release
-
 https://github.com/rmyorston/busybox-w32/releases.atom
 tag release product
 
