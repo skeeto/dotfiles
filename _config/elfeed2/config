@@ -42,9 +42,6 @@ https://danluu.com/atom.xml
 title Dan Luu
 tag dev blog
 
-https://www.debian.org/security/dsa
-tag debian list security important
-
 https://www.debian.org/News/news
 tag debian list
 
